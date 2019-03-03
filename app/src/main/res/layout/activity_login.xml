@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".Panels.Login">
 
     <LinearLayout
@@ -83,7 +85,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
-                android:text="اولین سیستم  درخواست سرویس برقی در کل کشور"
+                android:text="اولین سیستم درخواست سرویس برقی در کل کشور"
                 android:textColor="@color/color_tittle_gray"
                 android:textAlignment="center"
                 android:textSize="14sp"

@@ -5,4 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="color_white">#fff</color>
     <color name="color_tittle_gray">#858688</color>
+    <color name="color_sms_orange">#cb7400</color>
 </resources>
