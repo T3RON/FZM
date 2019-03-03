@@ -24,17 +24,19 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".Panels.Sms"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Panels.Login"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".MainActivity"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden"/>
 
 
         <meta-data
