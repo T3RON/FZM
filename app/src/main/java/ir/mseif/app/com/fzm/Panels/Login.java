@@ -23,8 +23,8 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-        btn_sms = findViewById(R.id.button);
-        editText = findViewById(R.id.editText);
+        btn_sms = findViewById(R.id.btn_vifrey);
+        editText = findViewById(R.id.edt_get_number);
 
 
         btn_sms.setOnClickListener(new View.OnClickListener() {

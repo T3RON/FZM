@@ -29,7 +29,7 @@
 
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/img_login_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -54,7 +54,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView">
+                app:layout_constraintTop_toBottomOf="@+id/img_login_image">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -94,7 +94,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/edit_verify"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -119,7 +119,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_verify"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -135,7 +135,7 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_verify" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -146,14 +146,14 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
+                android:onClick="Send_again"
                 android:text="ارسال مجدد کد فعال سازی ؟"
                 android:textAlignment="center"
                 android:textColor="@color/color_sms_orange"
                 android:textSize="14sp"
-                android:onClick="Send_again"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button"
+                app:layout_constraintTop_toBottomOf="@+id/btn_verify"
                 tools:ignore="SmallSp" />
 
             <TextView
