@@ -9,22 +9,25 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Login extends AppCompatActivity {
 
-    Button btn_sms;
-    EditText editText;
+
+    @BindView(R.id.btn_verify) Button btn_sms;
+    @BindView(R.id.edt_get_number) EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
 
-        btn_sms = findViewById(R.id.btn_vifrey);
-        editText = findViewById(R.id.edt_get_number);
+
 
 
         btn_sms.setOnClickListener(new View.OnClickListener() {
