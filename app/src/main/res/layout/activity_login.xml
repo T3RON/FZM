@@ -27,9 +27,8 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/img_login_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -37,6 +36,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:contentDescription="TODO"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -54,7 +54,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView">
+                app:layout_constraintTop_toBottomOf="@+id/img_login_image">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -85,16 +85,16 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
-                android:text="اولین سیستم درخواست سرویس برقی در کل کشور"
-                android:textColor="@color/color_tittle_gray"
+                android:text="اولین سیستم درخواست خدمات برقی در کل کشور"
                 android:textAlignment="center"
+                android:textColor="@color/color_tittle_gray"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/edt_get_number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -119,7 +119,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_vifrey"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -131,11 +131,11 @@
                 android:paddingLeft="50dp"
                 android:paddingRight="50dp"
                 android:text="دریافت کد فعال سازی"
-                android:textSize="12sp"
                 android:textColor="@color/ches_white"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/edt_get_number" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -152,7 +152,7 @@
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button"
+                app:layout_constraintTop_toBottomOf="@+id/btn_vifrey"
                 tools:ignore="SmallSp" />
 
             <TextView
@@ -171,8 +171,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-
 
 
         </android.support.constraint.ConstraintLayout>
