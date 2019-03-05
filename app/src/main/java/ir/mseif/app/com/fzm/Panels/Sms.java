@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.MainActivity;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -16,20 +18,12 @@ public class Sms extends AppCompatActivity {
 
 
 
-    Button btn_sms;
-
+    @BindView(R.id.btn_verify) Button btn_sms;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sms);
-
-
-
-
-    btn_sms = findViewById(R.id.btn_verify);
-
-
-
+        ButterKnife.bind(this);
 
 
     btn_sms.setOnClickListener(new View.OnClickListener() {
