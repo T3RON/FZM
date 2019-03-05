@@ -6,4 +6,8 @@
     <color name="color_white">#fff</color>
     <color name="color_tittle_gray">#858688</color>
     <color name="color_sms_orange">#cb7400</color>
+    <color name="color_background_asansor">#a2a2a2</color>
+    <color name="color_hint">#cacaca</color>
+    <color name="color_asansor_view">#f2f2f2</color>
+    <color name="color_asansor_num">#d4a520</color>
 </resources>
