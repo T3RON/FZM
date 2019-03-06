@@ -22,7 +22,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Asansor"></activity>
+        <activity android:name=".Camera"></activity>
+        <activity android:name=".Asansor" />
         <activity
             android:name=".Panels.Sms"
             android:theme="@style/AppTheme.NoActionBar"
