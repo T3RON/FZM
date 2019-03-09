@@ -1,29 +1,23 @@
-package ir.mseif.app.com.fzm;
+package ir.mseif.app.com.fzm.Activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
+import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class Shutter_Door extends AppCompatActivity {
+public class Contact extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shutter__door);
+        setContentView(R.layout.activity_contact);
     }
 
 
 
 
-    // Go To Time Activity
-    public void Go_To_Time (View v){
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-    }
 
 
     @Override

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Antenna">
+    tools:context=".Services.Antenna">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -122,6 +122,7 @@
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:text="آدرس دقیق"
+            android:onClick="Go_To_Location"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toStartOf="@+id/imageButton3"
             app:layout_constraintStart_toStartOf="parent"

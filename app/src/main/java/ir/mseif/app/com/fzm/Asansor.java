@@ -5,10 +5,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import butterknife.BindView;
+import ir.mseif.app.com.fzm.Activity.Map;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Asansor extends AppCompatActivity {
@@ -67,6 +67,16 @@ public class Asansor extends AppCompatActivity {
 //        return String.valueOf(b);
 
     }
+
+
+
+    // Go To Time Activity
+    public void Go_To_Location (View v){
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        startActivity(intent);
+    }
+
+
 
 
     // Go To Time Activity

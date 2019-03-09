@@ -6,6 +6,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import ir.mseif.app.com.fzm.Services.Antenna;
+import ir.mseif.app.com.fzm.Services.Camera;
+import ir.mseif.app.com.fzm.Services.Chandelier;
+import ir.mseif.app.com.fzm.Services.Cooler;
+import ir.mseif.app.com.fzm.Services.E_Device;
+import ir.mseif.app.com.fzm.Services.E_panel;
+import ir.mseif.app.com.fzm.Services.Generator;
+import ir.mseif.app.com.fzm.Services.Iphon;
+import ir.mseif.app.com.fzm.Services.Lighting;
+import ir.mseif.app.com.fzm.Services.Santeral;
+import ir.mseif.app.com.fzm.Services.Security;
+import ir.mseif.app.com.fzm.Services.Shutter_Door;
+import ir.mseif.app.com.fzm.Services.Socket;
+import ir.mseif.app.com.fzm.Services.Wiring;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity {
