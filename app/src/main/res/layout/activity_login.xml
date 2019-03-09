@@ -29,18 +29,19 @@
 
             <ImageView
                 android:id="@+id/img_login_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
                 android:contentDescription="TODO"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/p_123" />
+                app:srcCompat="@drawable/ic_tools"
+                tools:ignore="VectorDrawableCompat" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -48,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:orientation="horizontal"
