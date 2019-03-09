@@ -45,21 +45,69 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Go to E_Device Page
+    public void page_e_device (View v){
+        Intent intent = new Intent(getApplicationContext(), E_Device.class);
+        startActivity(intent);
+    }
+
     // Go to Wiring Page
     public void page_wiring (View v){
         Intent intent = new Intent(getApplicationContext(), Wiring.class);
         startActivity(intent);
     }
 
-    // Go to Antenna Page
+    // Go to E_Panel Page
     public void page_e_panel (View v){
         Intent intent = new Intent(getApplicationContext(), E_panel.class);
+        startActivity(intent);
+    }
+
+    // Go to Shutter_Door Page
+    public void page_shutter_door (View v){
+        Intent intent = new Intent(getApplicationContext(), Shutter_Door.class);
         startActivity(intent);
     }
 
     // Go to Antenna Page
     public void page_antenna (View v){
         Intent intent = new Intent(getApplicationContext(), Antenna.class);
+        startActivity(intent);
+    }
+
+    // Go to Lighting Page
+    public void page_lighting (View v){
+        Intent intent = new Intent(getApplicationContext(), Lighting.class);
+        startActivity(intent);
+    }
+
+    // Go to Security Page
+    public void page_security (View v){
+        Intent intent = new Intent(getApplicationContext(), Security.class);
+        startActivity(intent);
+    }
+
+    // Go to Generator Page
+    public void page_generator (View v){
+        Intent intent = new Intent(getApplicationContext(), Generator.class);
+        startActivity(intent);
+    }
+
+    // Go to Cooler Page
+    public void page_cooler (View v){
+        Intent intent = new Intent(getApplicationContext(), Cooler.class);
+        startActivity(intent);
+    }
+
+    // Go to Chandelier Page
+    public void page_chandelier (View v){
+        Intent intent = new Intent(getApplicationContext(), Chandelier.class);
+        startActivity(intent);
+    }
+
+    // Go to Socket Page
+    public void page_socket (View v){
+        Intent intent = new Intent(getApplicationContext(), Socket.class);
         startActivity(intent);
     }
 

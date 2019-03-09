@@ -22,7 +22,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".E_panel"></activity>
+        <activity android:name=".Lighting"></activity>
+        <activity android:name=".Chandelier" />
+        <activity android:name=".E_Device" />
+        <activity android:name=".Socket" />
+        <activity android:name=".Generator" />
+        <activity android:name=".Security" />
+        <activity android:name=".Shutter_Door" />
+        <activity android:name=".Cooler" />
+        <activity android:name=".E_panel" />
         <activity android:name=".Antenna" />
         <activity android:name=".Wiring" />
         <activity android:name=".Santeral" />
