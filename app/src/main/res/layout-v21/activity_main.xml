@@ -46,6 +46,7 @@
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp"
+                    android:onClick="page_camera"
                     app:layout_constraintBottom_toTopOf="@+id/cardView5"
                     app:layout_constraintEnd_toStartOf="@+id/cardView15"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -93,6 +94,7 @@
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp"
+                    android:onClick="page_iphon"
                     app:layout_constraintBottom_toTopOf="@+id/cardView4"
                     app:layout_constraintEnd_toStartOf="@+id/cardView13"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -192,6 +194,7 @@
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp"
+                    android:onClick="page_santeral"
                     app:layout_constraintBottom_toTopOf="@+id/cardView14"
                     app:layout_constraintEnd_toStartOf="@+id/cardView4"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -238,6 +241,7 @@
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp"
+                    android:onClick="page_wiring"
                     app:layout_constraintBottom_toTopOf="@+id/cardView11"
                     app:layout_constraintEnd_toStartOf="@+id/cardView12"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -257,7 +261,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/ic_digital_antenna" />
+                            android:src="@drawable/ic_wiring_and_electricity" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -335,6 +339,7 @@
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp"
+                    android:onClick="page_e_panel"
                     app:layout_constraintBottom_toTopOf="@+id/cardView10"
                     app:layout_constraintEnd_toStartOf="@+id/cardView11"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -429,6 +434,7 @@
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="8dp"
+                    android:onClick="page_antenna"
                     app:layout_constraintBottom_toTopOf="@+id/cardView6"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"

@@ -22,7 +22,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Camera"></activity>
+        <activity android:name=".E_panel"></activity>
+        <activity android:name=".Antenna" />
+        <activity android:name=".Wiring" />
+        <activity android:name=".Santeral" />
+        <activity android:name=".Iphon" />
+        <activity android:name=".Camera" />
         <activity android:name=".Asansor" />
         <activity
             android:name=".Panels.Sms"

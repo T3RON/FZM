@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    tools:context=".Camera">
+    tools:context=".Iphon">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,7 +13,7 @@
         android:focusableInTouchMode="true">
 
         <Spinner
-            android:id="@+id/spinner2"
+            android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -24,11 +22,12 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -37,10 +36,10 @@
             android:text="خدمت درخواستی  را مشخص کنید :"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
         <View
-            android:id="@+id/view3"
+            android:id="@+id/view4"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginStart="8dp"
@@ -52,13 +51,13 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView13"
-            app:layout_constraintEnd_toStartOf="@+id/textView13"
+            app:layout_constraintBottom_toBottomOf="@+id/textView14"
+            app:layout_constraintEnd_toStartOf="@+id/textView14"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView13" />
+            app:layout_constraintTop_toTopOf="@+id/textView14" />
 
         <CheckBox
-            android:id="@+id/checkBox11"
+            android:id="@+id/checkBox14"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -73,15 +72,15 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:text="تنظیم دوربین و دستگاه"
+            android:text="نصب آیفون در واحد"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
             tools:ignore="RtlHardcoded" />
 
         <CheckBox
-            android:id="@+id/checkBox12"
+            android:id="@+id/checkBox15"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -96,15 +95,15 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:text="نصب و راه اندازی دوربین"
+            android:text="نصب پنل جلوی در"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox11"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox14"
             tools:ignore="RtlHardcoded" />
 
         <CheckBox
-            android:id="@+id/checkBox13"
+            android:id="@+id/checkBox16"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -119,15 +118,15 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:text="تعمیر دوربین و رفع ایراد"
+            android:text="تعمیر آیفون یا پنل"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox12"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox15"
             tools:ignore="RtlHardcoded" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/editText11"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -149,10 +148,10 @@
             android:textColorHint="@color/color_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox13" />
+            app:layout_constraintTop_toBottomOf="@+id/checkBox16" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/editText12"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -171,11 +170,11 @@
             android:textColorHint="@color/color_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/editText9"
-            app:layout_constraintTop_toBottomOf="@+id/editText6" />
+            app:layout_constraintStart_toEndOf="@+id/editText13"
+            app:layout_constraintTop_toBottomOf="@+id/editText11" />
 
         <EditText
-            android:id="@+id/editText8"
+            android:id="@+id/editText13"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -194,22 +193,23 @@
             android:paddingBottom="10dp"
             android:textAlignment="center"
             android:textColorHint="@color/color_hint"
-            app:layout_constraintEnd_toStartOf="@+id/editText9"
+            app:layout_constraintEnd_toStartOf="@+id/editText12"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText6" />
+            app:layout_constraintStart_toEndOf="@+id/editText14"
+            app:layout_constraintTop_toBottomOf="@+id/editText11" />
 
         <EditText
-            android:id="@+id/editText9"
+            android:id="@+id/editText14"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:ems="10"
             android:hint="پلاک"
-            android:textSize="14sp"
             android:inputType="number"
             android:paddingStart="15dp"
             android:paddingTop="10dp"
@@ -217,13 +217,14 @@
             android:paddingBottom="10dp"
             android:textAlignment="center"
             android:textColorHint="@color/color_hint"
-            app:layout_constraintEnd_toStartOf="@+id/editText7"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/editText13"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/editText8"
-            app:layout_constraintTop_toBottomOf="@+id/editText6" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText11" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -239,11 +240,11 @@
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText8"
+            app:layout_constraintTop_toBottomOf="@+id/editText13"
             tools:ignore="RtlCompat" />
 
         <EditText
-            android:id="@+id/editText10"
+            android:id="@+id/editText15"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -264,10 +265,10 @@
             android:textColorHint="@color/color_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2" />
+            app:layout_constraintTop_toBottomOf="@+id/button5" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/button6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -290,7 +291,6 @@
             tools:ignore="RtlCompat"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText10" />
-
+            app:layout_constraintTop_toBottomOf="@+id/editText15" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
