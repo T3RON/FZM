@@ -6,8 +6,14 @@
     <color name="color_white">#fff</color>
     <color name="color_tittle_gray">#858688</color>
     <color name="color_sms_orange">#cb7400</color>
-    <color name="color_background_asansor">#a2a2a2</color>
+    <color name="color_background_asansor">#f8f8f8</color>
     <color name="color_hint">#cacaca</color>
     <color name="color_asansor_view">#f2f2f2</color>
     <color name="color_asansor_num">#d4a520</color>
+    <color name="color_green">#239003</color>
+    <color name="color_orange_profile">#a08c23</color>
+    <color name="color_pink">#f52579</color>
+    <color name="color_dark">#33363d</color>
+    <color name="color_orange_history">#a08c26</color>
+    <color name="color_date">#9f8756</color>
 </resources>
