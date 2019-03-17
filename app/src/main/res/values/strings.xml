@@ -1,3 +1,34 @@
 <resources>
-    <string name="app_name">FZM</string>
+    <string name="app_name">فازمتر</string>
+    <string name="Open">FZM</string>
+    <string name="Close">FZM</string>
+    <string name="Camera">دوربین مدار بسته</string>
+    <string name="Iphone">آیفون تصویری</string>
+    <string name="Asansor">آسانسور</string>
+    <string name="Santeral">تلفن و سانترال</string>
+    <string name="Wiring">سیمکشی و برق کاری</string>
+    <string name="E_device">لوازم برقی خانگی</string>
+    <string name="E_panel">تابلو برق ۱ فاز و ۳ فاز</string>
+    <string name="Shutter_door">جک و کرکره برقی</string>
+    <string name="Antenna">آنتن مرکزی و دیجیتال</string>
+    <string name="Lighting">نور پردازی و نور مخفی</string>
+    <string name="Security">دزدگیر اماکن</string>
+    <string name="Generator">برق اضطراری و ژنراتور</string>
+    <string name="Cooler">پکیج و کولر</string>
+    <string name="Chandelier">لوستر و چراغ</string>
+    <string name="Socket">کلید و پریز هوشمند</string>
+    <string name="First_System">اولین سیستم درخواست خدمات برقی در کل کشور</string>
+    <string name="Our_CustomerS">مشتریان ما</string>
+    <string name="FZM">فازمتر</string>
+    <string name="About_us">درباره ما</string>
+    <string name="About_Company">متن شرکت</string>
+    <string name="Address">آدرس ...</string>
+    <string name="Alley">کوچه</string>
+    <string name="unit">واحد</string>
+    <string name="tag">پلاک</string>
+    <string name="register">ثبت درخواست</string>
+    <string name="Description">توضیحات</string>
+    <string name="Location">آدرس دقیق</string>
+    <string name="Send">ارسال درخواست</string>
+    <string name="checek_box">12sp</string>
 </resources>

@@ -86,7 +86,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
-                android:text="اولین سیستم درخواست خدمات برقی در کل کشور"
+                android:text="@string/First_System"
                 android:textAlignment="center"
                 android:textColor="@color/color_tittle_gray"
                 android:textSize="14sp"

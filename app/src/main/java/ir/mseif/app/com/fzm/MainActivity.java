@@ -2,10 +2,21 @@ package ir.mseif.app.com.fzm;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
+import ir.mseif.app.com.fzm.Activity.About;
+import ir.mseif.app.com.fzm.Activity.Contact;
+import ir.mseif.app.com.fzm.Activity.History;
+import ir.mseif.app.com.fzm.Activity.Profile;
+import ir.mseif.app.com.fzm.Activity.Wallet;
 import ir.mseif.app.com.fzm.Services.Antenna;
 import ir.mseif.app.com.fzm.Services.Camera;
 import ir.mseif.app.com.fzm.Services.Chandelier;
@@ -24,10 +35,69 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        drawerLayout = findViewById(R.id.drawer_main);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
+        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
+
+
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+        NavigationView nav_view = findViewById(R.id.nav_view);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
+
+
+
+        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                int id = menuItem.getItemId();
+
+                if(id == R.id.profile){
+                    Intent intent = new Intent(getApplicationContext(), Profile.class);
+                    startActivity(intent);
+                }else if(id == R.id.lastservice){
+                    Intent intent = new Intent(getApplicationContext(), History.class);
+                    startActivity(intent);
+                }else if(id == R.id.wallet){
+                    Intent intent = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(intent);
+                }else if(id == R.id.contact){
+                    Intent intent = new Intent(getApplicationContext(), Contact.class);
+                    startActivity(intent);
+                }else if(id == R.id.about){
+                    Intent intent = new Intent(getApplicationContext(), About.class);
+                    startActivity(intent);
+                }else if(id == R.id.exit){
+                }else if(id == R.id.exit_app){
+                }
+
+
+                return true;
+            }
+        });
+
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return actionBarDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 
 
