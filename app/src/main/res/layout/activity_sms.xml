@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusable="true"
-    android:focusableInTouchMode="true"
-    tools:context=".Panels.Login">
+    android:focusableInTouchMode="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -153,8 +152,7 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_verify"
-                tools:ignore="SmallSp" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_verify" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -165,10 +163,12 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
+                android:layout_marginBottom="16dp"
                 android:text="شرکت تعمیرات فازمتر"
                 android:textAlignment="center"
                 android:textColor="@color/color_tittle_gray"
                 android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />

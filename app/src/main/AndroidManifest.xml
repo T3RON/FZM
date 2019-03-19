@@ -22,11 +22,11 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activity.Time"></activity>
+        <activity android:name=".Activity.Profile"></activity>
+        <activity android:name=".Activity.About" />
+        <activity android:name=".Activity.Time" />
         <activity android:name=".Activity.History" />
         <activity android:name=".Activity.Wallet" />
-        <activity android:name=".Activity.about" />
-        <activity android:name=".Activity.profile" />
         <activity android:name=".Activity.Contact" />
         <activity android:name=".Activity.Map" />
         <activity android:name=".Services.Lighting" />

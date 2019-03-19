@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_sentral">
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,13 +22,11 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:text="خدمت درخواستی  را مشخص کنید :"
             android:textColor="@color/colorPrimary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="223dp"
+            tools:layout_editor_absoluteY="8dp" />
 
         <View
             android:id="@+id/view5"
@@ -59,6 +63,7 @@
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
             android:text="تنظیم دوربین و دستگاه"
+            android:textSize="12sp"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -82,6 +87,7 @@
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
             android:text="تنظیم دوربین و دستگاه"
+            android:textSize="12sp"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +111,7 @@
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
             android:text="تنظیم دوربین و دستگاه"
+            android:textSize="12sp"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -123,8 +130,8 @@
             android:background="@drawable/style_asansor_corner"
             android:ems="10"
             android:gravity="top"
-            android:hint="آدرس ..."
-            android:textSize="14sp"
+            android:hint="@string/Address"
+            android:textSize="13sp"
             android:inputType="textMultiLine"
             android:minLines="3"
             android:paddingStart="15dp"
@@ -145,8 +152,8 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:ems="10"
-            android:hint="کوچه"
-            android:textSize="14sp"
+            android:hint="@string/Alley"
+            android:textSize="12sp"
             android:inputType="textPersonName"
             android:paddingStart="15dp"
             android:paddingTop="10dp"
@@ -163,15 +170,12 @@
             android:id="@+id/editText18"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:ems="10"
-            android:hint="واحد"
-            android:textSize="14sp"
+            android:hint="@string/unit"
             android:inputType="number"
             android:paddingStart="15dp"
             android:paddingTop="10dp"
@@ -179,6 +183,7 @@
             android:paddingBottom="10dp"
             android:textAlignment="center"
             android:textColorHint="@color/color_hint"
+            android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@+id/editText17"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/editText19"
@@ -195,7 +200,7 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:ems="10"
-            android:hint="پلاک"
+            android:hint="@string/tag"
             android:inputType="number"
             android:paddingStart="15dp"
             android:paddingTop="10dp"
@@ -203,7 +208,7 @@
             android:paddingBottom="10dp"
             android:textAlignment="center"
             android:textColorHint="@color/color_hint"
-            android:textSize="14sp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@+id/editText18"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -222,7 +227,8 @@
             android:drawableStart="@drawable/ic_location"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:text="آدرس دقیق"
+            android:text="@string/Location"
+            android:textSize="14sp"
             android:onClick="Go_To_Location"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -240,8 +246,8 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
-            android:hint="توضیحات"
-            android:textSize="14sp"
+            android:hint="@string/Description"
+            android:textSize="13sp"
             android:inputType="textMultiLine"
             android:minLines="4"
             android:gravity="top"
@@ -271,7 +277,7 @@
             android:paddingBottom="12dp"
             android:paddingEnd="15dp"
             android:paddingStart="15dp"
-            android:text="ثبت درخواست"
+            android:text="@string/register"
             android:textColor="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             android:onClick="Go_To_Time"
@@ -281,3 +287,19 @@
             app:layout_constraintTop_toBottomOf="@+id/editText20" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
+
+
+
+
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/navigation_menu"
+        >
+
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>
