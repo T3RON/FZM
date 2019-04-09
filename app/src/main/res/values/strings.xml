@@ -31,4 +31,10 @@
     <string name="Location">آدرس دقیق</string>
     <string name="Send">ارسال درخواست</string>
     <string name="checek_box">12sp</string>
+    <string name="Today">امروز</string>
+    <string name="Tomorrow">فردا</string>
+    <string name="More">بیشتر</string>
+    <string name="What_Time">چه ساعتی ؟</string>
+    <string name="Your_Price">مبلغ مورد نظر خود را وارد کنید</string>
+    <string name="Security_Code">کد امنیتی</string>
 </resources>
