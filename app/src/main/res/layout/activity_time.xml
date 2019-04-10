@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,10 +51,10 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -66,10 +66,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:text="امروز"
+                    android:text="@string/Today"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
@@ -78,10 +78,10 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/cardView18"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -93,10 +93,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:text="فردا"
+                    android:text="@string/Tomorrow"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </android.support.v7.widget.CardView>
 
 
@@ -106,10 +106,10 @@
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/cardView17"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -122,10 +122,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:text="بیشتر"
+                    android:text="@string/More"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </android.support.v7.widget.CardView>
         </android.support.constraint.ConstraintLayout>
 
@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -168,7 +168,7 @@
 
             <View
                 android:id="@+id/view22"
-                android:layout_width="81dp"
+                android:layout_width="32dp"
                 android:layout_height="121dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -186,10 +186,10 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
                 android:layout_marginBottom="8dp"
-                android:text="چه ساعتی ؟"
+                android:text="@string/What_Time"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -225,6 +225,7 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
+                android:background="@color/color_hint"
                 app:layout_constraintEnd_toEndOf="@+id/imageButton8"
                 app:layout_constraintStart_toStartOf="@+id/imageButton8"
                 app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
@@ -234,6 +235,7 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
+                android:background="@color/color_hint"
                 app:layout_constraintEnd_toEndOf="@+id/imageButton7"
                 app:layout_constraintStart_toStartOf="@+id/imageButton7"
                 app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
@@ -243,6 +245,7 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
+                android:background="@color/color_hint"
                 app:layout_constraintEnd_toEndOf="@+id/imageButton10"
                 app:layout_constraintStart_toStartOf="@+id/imageButton10"
                 app:layout_constraintTop_toBottomOf="@+id/textView50" />
@@ -252,6 +255,7 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
+                android:background="@color/color_hint"
                 app:layout_constraintEnd_toEndOf="@+id/imageButton9"
                 app:layout_constraintStart_toStartOf="@+id/imageButton9"
                 app:layout_constraintTop_toBottomOf="@+id/textView51" />
@@ -289,7 +293,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"

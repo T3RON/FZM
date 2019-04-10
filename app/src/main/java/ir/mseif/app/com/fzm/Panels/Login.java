@@ -17,7 +17,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class Login extends AppCompatActivity {
 
 
-    @BindView(R.id.btn_verify) Button btn_sms;
+    @BindView(R.id.btn_vifrey) Button btn_sms;
     @BindView(R.id.edt_get_number) EditText editText;
 
     @Override
@@ -25,7 +25,6 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
 
 
 

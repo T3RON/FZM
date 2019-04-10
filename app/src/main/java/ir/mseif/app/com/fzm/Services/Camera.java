@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.MainActivity;
 import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.R;
@@ -34,7 +35,7 @@ public class Camera extends AppCompatActivity {
 
     // Go To Time Activity
     public void Go_To_Time (View v){
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(), Time.class);
         startActivity(intent);
     }
 
