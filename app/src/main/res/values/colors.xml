@@ -16,4 +16,5 @@
     <color name="color_dark">#33363d</color>
     <color name="color_orange_history">#a08c26</color>
     <color name="color_date">#9f8756</color>
+    <color name="color_red">#ff1100</color>
 </resources>

@@ -9,8 +9,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
@@ -36,8 +38,9 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class MainActivity extends AppCompatActivity {
 
 
-    private DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle actionBarDrawerToggle;
+    public DrawerLayout drawerLayout;
+    public ActionBarDrawerToggle actionBarDrawerToggle;
+    Button btn_nav;
 
 
     @Override
@@ -55,10 +58,11 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView nav_view = findViewById(R.id.nav_view);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.app_title);
 
 
-
+        btn_nav = findViewById(R.id.btn_nav);
 
 
 
@@ -83,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
                 }else if(id == R.id.about){
                     Intent intent = new Intent(getApplicationContext(), About.class);
                     startActivity(intent);
-                }else if(id == R.id.exit){
                 }else if(id == R.id.exit_app){
                 }
 
@@ -92,12 +95,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
 
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return actionBarDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
+        btn_nav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+                    drawerLayout.closeDrawer(Gravity.RIGHT);
+                } else {
+                    drawerLayout.openDrawer(Gravity.RIGHT);
+                }
+            }
+        });
     }
 
 

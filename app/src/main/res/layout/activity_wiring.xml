@@ -229,14 +229,13 @@
 
 
 
-    <android.support.design.widget.NavigationView
+    <ir.basalam.rtlnavigationview.RtlNavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/nav_view"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/navigation_header"
-        app:menu="@menu/navigation_menu"
-        >
+        android:layout_gravity="right"
+        android:fitsSystemWindows="true"
+        app:rtl_menu="@menu/navigation_menu"
+        app:headerLayout="@layout/navigation_header"/>
 
-    </android.support.design.widget.NavigationView>
 </android.support.v4.widget.DrawerLayout>
