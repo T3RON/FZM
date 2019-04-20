@@ -106,18 +106,22 @@
                 tools:ignore="VectorDrawableCompat" />
         </android.support.constraint.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <RadioGroup
+            android:id="@+id/radio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button">
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout10">
 
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="0dp"
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -139,10 +143,9 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="RtlHardcoded" />
 
-
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="0dp"
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -161,12 +164,12 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox"
+                app:layout_constraintTop_toBottomOf="@+id/radioButton"
                 tools:ignore="RtlHardcoded" />
 
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="0dp"
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -187,10 +190,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox2"
+                app:layout_constraintTop_toBottomOf="@+id/radioButton2"
                 tools:ignore="RtlHardcoded" />
 
-        </android.support.constraint.ConstraintLayout>
+        </RadioGroup>
 
         <TextView
             android:id="@+id/textView11"
@@ -203,7 +206,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+            app:layout_constraintTop_toBottomOf="@+id/radio" />
 
         <View
             android:id="@+id/view"
@@ -224,18 +227,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView11" />
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout4"
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:id="@+id/radiogroup2"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11">
 
-            <CheckBox
-                android:id="@+id/checkBox4"
-                android:layout_width="0dp"
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -257,10 +261,9 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="RtlHardcoded" />
 
-
-            <CheckBox
-                android:id="@+id/checkBox5"
-                android:layout_width="0dp"
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -279,13 +282,12 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox4"
+                app:layout_constraintTop_toBottomOf="@+id/radioButton4"
                 tools:ignore="RtlHardcoded" />
 
-
-            <CheckBox
-                android:id="@+id/checkBox6"
-                android:layout_width="0dp"
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -304,13 +306,12 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox5"
+                app:layout_constraintTop_toBottomOf="@+id/radioButton5"
                 tools:ignore="RtlHardcoded" />
 
-
-            <CheckBox
-                android:id="@+id/checkBox7"
-                android:layout_width="0dp"
+            <RadioButton
+                android:id="@+id/radioButton7"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -331,10 +332,10 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox6"
+                app:layout_constraintTop_toBottomOf="@+id/radioButton6"
                 tools:ignore="RtlHardcoded" />
 
-        </android.support.constraint.ConstraintLayout>
+        </RadioGroup>
 
         <TextView
             android:id="@+id/textView12"
@@ -347,7 +348,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+            app:layout_constraintTop_toBottomOf="@+id/radiogroup2" />
 
         <View
             android:id="@+id/view2"
@@ -367,21 +368,77 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView12" />
 
-        <android.support.constraint.ConstraintLayout
+        <RadioGroup
             android:id="@+id/constraintLayout5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView12">
 
-            <CheckBox
-                android:id="@+id/checkBox8"
+
+            <RadioButton
+                android:id="@+id/radioButton10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/style_asansor_corner"
+                android:button="@null"
+                android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="10dp"
+                android:text="نمی دانم"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/radioButton9"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlHardcoded" />
+
+            <RadioButton
+                android:id="@+id/radioButton9"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/style_asansor_corner"
+                android:button="@null"
+                android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                android:gravity="center"
+                android:paddingStart="15dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="10dp"
+                android:text="ایرانی"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/radioButton8"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/radioButton9"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlHardcoded" />
+
+            <RadioButton
+                android:id="@+id/radioButton8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
                 android:background="@drawable/style_asansor_corner"
                 android:button="@null"
                 android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
@@ -396,62 +453,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/checkBox9"
+                app:layout_constraintStart_toEndOf="@+id/radioButton9"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="RtlHardcoded" />
 
-            <CheckBox
-                android:id="@+id/checkBox9"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/style_asansor_corner"
-                android:button="@null"
-                android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
-                android:gravity="center"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="10dp"
-                android:text="ایرانی"
-                android:textColor="@color/colorPrimary"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/checkBox8"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/checkBox10"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="RtlHardcoded" />
-
-            <CheckBox
-                android:id="@+id/checkBox10"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/style_asansor_corner"
-                android:button="@null"
-                android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
-                android:gravity="center"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="10dp"
-                android:text="نمی دانم"
-                android:textColor="@color/colorPrimary"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/checkBox9"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="spread_inside"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="RtlHardcoded" />
-
-        </android.support.constraint.ConstraintLayout>
+        </RadioGroup>
 
         <EditText
             android:id="@+id/editText"

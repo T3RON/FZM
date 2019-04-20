@@ -56,4 +56,6 @@ dependencies {
     implementation 'com.codesgood:justifiedtextview:1.1.0'
     // Persian Date
     implementation 'com.github.samanzamani.persiandate:PersianDate:0.4'
+    // Fast Android Networking
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
 }
