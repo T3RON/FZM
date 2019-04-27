@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_cooler">
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Services.Cooler">
@@ -210,6 +209,31 @@
             app:layout_constraintTop_toBottomOf="@+id/editText42"
             tools:ignore="RtlCompat" />
 
+
+        <EditText
+            android:id="@+id/editText95"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/style_asansor_corner"
+            android:gravity="top"
+            android:hint="@string/Description"
+            android:inputType="textMultiLine"
+            android:minLines="4"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            android:textColorHint="@color/color_hint"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button15" />
+
         <Button
             android:id="@+id/button16"
             android:layout_width="0dp"
@@ -223,18 +247,20 @@
             android:background="@drawable/style_asansor_corner"
             android:drawableStart="@drawable/ic_arrow_left_blue"
             android:gravity="right"
-            android:paddingTop="@dimen/dimen_lvl2"
-            android:paddingBottom="12dp"
-            android:paddingEnd="15dp"
+            android:onClick="Go_To_Time"
             android:paddingStart="15dp"
+            android:paddingTop="@dimen/dimen_lvl2"
+            android:paddingEnd="15dp"
+            android:paddingBottom="12dp"
             android:text="@string/register"
             android:textColor="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:onClick="Go_To_Time"
-            tools:ignore="RtlCompat"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button15" />
+            app:layout_constraintTop_toBottomOf="@+id/editText95"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="RtlCompat" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
 
