@@ -140,7 +140,7 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="15dp"
                 android:paddingBottom="10dp"
-                android:text="نصب و راه اندازی دوربین"
+                android:text="تعمییر دوربین و رفع ایراد"
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
