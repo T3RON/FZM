@@ -14,6 +14,7 @@
     tools:context=".Asansor">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -21,7 +22,7 @@
 
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_location"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -34,17 +35,17 @@
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:text="@string/Location"
-            android:textSize="14sp"
             android:textColor="@color/colorPrimary"
-            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout10"
-            app:layout_constraintEnd_toStartOf="@+id/constraintLayout10"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/place_number_unit"
+            app:layout_constraintEnd_toStartOf="@+id/place_number_unit"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout10"
+            app:layout_constraintTop_toTopOf="@+id/place_number_unit"
             tools:ignore="RtlCompat" />
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout10"
+            android:id="@+id/place_number_assansor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -52,11 +53,11 @@
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button"
+            app:layout_constraintStart_toEndOf="@+id/btn_location"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/imgbtn_up"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/style_asansor_corner"
@@ -66,7 +67,7 @@
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/txt_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -75,12 +76,12 @@
                 android:layout_marginRight="8dp"
                 android:text="0"
                 android:textColor="@color/color_asansor_num"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-                app:layout_constraintStart_toEndOf="@+id/imageButton"
-                app:layout_constraintTop_toTopOf="@+id/imageButton" />
+                app:layout_constraintEnd_toStartOf="@+id/imgbtn_down"
+                app:layout_constraintStart_toEndOf="@+id/imgbtn_up"
+                app:layout_constraintTop_toTopOf="@+id/imgbtn_up" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/txt_assansor_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -88,15 +89,15 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:text="تعداد آسانسور"
-                android:textSize="12sp"
                 android:textColor="@color/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/imageButton"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-                app:layout_constraintStart_toEndOf="@+id/imageButton"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imgbtn_up"
+                app:layout_constraintEnd_toStartOf="@+id/imgbtn_down"
+                app:layout_constraintStart_toEndOf="@+id/imgbtn_up"
+                app:layout_constraintTop_toBottomOf="@+id/txt_number" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/imgbtn_down"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/style_asansor_corner"
@@ -107,7 +108,7 @@
         </android.support.constraint.ConstraintLayout>
 
         <RadioGroup
-            android:id="@+id/radio"
+            android:id="@+id/place_job"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -117,10 +118,10 @@
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout10">
+            app:layout_constraintTop_toBottomOf="@+id/place_number_unit">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/rbtn_nasb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -144,7 +145,7 @@
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/rbtn_repair"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -164,11 +165,11 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioButton"
+                app:layout_constraintTop_toBottomOf="@+id/rbtn_nasb"
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/rbtn_other_kind"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -190,13 +191,13 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioButton2"
+                app:layout_constraintTop_toBottomOf="@+id/rbtn_repair"
                 tools:ignore="RtlHardcoded" />
 
         </RadioGroup>
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/txt_tittle_kind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -206,7 +207,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radio" />
+            app:layout_constraintTop_toBottomOf="@+id/place_job" />
 
         <View
             android:id="@+id/view"
@@ -221,24 +222,24 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView11"
-            app:layout_constraintEnd_toStartOf="@+id/textView11"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_tittle_kind"
+            app:layout_constraintEnd_toStartOf="@+id/txt_tittle_kind"
             app:layout_constraintHorizontal_bias="0.484"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView11" />
+            app:layout_constraintTop_toTopOf="@+id/txt_tittle_kind" />
 
         <RadioGroup
-            android:id="@+id/radiogroup2"
+            android:id="@+id/place_kind"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11">
+            app:layout_constraintTop_toBottomOf="@+id/txt_tittle_kind">
 
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/rbtn_nimeEsteal_nime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -262,7 +263,7 @@
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/radioButton5"
+                android:id="@+id/rbtn_nimeEsteal_auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -282,11 +283,11 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioButton4"
+                app:layout_constraintTop_toBottomOf="@+id/rbtn_nimeEsteal_nime"
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/radioButton6"
+                android:id="@+id/rbtn_tamamEsteal_nime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -306,11 +307,11 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioButton5"
+                app:layout_constraintTop_toBottomOf="@+id/rbtn_nimeEsteal_auto"
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/radioButton7"
+                android:id="@+id/rbtn_tamamEsteal_tamam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -332,13 +333,13 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioButton6"
+                app:layout_constraintTop_toBottomOf="@+id/rbtn_tamamEsteal_nime"
                 tools:ignore="RtlHardcoded" />
 
         </RadioGroup>
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/txt_engine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -348,7 +349,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radiogroup2" />
+            app:layout_constraintTop_toBottomOf="@+id/place_kind" />
 
         <View
             android:id="@+id/view2"
@@ -363,24 +364,24 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView12"
-            app:layout_constraintEnd_toStartOf="@+id/textView12"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_engine"
+            app:layout_constraintEnd_toStartOf="@+id/txt_engine"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView12" />
+            app:layout_constraintTop_toTopOf="@+id/txt_engine" />
 
         <RadioGroup
-            android:id="@+id/constraintLayout5"
+            android:id="@+id/place_engine"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12">
+            app:layout_constraintTop_toBottomOf="@+id/txt_engine">
 
 
             <RadioButton
-                android:id="@+id/radioButton10"
+                android:id="@+id/rbtn_nemidanam"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -400,7 +401,7 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/radioButton9"
+                app:layout_constraintEnd_toStartOf="@+id/rbtn_irani"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
@@ -408,7 +409,7 @@
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/radioButton9"
+                android:id="@+id/rbtn_irani"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -426,14 +427,14 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/radioButton8"
+                app:layout_constraintEnd_toStartOf="@+id/rbtn_khareji"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/radioButton9"
+                app:layout_constraintStart_toEndOf="@+id/rbtn_irani"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/radioButton8"
+                android:id="@+id/rbtn_khareji"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -453,14 +454,14 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/radioButton9"
+                app:layout_constraintStart_toEndOf="@+id/rbtn_irani"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="RtlHardcoded" />
 
         </RadioGroup>
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/etx_address"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -478,15 +479,15 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:textColorHint="@color/color_hint"
             android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/color_hint"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
+            app:layout_constraintTop_toBottomOf="@+id/place_engine" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/etx_alley"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -494,22 +495,22 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/Alley"
             android:inputType="textPersonName"
             android:paddingStart="15dp"
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:gravity="center"
             android:textColorHint="@color/color_hint"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/editText3"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintStart_toEndOf="@+id/etx_unit"
+            app:layout_constraintTop_toBottomOf="@+id/etx_address" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/etx_unit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -517,22 +518,22 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/unit"
             android:inputType="number"
             android:paddingStart="15dp"
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:gravity="center"
             android:textColorHint="@color/color_hint"
             android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/editText2"
+            app:layout_constraintEnd_toStartOf="@+id/etx_alley"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/editText4"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintStart_toEndOf="@+id/etx_plaque"
+            app:layout_constraintTop_toBottomOf="@+id/etx_address" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/etx_plaque"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -542,22 +543,22 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/tag"
             android:inputType="number"
             android:paddingStart="15dp"
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:gravity="center"
             android:textColorHint="@color/color_hint"
             android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/editText3"
+            app:layout_constraintEnd_toStartOf="@+id/etx_unit"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/etx_address" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/etx_description_address"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -578,11 +579,11 @@
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+            app:layout_constraintTop_toBottomOf="@+id/etx_unit" />
 
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btn_accept"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -604,7 +605,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText5"
+            app:layout_constraintTop_toBottomOf="@+id/etx_description_address"
             tools:ignore="RtlCompat" />
 
     </android.support.constraint.ConstraintLayout>

@@ -33,7 +33,7 @@ public class Asansor extends AppCompatActivity {
 
 //    @BindView(R.id.button2) Button Inc_number;
 //    @BindView(R.id.button3) Button Dec_number;
-    @BindView(R.id.textView9) TextView asansor_num;
+    @BindView(R.id.txt_number) TextView asansor_num;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

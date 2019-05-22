@@ -12,13 +12,14 @@
     tools:context=".Activity.History">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
         <TextView
-            android:id="@+id/textView38"
+            android:id="@+id/txt_tittle_history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -43,12 +44,13 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView38"
-            app:layout_constraintEnd_toStartOf="@+id/textView38"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_tittle_history"
+            app:layout_constraintEnd_toStartOf="@+id/txt_tittle_history"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView38" />
+            app:layout_constraintTop_toTopOf="@+id/txt_tittle_history" />
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcy_history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
@@ -56,14 +58,14 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+            android:clipToPadding="false"
             android:dividerHeight="5dp"
             android:paddingBottom="5dp"
-            app:stackFromEnd="true"
-            app:reverseLayout="true"
-            android:clipToPadding="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_tittle_history"
+            app:reverseLayout="true"
+            app:stackFromEnd="true" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
 

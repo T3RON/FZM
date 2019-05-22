@@ -20,7 +20,6 @@ import ir.mseif.app.com.fzm.Activity.History;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
-import ir.mseif.app.com.fzm.MainActivity;
 import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -35,7 +34,7 @@ public class E_Device extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_e__device);
+        setContentView(R.layout.activity_e_device);
 
         drawerLayout = findViewById(R.id.drawer_e_device);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);

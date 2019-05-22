@@ -12,13 +12,14 @@
     tools:context=".Activity.Contact">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/txt_tittle_contact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -42,13 +43,13 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView6"
-            app:layout_constraintEnd_toStartOf="@+id/textView6"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_tittle_contact"
+            app:layout_constraintEnd_toStartOf="@+id/txt_tittle_contact"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView6" />
+            app:layout_constraintTop_toTopOf="@+id/txt_tittle_contact" />
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout6"
+            android:id="@+id/place_request"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -59,10 +60,10 @@
             android:background="@drawable/style_asansor_corner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6">
+            app:layout_constraintTop_toBottomOf="@+id/txt_tittle_contact">
 
             <EditText
-                android:id="@+id/editText84"
+                android:id="@+id/etx_tittle_request"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -86,7 +87,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Spinner
-                android:id="@+id/spinner17"
+                android:id="@+id/spn_kind"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -98,10 +99,10 @@
                 android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText84" />
+                app:layout_constraintTop_toBottomOf="@+id/etx_tittle_request" />
 
             <EditText
-                android:id="@+id/editText85"
+                android:id="@+id/etx_request"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -124,11 +125,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner17" />
+                app:layout_constraintTop_toBottomOf="@+id/spn_kind" />
         </android.support.constraint.ConstraintLayout>
 
         <Button
-            android:id="@+id/button32"
+            android:id="@+id/btn_accept"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -149,7 +150,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
+            app:layout_constraintTop_toBottomOf="@+id/place_request"
             tools:ignore="RtlCompat" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

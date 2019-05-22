@@ -12,13 +12,14 @@
     tools:context=".Activity.Wallet">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/img_tittle_wallet"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
@@ -30,7 +31,7 @@
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
-            android:id="@+id/textView30"
+            android:id="@+id/txt_your_wallet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -38,7 +39,7 @@
             android:layout_marginRight="16dp"
             android:text="کیف پول شما"
             android:textColor="@color/colorPrimary"
-            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintEnd_toStartOf="@+id/img_tittle_wallet"
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
@@ -54,13 +55,13 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView30"
-            app:layout_constraintEnd_toStartOf="@+id/textView30"
-            app:layout_constraintStart_toEndOf="@+id/textView31"
-            app:layout_constraintTop_toTopOf="@+id/textView30" />
+            app:layout_constraintBottom_toBottomOf="@+id/txt_your_wallet"
+            app:layout_constraintEnd_toStartOf="@+id/txt_your_wallet"
+            app:layout_constraintStart_toEndOf="@+id/txt_wallet_amount"
+            app:layout_constraintTop_toTopOf="@+id/txt_your_wallet" />
 
         <TextView
-            android:id="@+id/textView31"
+            android:id="@+id/txt_wallet_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -72,7 +73,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView32"
+            android:id="@+id/txt_description_wallet"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -84,10 +85,10 @@
             android:textColor="@color/color_tittle_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView30" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_your_wallet" />
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout7"
+            android:id="@+id/place_go_to_dargah"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -99,10 +100,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView32">
+            app:layout_constraintTop_toBottomOf="@+id/txt_description_wallet">
 
             <EditText
-                android:id="@+id/editText89"
+                android:id="@+id/etx_price_number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -124,7 +125,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editText90"
+                android:id="@+id/etx_verify_code"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -142,23 +143,23 @@
                 android:textColorHint="@color/color_tittle_gray"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView33"
-                app:layout_constraintTop_toBottomOf="@+id/editText89" />
+                app:layout_constraintStart_toEndOf="@+id/txt_verify_code"
+                app:layout_constraintTop_toBottomOf="@+id/etx_price_number" />
 
             <TextView
-                android:id="@+id/textView33"
+                android:id="@+id/txt_verify_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:text="۴۸۵۲۶"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="@+id/editText90"
+                app:layout_constraintBottom_toBottomOf="@+id/etx_verify_code"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/editText90" />
+                app:layout_constraintTop_toTopOf="@+id/etx_verify_code" />
 
             <Button
-                android:id="@+id/button34"
+                android:id="@+id/btn_go_to_dargah"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -177,10 +178,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText90" />
+                app:layout_constraintTop_toBottomOf="@+id/etx_verify_code" />
         </android.support.constraint.ConstraintLayout>
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcy_wallet"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
@@ -188,14 +190,14 @@
             android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+            android:clipToPadding="false"
             android:dividerHeight="5dp"
             android:paddingBottom="5dp"
-            app:stackFromEnd="true"
-            app:reverseLayout="true"
-            android:clipToPadding="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
+            app:layout_constraintTop_toBottomOf="@+id/place_go_to_dargah"
+            app:reverseLayout="true"
+            app:stackFromEnd="true" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
 

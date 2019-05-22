@@ -12,13 +12,14 @@
         tools:context=".Activity.About">
 
         <android.support.constraint.ConstraintLayout
+            android:id="@+id/place_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true">
 
             <TextView
-                android:id="@+id/textView26"
+                android:id="@+id/txt_app_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="120dp"
@@ -31,7 +32,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView27"
+                android:id="@+id/txt_app_dec"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -45,17 +46,17 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toBottomOf="@+id/textView26" />
+                app:layout_constraintStart_toEndOf="@+id/img_logo"
+                app:layout_constraintTop_toBottomOf="@+id/txt_app_name" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/img_logo"
                 android:layout_width="100dp"
                 android:layout_height="250dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="32dp"
-                app:layout_constraintEnd_toStartOf="@+id/textView27"
+                app:layout_constraintEnd_toStartOf="@+id/txt_app_dec"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -63,7 +64,7 @@
                 tools:ignore="ContentDescription,VectorDrawableCompat" />
 
             <TextView
-                android:id="@+id/textView28"
+                android:id="@+id/txt_tittle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -72,7 +73,7 @@
                 android:text="@string/About_us"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/img_logo" />
 
             <View
                 android:id="@+id/view13"
@@ -87,12 +88,13 @@
                 android:paddingTop="10dp"
                 android:paddingEnd="15dp"
                 android:paddingBottom="10dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView28"
-                app:layout_constraintEnd_toStartOf="@+id/textView28"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_tittle"
+                app:layout_constraintEnd_toStartOf="@+id/txt_tittle"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView28" />
+                app:layout_constraintTop_toTopOf="@+id/txt_tittle" />
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/place_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -109,7 +111,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view13">
 
                 <TextView
-                    android:id="@+id/textView29"
+                    android:id="@+id/txt_main_description"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"

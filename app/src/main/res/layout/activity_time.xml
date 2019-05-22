@@ -14,11 +14,12 @@
     tools:context=".Activity.Time">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textView45"
+            android:id="@+id/txt_tittle_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -33,7 +34,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout8"
+            android:id="@+id/place_day"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -43,10 +44,10 @@
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView45">
+            app:layout_constraintTop_toBottomOf="@+id/txt_tittle_time">
 
             <android.support.v7.widget.CardView
-                android:id="@+id/cardView18"
+                android:id="@+id/place_today"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -58,11 +59,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/cardView17"
+                app:layout_constraintStart_toEndOf="@+id/place_tomorrow"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/textView46"
+                    android:id="@+id/txt_today"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
@@ -73,7 +74,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/cardView17"
+                android:id="@+id/place_tomorrow"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -83,13 +84,13 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cardView18"
+                app:layout_constraintEnd_toStartOf="@+id/place_today"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/cardView16"
+                app:layout_constraintStart_toEndOf="@+id/place_other_day"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/textView47"
+                    android:id="@+id/txt_tomottow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
@@ -101,7 +102,7 @@
 
 
             <android.support.v7.widget.CardView
-                android:id="@+id/cardView16"
+                android:id="@+id/place_other_day"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -111,14 +112,14 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cardView17"
+                app:layout_constraintEnd_toStartOf="@+id/place_tomorrow"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
 
                 <TextView
-                    android:id="@+id/textView48"
+                    android:id="@+id/txt_other_day"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
@@ -130,7 +131,7 @@
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/constraintLayout9"
+            android:id="@+id/place_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -140,10 +141,10 @@
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout8">
+            app:layout_constraintTop_toBottomOf="@+id/place_day">
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/imgbtn_hour_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -155,7 +156,7 @@
                 tools:ignore="VectorDrawableCompat" />
 
             <ImageButton
-                android:id="@+id/imageButton8"
+                android:id="@+id/imgbtn_minute_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -168,18 +169,18 @@
 
             <View
                 android:id="@+id/view22"
-                android:layout_width="32dp"
-                android:layout_height="121dp"
+                android:layout_width="30dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageButton7"
+                app:layout_constraintStart_toEndOf="@+id/imgbtn_hour_up"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView49"
+                android:id="@+id/txt_what_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -195,7 +196,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView50"
+                android:id="@+id/txt_minute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -203,12 +204,12 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton8"
-                app:layout_constraintStart_toStartOf="@+id/imageButton8"
+                app:layout_constraintEnd_toEndOf="@+id/imgbtn_minute_up"
+                app:layout_constraintStart_toStartOf="@+id/imgbtn_minute_up"
                 app:layout_constraintTop_toBottomOf="@+id/view18" />
 
             <TextView
-                android:id="@+id/textView51"
+                android:id="@+id/txt_hour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -216,8 +217,8 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton7"
-                app:layout_constraintStart_toStartOf="@+id/imageButton7"
+                app:layout_constraintEnd_toEndOf="@+id/imgbtn_hour_up"
+                app:layout_constraintStart_toStartOf="@+id/imgbtn_hour_up"
                 app:layout_constraintTop_toBottomOf="@+id/view19" />
 
             <View
@@ -226,9 +227,9 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/color_hint"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton8"
-                app:layout_constraintStart_toStartOf="@+id/imageButton8"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
+                app:layout_constraintEnd_toEndOf="@+id/imgbtn_minute_up"
+                app:layout_constraintStart_toStartOf="@+id/imgbtn_minute_up"
+                app:layout_constraintTop_toBottomOf="@+id/imgbtn_minute_up" />
 
             <View
                 android:id="@+id/view19"
@@ -236,9 +237,9 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/color_hint"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton7"
-                app:layout_constraintStart_toStartOf="@+id/imageButton7"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
+                app:layout_constraintEnd_toEndOf="@+id/imgbtn_hour_up"
+                app:layout_constraintStart_toStartOf="@+id/imgbtn_hour_up"
+                app:layout_constraintTop_toBottomOf="@+id/imgbtn_hour_up" />
 
             <View
                 android:id="@+id/view20"
@@ -246,9 +247,9 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/color_hint"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton10"
-                app:layout_constraintStart_toStartOf="@+id/imageButton10"
-                app:layout_constraintTop_toBottomOf="@+id/textView50" />
+                app:layout_constraintEnd_toEndOf="@+id/imgbtn_minute_down"
+                app:layout_constraintStart_toStartOf="@+id/imgbtn_minute_down"
+                app:layout_constraintTop_toBottomOf="@+id/txt_minute" />
 
             <View
                 android:id="@+id/view21"
@@ -256,39 +257,39 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
                 android:background="@color/color_hint"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton9"
-                app:layout_constraintStart_toStartOf="@+id/imageButton9"
-                app:layout_constraintTop_toBottomOf="@+id/textView51" />
+                app:layout_constraintEnd_toEndOf="@+id/imgbtn_hour_down"
+                app:layout_constraintStart_toStartOf="@+id/imgbtn_hour_down"
+                app:layout_constraintTop_toBottomOf="@+id/txt_hour" />
 
             <ImageButton
-                android:id="@+id/imageButton9"
+                android:id="@+id/imgbtn_hour_down"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton7"
-                app:layout_constraintStart_toStartOf="@+id/imageButton7"
+                app:layout_constraintEnd_toEndOf="@+id/imgbtn_hour_up"
+                app:layout_constraintStart_toStartOf="@+id/imgbtn_hour_up"
                 app:layout_constraintTop_toBottomOf="@+id/view21"
                 app:srcCompat="@drawable/ic_arrow_bottom_blue"
                 tools:ignore="VectorDrawableCompat" />
 
             <ImageButton
-                android:id="@+id/imageButton10"
+                android:id="@+id/imgbtn_minute_down"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton8"
-                app:layout_constraintStart_toStartOf="@+id/imageButton8"
+                app:layout_constraintEnd_toEndOf="@+id/imgbtn_minute_up"
+                app:layout_constraintStart_toStartOf="@+id/imgbtn_minute_up"
                 app:layout_constraintTop_toBottomOf="@+id/view20"
                 app:srcCompat="@drawable/ic_arrow_bottom_blue"
                 tools:ignore="VectorDrawableCompat" />
         </android.support.constraint.ConstraintLayout>
 
         <Button
-            android:id="@+id/button35"
+            android:id="@+id/btn_accept"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -307,7 +308,7 @@
             android:textColor="@color/color_orange_history"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout9"
+            app:layout_constraintTop_toBottomOf="@+id/place_time"
             tools:ignore="RtlCompat" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

@@ -15,7 +15,7 @@
     card_view:cardUseCompatPadding="true">
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/place_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +24,7 @@
 
 
         <ImageView
+            android:id="@+id/img_moshtariha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
