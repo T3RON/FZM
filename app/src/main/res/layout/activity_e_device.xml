@@ -59,7 +59,7 @@
             android:id="@+id/place_number_tools"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +68,7 @@
             app:layout_constraintTop_toBottomOf="@+id/etx_device_name">
 
             <ImageButton
-                android:id="@+id/imgbtn_up"
+                android:id="@+id/imgbtn_down"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/style_asansor_corner"
@@ -88,9 +88,9 @@
                 android:layout_marginRight="8dp"
                 android:text="0"
                 android:textColor="@color/color_asansor_num"
-                app:layout_constraintEnd_toStartOf="@+id/imgbtn_up"
-                app:layout_constraintStart_toEndOf="@+id/imgbtn_down"
-                app:layout_constraintTop_toTopOf="@+id/imgbtn_up" />
+                app:layout_constraintEnd_toStartOf="@+id/imgbtn_down"
+                app:layout_constraintStart_toEndOf="@+id/imgbtn_up"
+                app:layout_constraintTop_toTopOf="@+id/imgbtn_down" />
 
             <TextView
                 android:id="@+id/txt_tools_number"
@@ -109,14 +109,14 @@
                 app:layout_constraintStart_toEndOf="@+id/imgbtn_down" />
 
             <ImageButton
-                android:id="@+id/imgbtn_down"
+                android:id="@+id/imgbtn_up"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/style_asansor_corner"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_arrow_bottom_blue"
+                app:srcCompat="@drawable/ic_arrow_top_blue"
                 tools:ignore="ContentDescription,VectorDrawableCompat" />
         </android.support.constraint.ConstraintLayout>
 

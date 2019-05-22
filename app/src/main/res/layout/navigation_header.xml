@@ -60,6 +60,7 @@
             android:layout_weight="1"
             android:padding="10dp"
             android:text="09192183440"
+            android:maxLength="11"
             android:textColor="@color/color_white"
             android:textDirection="ltr"
             tools:layout_editor_absoluteY="628dp" />

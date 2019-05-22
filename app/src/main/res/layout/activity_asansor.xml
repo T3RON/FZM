@@ -24,7 +24,7 @@
         <Button
             android:id="@+id/btn_location"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginEnd="8dp"
@@ -38,15 +38,15 @@
             android:textColor="@color/colorPrimary"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/place_number_unit"
-            app:layout_constraintEnd_toStartOf="@+id/place_number_unit"
+            app:layout_constraintEnd_toStartOf="@+id/place_number_assansor"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/place_number_unit"
+            app:layout_constraintTop_toTopOf="@+id/place_number_assansor"
             tools:ignore="RtlCompat" />
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/place_number_assansor"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
@@ -107,18 +107,51 @@
                 tools:ignore="VectorDrawableCompat" />
         </android.support.constraint.ConstraintLayout>
 
-        <RadioGroup
-            android:id="@+id/place_job"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/txt_tittle_job"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="خدمت درخواستی  را مشخص کنید :"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/place_number_assansor" />
+
+        <View
+            android:id="@+id/view80"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/color_asansor_view"
+            android:paddingStart="15dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_tittle_job"
+            app:layout_constraintEnd_toStartOf="@+id/txt_tittle_job"
+            app:layout_constraintHorizontal_bias="0.484"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/place_number_unit">
+            app:layout_constraintTop_toTopOf="@+id/txt_tittle_job" />
+
+            <LinearLayout
+                android:id="@+id/place_job"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tittle_job"
+                android:orientation="vertical">
 
             <RadioButton
                 android:id="@+id/rbtn_nasb"
@@ -193,8 +226,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rbtn_repair"
                 tools:ignore="RtlHardcoded" />
-
-        </RadioGroup>
+            </LinearLayout>
 
         <TextView
             android:id="@+id/txt_tittle_kind"

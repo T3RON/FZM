@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -30,6 +32,7 @@ public class Map extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        ButterKnife.bind(this);
 
         drawerLayout = findViewById(R.id.drawer_map);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
@@ -45,8 +48,8 @@ public class Map extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.app_title);
 
 
-        btn_nav = findViewById(R.id.btn_nav);
 
+        btn_nav = findViewById(R.id.btn_nav);
 
 
 
