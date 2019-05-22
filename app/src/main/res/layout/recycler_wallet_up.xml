@@ -12,7 +12,7 @@
 
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout4"
+        android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/style_asansor_corner"
@@ -21,7 +21,7 @@
 
 
         <TextView
-            android:id="@+id/textView34"
+            android:id="@+id/txt_mablagh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -35,7 +35,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView35"
+            android:id="@+id/txt_mablagh_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -45,11 +45,11 @@
             android:text="۵۰۰۰۰۰۰۰"
             android:textColor="@color/color_green"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView34"
+            app:layout_constraintEnd_toStartOf="@+id/txt_mablagh"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView36"
+            android:id="@+id/txt_toman"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -59,11 +59,11 @@
             android:text="تومان"
             android:textColor="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView35"
+            app:layout_constraintEnd_toStartOf="@+id/txt_mablagh_number"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView37"
+            android:id="@+id/txt_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -72,11 +72,11 @@
             android:layout_marginBottom="32dp"
             android:text="۱۳۹۷/۰۱/۰۱"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintStart_toEndOf="@+id/img_mablagh_up"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/img_mablagh_up"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="8dp"

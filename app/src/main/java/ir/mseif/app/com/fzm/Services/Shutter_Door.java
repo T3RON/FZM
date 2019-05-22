@@ -20,7 +20,6 @@ import ir.mseif.app.com.fzm.Activity.History;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
-import ir.mseif.app.com.fzm.MainActivity;
 import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -37,7 +36,7 @@ public class Shutter_Door extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shutter__door);
+        setContentView(R.layout.activity_shutter_door);
 
         drawerLayout = findViewById(R.id.drawer_shutter_door);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);

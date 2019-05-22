@@ -11,13 +11,14 @@
     tools:context=".Services.Socket">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
         <EditText
-            android:id="@+id/editText61"
+            android:id="@+id/etx_number_tools"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -40,7 +41,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Spinner
-            android:id="@+id/spinner13"
+            android:id="@+id/spn_action"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="8dp"
@@ -51,10 +52,10 @@
             android:background="@drawable/style_asansor_corner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText61" />
+            app:layout_constraintTop_toBottomOf="@+id/etx_number_tools" />
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/txt_tittle_wiring"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -64,7 +65,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner13" />
+            app:layout_constraintTop_toBottomOf="@+id/spn_action" />
 
         <View
             android:id="@+id/view7"
@@ -79,23 +80,23 @@
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView19"
-            app:layout_constraintEnd_toStartOf="@+id/textView19"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_tittle_wiring"
+            app:layout_constraintEnd_toStartOf="@+id/txt_tittle_wiring"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView19" />
+            app:layout_constraintTop_toTopOf="@+id/txt_tittle_wiring" />
 
         <RadioGroup
-            android:id="@+id/radioGroup5"
+            android:id="@+id/place_wiring"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView19">
+            app:layout_constraintTop_toBottomOf="@+id/txt_tittle_wiring">
 
             <RadioButton
-                android:id="@+id/radioButton26"
+                android:id="@+id/rbtn_nemidanam"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -115,12 +116,12 @@
                 android:text="نمی دانم"
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@+id/radioButton25"
+                app:layout_constraintEnd_toStartOf="@+id/rbtn_no"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <RadioButton
-                android:id="@+id/radioButton25"
+                android:id="@+id/rbtn_no"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -138,12 +139,12 @@
                 android:text="خیر"
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@+id/radioButton26"
+                app:layout_constraintEnd_toStartOf="@+id/rbtn_nemidanam"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/radioButton25" />
+                app:layout_constraintStart_toEndOf="@+id/rbtn_no" />
 
             <RadioButton
-                android:id="@+id/radioButton24"
+                android:id="@+id/rbtn_yes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -163,13 +164,13 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/radioButton25"
+                app:layout_constraintStart_toEndOf="@+id/rbtn_no"
                 app:layout_constraintTop_toBottomOf="parent" />
         </RadioGroup>
 
 
         <EditText
-            android:id="@+id/editText62"
+            android:id="@+id/etx_description_karshenas"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -190,10 +191,10 @@
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup5" />
+            app:layout_constraintTop_toBottomOf="@+id/place_wiring" />
 
         <EditText
-            android:id="@+id/editText63"
+            android:id="@+id/etx_address"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -215,10 +216,10 @@
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText62" />
+            app:layout_constraintTop_toBottomOf="@+id/etx_description_karshenas" />
 
         <EditText
-            android:id="@+id/editText64"
+            android:id="@+id/etx_alley"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -237,11 +238,11 @@
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/editText65"
-            app:layout_constraintTop_toBottomOf="@+id/editText63" />
+            app:layout_constraintStart_toEndOf="@+id/etx_unit"
+            app:layout_constraintTop_toBottomOf="@+id/etx_address" />
 
         <EditText
-            android:id="@+id/editText65"
+            android:id="@+id/etx_unit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -258,13 +259,13 @@
             android:paddingBottom="10dp"
             android:textColorHint="@color/color_hint"
             android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/editText64"
+            app:layout_constraintEnd_toStartOf="@+id/etx_alley"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/editText66"
-            app:layout_constraintTop_toBottomOf="@+id/editText63" />
+            app:layout_constraintStart_toEndOf="@+id/etx_plaque"
+            app:layout_constraintTop_toBottomOf="@+id/etx_address" />
 
         <EditText
-            android:id="@+id/editText66"
+            android:id="@+id/etx_plaque"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -283,13 +284,13 @@
             android:paddingBottom="10dp"
             android:textColorHint="@color/color_hint"
             android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/editText65"
+            app:layout_constraintEnd_toStartOf="@+id/etx_unit"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText63" />
+            app:layout_constraintTop_toBottomOf="@+id/etx_address" />
 
         <Button
-            android:id="@+id/button23"
+            android:id="@+id/btn_location"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -307,12 +308,12 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText65"
+            app:layout_constraintTop_toBottomOf="@+id/etx_unit"
             tools:ignore="RtlCompat" />
 
 
         <EditText
-            android:id="@+id/editText94"
+            android:id="@+id/etx_description_address"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -333,10 +334,10 @@
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button23" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_location" />
 
         <Button
-            android:id="@+id/button24"
+            android:id="@+id/btn_accept"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -358,7 +359,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText94"
+            app:layout_constraintTop_toBottomOf="@+id/etx_description_address"
             tools:ignore="RtlCompat" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

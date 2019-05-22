@@ -22,16 +22,17 @@
 
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/place_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <android.support.constraint.ConstraintLayout
-                    android:id="@+id/constraintLayout"
+                    android:id="@+id/place-servies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:paddingBottom="5dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView7"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_moshtariha"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.476"
                     app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +43,7 @@
 
                     <!-- Column 1 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView3"
+                        android:id="@+id/place_camera"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -52,8 +53,8 @@
                         android:onClick="page_camera"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView5"
-                        app:layout_constraintEnd_toStartOf="@+id/cardView15"
+                        app:layout_constraintBottom_toTopOf="@+id/place_santeral"
+                        app:layout_constraintEnd_toStartOf="@+id/place_iphon"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
@@ -69,6 +70,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_camera"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -76,12 +78,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_camera"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Camera"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Camera"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -94,7 +97,7 @@
 
                     <!-- Column 2 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView15"
+                        android:id="@+id/place_iphon"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -104,10 +107,10 @@
                         android:onClick="page_iphon"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView4"
-                        app:layout_constraintEnd_toStartOf="@+id/cardView13"
+                        app:layout_constraintBottom_toTopOf="@+id/place_wiring"
+                        app:layout_constraintEnd_toStartOf="@+id/place_asansor"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/cardView3"
+                        app:layout_constraintStart_toEndOf="@+id/place_camera"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <LinearLayout
@@ -121,6 +124,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_iphon"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -128,12 +132,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_iphon"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Iphone"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Iphone"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -145,7 +150,7 @@
 
                     <!-- Column 3 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView13"
+                        android:id="@+id/place_asansor"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -157,10 +162,10 @@
                         android:onClick="page_asansor"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView12"
+                        app:layout_constraintBottom_toTopOf="@+id/place_e_device"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/cardView15"
+                        app:layout_constraintStart_toEndOf="@+id/place_iphon"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <LinearLayout
@@ -174,6 +179,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_asansor"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -181,13 +187,14 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_asansor"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:gravity="center"
-                                android:text="@string/Asansor"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="@string/Asansor"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
                                 tools:ignore="SmallSp" />
@@ -201,7 +208,7 @@
 
                     <!-- Column 1 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView5"
+                        android:id="@+id/place_santeral"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -210,11 +217,11 @@
                         android:onClick="page_santeral"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView14"
-                        app:layout_constraintEnd_toStartOf="@+id/cardView4"
+                        app:layout_constraintBottom_toTopOf="@+id/place_e_panel"
+                        app:layout_constraintEnd_toStartOf="@+id/place_wiring"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+                        app:layout_constraintTop_toBottomOf="@+id/place_camera">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -227,6 +234,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_santeral"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -234,12 +242,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_santeral"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Santeral"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Santeral"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -251,7 +260,7 @@
 
                     <!-- Column 2 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView4"
+                        android:id="@+id/place_wiring"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -260,11 +269,11 @@
                         android:onClick="page_wiring"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView11"
-                        app:layout_constraintEnd_toStartOf="@+id/cardView12"
+                        app:layout_constraintBottom_toTopOf="@+id/place_shutter_door"
+                        app:layout_constraintEnd_toStartOf="@+id/place_e_device"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/cardView5"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView15">
+                        app:layout_constraintStart_toEndOf="@+id/place_santeral"
+                        app:layout_constraintTop_toBottomOf="@+id/place_iphon">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -277,6 +286,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_wiring"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -284,12 +294,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_wiring"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Wiring"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Wiring"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -301,7 +312,7 @@
 
                     <!-- Column 3 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView12"
+                        android:id="@+id/place_e_device"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -312,11 +323,11 @@
                         android:onClick="page_e_device"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView9"
+                        app:layout_constraintBottom_toTopOf="@+id/place_antenna"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/cardView4"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView13">
+                        app:layout_constraintStart_toEndOf="@+id/place_wiring"
+                        app:layout_constraintTop_toBottomOf="@+id/place_asansor">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -329,6 +340,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_e_device"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -336,12 +348,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_e_device"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/E_device"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/E_device"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -356,7 +369,7 @@
 
                     <!-- Column 1 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView14"
+                        android:id="@+id/place_e_panel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -365,11 +378,11 @@
                         android:onClick="page_e_panel"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView10"
-                        app:layout_constraintEnd_toStartOf="@+id/cardView11"
+                        app:layout_constraintBottom_toTopOf="@+id/place_lighting"
+                        app:layout_constraintEnd_toStartOf="@+id/place_shutter_door"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView5">
+                        app:layout_constraintTop_toBottomOf="@+id/place_santeral">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -382,6 +395,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_e_panel"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -389,12 +403,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_e_panel"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/E_panel"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/E_panel"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -406,7 +421,7 @@
 
                     <!-- Column 2 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView11"
+                        android:id="@+id/place_shutter_door"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -415,11 +430,11 @@
                         android:onClick="page_shutter_door"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView8"
-                        app:layout_constraintEnd_toStartOf="@+id/cardView9"
+                        app:layout_constraintBottom_toTopOf="@+id/place_security"
+                        app:layout_constraintEnd_toStartOf="@+id/place_antenna"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/cardView14"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView4">
+                        app:layout_constraintStart_toEndOf="@+id/place_e_panel"
+                        app:layout_constraintTop_toBottomOf="@+id/place_wiring">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -432,6 +447,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_shutter_door"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -439,12 +455,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_shutter_door"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Shutter_door"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Shutter_door"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -456,7 +473,7 @@
 
                     <!-- Column 3 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView9"
+                        android:id="@+id/place_antenna"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -467,11 +484,11 @@
                         android:onClick="page_antenna"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView6"
+                        app:layout_constraintBottom_toTopOf="@+id/place_generator"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/cardView11"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView12">
+                        app:layout_constraintStart_toEndOf="@+id/place_shutter_door"
+                        app:layout_constraintTop_toBottomOf="@+id/place_e_device">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -484,6 +501,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_antenna"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -491,12 +509,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_antenna"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Antenna"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Antenna"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -511,7 +530,7 @@
 
                     <!-- Column 1 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView10"
+                        android:id="@+id/place_lighting"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -520,11 +539,11 @@
                         android:onClick="page_lighting"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView7"
-                        app:layout_constraintEnd_toStartOf="@+id/cardView8"
+                        app:layout_constraintBottom_toTopOf="@+id/place_cooler"
+                        app:layout_constraintEnd_toStartOf="@+id/place_security"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView14">
+                        app:layout_constraintTop_toBottomOf="@+id/place_e_panel">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -537,6 +556,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_lighting"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -544,12 +564,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_lighting"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Lighting"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Lighting"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -560,7 +581,7 @@
 
                     <!-- Column 2 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView8"
+                        android:id="@+id/place_security"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -569,11 +590,11 @@
                         android:onClick="page_security"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView2"
-                        app:layout_constraintEnd_toStartOf="@+id/cardView6"
+                        app:layout_constraintBottom_toTopOf="@+id/place_chandelier"
+                        app:layout_constraintEnd_toStartOf="@+id/place_generator"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/cardView10"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView11">
+                        app:layout_constraintStart_toEndOf="@+id/place_lighting"
+                        app:layout_constraintTop_toBottomOf="@+id/place_shutter_door">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -586,6 +607,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_security"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -593,12 +615,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_security"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Security"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Security"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -610,7 +633,7 @@
 
                     <!-- Column 3 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView6"
+                        android:id="@+id/place_generator"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -621,11 +644,11 @@
                         android:onClick="page_generator"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/cardView"
+                        app:layout_constraintBottom_toTopOf="@+id/place_socket"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/cardView8"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView9">
+                        app:layout_constraintStart_toEndOf="@+id/place_security"
+                        app:layout_constraintTop_toBottomOf="@+id/place_antenna">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -638,6 +661,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_generator"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -645,12 +669,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_generator"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Generator"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Generator"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -665,7 +690,7 @@
 
                     <!-- Column 1 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView7"
+                        android:id="@+id/place_cooler"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -675,10 +700,10 @@
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/cardView2"
+                        app:layout_constraintEnd_toStartOf="@+id/place_chandelier"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView10">
+                        app:layout_constraintTop_toBottomOf="@+id/place_lighting">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -691,6 +716,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_cooler"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -698,12 +724,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_cooler"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Cooler"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Cooler"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -715,7 +742,7 @@
 
                     <!-- Column 2 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView2"
+                        android:id="@+id/place_chandelier"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -725,10 +752,10 @@
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/cardView"
+                        app:layout_constraintEnd_toStartOf="@+id/place_socket"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/cardView7"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView8">
+                        app:layout_constraintStart_toEndOf="@+id/place_cooler"
+                        app:layout_constraintTop_toBottomOf="@+id/place_security">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -741,6 +768,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_chandelier"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -748,12 +776,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_chandelier"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Chandelier"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Chandelier"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -765,7 +794,7 @@
 
                     <!-- Column 3 -->
                     <android.support.v7.widget.CardView
-                        android:id="@+id/cardView"
+                        android:id="@+id/place_socket"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -779,8 +808,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/cardView2"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView6">
+                        app:layout_constraintStart_toEndOf="@+id/place_chandelier"
+                        app:layout_constraintTop_toBottomOf="@+id/place_generator">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -793,6 +822,7 @@
                             tools:ignore="UseCompoundDrawables">
 
                             <ImageView
+                                android:id="@+id/img_socket"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -800,12 +830,13 @@
                                 tools:ignore="ContentDescription" />
 
                             <TextView
+                                android:id="@+id/txt_socket"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="12dp"
-                                android:text="@string/Socket"
-                                android:maxLines="1"
                                 android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/Socket"
                                 android:textAlignment="center"
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="10sp"
@@ -819,7 +850,7 @@
                 </android.support.constraint.ConstraintLayout>
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/txt_moshtariha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
@@ -828,11 +859,11 @@
                     android:text="مشتریان ما"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp"
-                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+                    app:layout_constraintBottom_toTopOf="@+id/place_moshtari"
                     app:layout_constraintEnd_toEndOf="parent" />
 
                 <android.support.constraint.ConstraintLayout
-                    android:id="@+id/constraintLayout2"
+                    android:id="@+id/place_moshtari"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -840,7 +871,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textView8"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_tittle_login_page"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
@@ -927,12 +958,11 @@
                     </android.support.v7.widget.CardView>
 
 
-
                 </android.support.constraint.ConstraintLayout>
 
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/txt_tittle_login_page"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"

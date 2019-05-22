@@ -13,9 +13,11 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
@@ -31,57 +33,38 @@ public class Asansor extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
-//    @BindView(R.id.button2) Button Inc_number;
-//    @BindView(R.id.button3) Button Dec_number;
-    @BindView(R.id.textView9) TextView asansor_num;
+    @BindView(R.id.imgbtn_up) ImageButton Inc_number;
+    @BindView(R.id.imgbtn_down) ImageButton Dec_number;
+    @BindView(R.id.txt_number) TextView asansor_num;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asansor);
+        ButterKnife.bind(this);
 
 
 
-//        asansor_num.setText("s");
-//
-//        Inc_number.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String A = INC(String.valueOf(asansor_num.getText()));
-//                asansor_num.setText(A);
-//            }
-//        });
-//
-//
-//        Dec_number.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String A = DEC(String.valueOf(asansor_num.getText()));
-//                asansor_num.setText(A);
-//            }
-//        });
-//    }
-//
-//
-//
-//
-//    // Increas the number of asansor
-//    private String INC (String a){
-//        int b = Integer.parseInt(a);
-//        b++;
-//        return String.valueOf(b);
-//
-//    }
-//
-//    // Decrease the number of asansor
-//    private String DEC (String a){
-//        int b = Integer.parseInt(a);
-//        if (b>0) {
-//            b--;
-//        }else {
-//            b=0;
-//        }
-//        return String.valueOf(b);
+
+        Inc_number.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String A = INC(String.valueOf(asansor_num.getText()));
+                asansor_num.setText(A);
+            }
+        });
+
+
+        Dec_number.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String A = DEC(String.valueOf(asansor_num.getText()));
+                asansor_num.setText(A);
+            }
+        });
+
+
+
 
 
 
@@ -150,6 +133,25 @@ public class Asansor extends AppCompatActivity {
 
     }
 
+
+    // Increas the number of asansor
+    private String INC (String a){
+        int b = Integer.parseInt(a);
+        b++;
+        return String.valueOf(b);
+
+    }
+
+    // Decrease the number of asansor
+    private String DEC (String a){
+        int b = Integer.parseInt(a);
+        if (b>0) {
+            b--;
+        }else {
+            b=0;
+        }
+        return String.valueOf(b);
+    }
 
 
     // Go To Time Activity

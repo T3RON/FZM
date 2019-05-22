@@ -17,8 +17,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class Login extends AppCompatActivity {
 
 
-    @BindView(R.id.btn_vifrey) Button btn_sms;
-    @BindView(R.id.edt_get_number) EditText editText;
+    @BindView(R.id.btn_verify) Button btn_sms;
+    @BindView(R.id.etx_phone_number) EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

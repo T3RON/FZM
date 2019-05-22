@@ -8,12 +8,13 @@
     android:focusableInTouchMode="true">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/style_asansor_corner">
 
         <TextView
-            android:id="@+id/textView39"
+            android:id="@+id/txt_job"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -25,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView40"
+            android:id="@+id/txt_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -52,10 +53,10 @@
             android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_job" />
 
         <TextView
-            android:id="@+id/textView41"
+            android:id="@+id/txt_servicekar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -67,7 +68,7 @@
             app:layout_constraintTop_toBottomOf="@+id/view16" />
 
         <TextView
-            android:id="@+id/textView42"
+            android:id="@+id/txt_mizan_mablagh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -94,10 +95,10 @@
             android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView41" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_servicekar" />
 
         <TextView
-            android:id="@+id/textView43"
+            android:id="@+id/txt_vaziat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -111,7 +112,7 @@
             app:layout_constraintTop_toBottomOf="@+id/view17" />
 
         <TextView
-            android:id="@+id/textView44"
+            android:id="@+id/txt_type_vaziat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

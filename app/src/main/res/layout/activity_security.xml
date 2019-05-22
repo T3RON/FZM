@@ -11,13 +11,14 @@
     tools:context=".Services.Security">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
         <Spinner
-            android:id="@+id/spinner11"
+            android:id="@+id/spn_place"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="8dp"
@@ -31,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editText50"
+            android:id="@+id/etx_number_unit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -51,10 +52,10 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinner11" />
+            app:layout_constraintTop_toBottomOf="@+id/spn_place" />
 
         <EditText
-            android:id="@+id/editText51"
+            android:id="@+id/etx_description_karshenas"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -75,10 +76,10 @@
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText50" />
+            app:layout_constraintTop_toBottomOf="@+id/etx_number_unit" />
 
         <EditText
-            android:id="@+id/editText52"
+            android:id="@+id/etx_address"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -90,7 +91,6 @@
             android:ems="10"
             android:gravity="top"
             android:hint="@string/Address"
-            android:textSize="13sp"
             android:inputType="textMultiLine"
             android:minLines="3"
             android:paddingStart="15dp"
@@ -98,12 +98,13 @@
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
             android:textColorHint="@color/color_hint"
+            android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText51" />
+            app:layout_constraintTop_toBottomOf="@+id/etx_description_karshenas" />
 
         <EditText
-            android:id="@+id/editText53"
+            android:id="@+id/etx_alley"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -111,22 +112,22 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/Alley"
-            android:textSize="12sp"
             android:inputType="textPersonName"
             android:paddingStart="15dp"
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:gravity="center"
             android:textColorHint="@color/color_hint"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/editText54"
-            app:layout_constraintTop_toBottomOf="@+id/editText52" />
+            app:layout_constraintStart_toEndOf="@+id/etx_unit"
+            app:layout_constraintTop_toBottomOf="@+id/etx_address" />
 
         <EditText
-            android:id="@+id/editText54"
+            android:id="@+id/etx_unit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -134,22 +135,22 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/unit"
             android:inputType="number"
             android:paddingStart="15dp"
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:gravity="center"
             android:textColorHint="@color/color_hint"
             android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/editText53"
+            app:layout_constraintEnd_toStartOf="@+id/etx_alley"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/editText55"
-            app:layout_constraintTop_toBottomOf="@+id/editText52" />
+            app:layout_constraintStart_toEndOf="@+id/etx_plaque"
+            app:layout_constraintTop_toBottomOf="@+id/etx_address" />
 
         <EditText
-            android:id="@+id/editText55"
+            android:id="@+id/etx_plaque"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -159,22 +160,22 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/tag"
             android:inputType="number"
             android:paddingStart="15dp"
             android:paddingTop="10dp"
             android:paddingEnd="15dp"
             android:paddingBottom="10dp"
-            android:gravity="center"
             android:textColorHint="@color/color_hint"
             android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/editText54"
+            app:layout_constraintEnd_toStartOf="@+id/etx_unit"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText52" />
+            app:layout_constraintTop_toBottomOf="@+id/etx_address" />
 
         <Button
-            android:id="@+id/button19"
+            android:id="@+id/btn_location"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -184,20 +185,20 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:drawableStart="@drawable/ic_location"
+            android:onClick="Go_To_Location"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:text="@string/Location"
-            android:textSize="14sp"
-            android:onClick="Go_To_Location"
             android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText54"
+            app:layout_constraintTop_toBottomOf="@+id/etx_unit"
             tools:ignore="RtlCompat" />
 
 
         <EditText
-            android:id="@+id/editText91"
+            android:id="@+id/etx_description_address"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -218,10 +219,10 @@
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button19" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_location" />
 
         <Button
-            android:id="@+id/button20"
+            android:id="@+id/btn_accept"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -244,7 +245,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText91"
+            app:layout_constraintTop_toBottomOf="@+id/etx_description_address"
             tools:ignore="RtlCompat" />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

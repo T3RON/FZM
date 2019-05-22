@@ -46,7 +46,7 @@
                 tools:ignore="VectorDrawableCompat" />
 
             <LinearLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/place_app_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -60,7 +60,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/img_login_image">
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/txt_metr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
@@ -69,7 +69,7 @@
                     android:textSize="28sp" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/txt_faz"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -80,7 +80,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/txt_tittle_login_page"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -94,10 +94,10 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/place_app_name" />
 
             <EditText
-                android:id="@+id/edt_get_number"
+                android:id="@+id/etx_phone_number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -119,10 +119,10 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_tittle_login_page" />
 
             <Button
-                android:id="@+id/btn_vifrey"
+                android:id="@+id/btn_verify"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -138,10 +138,10 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edt_get_number" />
+                app:layout_constraintTop_toBottomOf="@+id/etx_phone_number" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/txt_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -155,11 +155,11 @@
                 android:textSize="11sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_vifrey"
+                app:layout_constraintTop_toBottomOf="@+id/btn_verify"
                 tools:ignore="SmallSp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/txt_sherkat_fazmetr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -173,7 +173,7 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_phone_number" />
 
 
         </android.support.constraint.ConstraintLayout>

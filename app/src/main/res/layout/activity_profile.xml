@@ -33,7 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/img_profile"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="8dp"
@@ -47,8 +47,8 @@
                 app:srcCompat="@drawable/ic_user"
                 tools:ignore="VectorDrawableCompat" />
 
-            <View
-                android:id="@+id/view12"
+            <ImageButton
+                android:id="@+id/imgbtn_edit_img_profile"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/style_edit_profile"
@@ -60,15 +60,15 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:contentDescription="TODO"
-                app:layout_constraintBottom_toBottomOf="@+id/view12"
-                app:layout_constraintEnd_toEndOf="@+id/view12"
-                app:layout_constraintStart_toStartOf="@+id/view12"
-                app:layout_constraintTop_toTopOf="@+id/view12"
+                app:layout_constraintBottom_toBottomOf="@+id/imgbtn_edit_img_profile"
+                app:layout_constraintEnd_toEndOf="@+id/imgbtn_edit_img_profile"
+                app:layout_constraintStart_toStartOf="@+id/imgbtn_edit_img_profile"
+                app:layout_constraintTop_toTopOf="@+id/imgbtn_edit_img_profile"
                 app:srcCompat="@drawable/ic_edit_p"
                 tools:ignore="VectorDrawableCompat" />
 
             <TextView
-                android:id="@+id/textView24"
+                android:id="@+id/txt_profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -84,7 +84,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view11" />
 
             <TextView
-                android:id="@+id/textView25"
+                android:id="@+id/txt_profile_wallet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -96,7 +96,7 @@
                 android:textColor="@color/color_green"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_profile_name" />
 
             <View
                 android:id="@+id/view10"
@@ -114,10 +114,10 @@
                 android:paddingBottom="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView25" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_profile_wallet" />
 
             <EditText
-                android:id="@+id/editText86"
+                android:id="@+id/etx_profile_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -141,7 +141,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view10" />
 
             <EditText
-                android:id="@+id/editText87"
+                android:id="@+id/etx_profile_email"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -162,10 +162,10 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText86" />
+                app:layout_constraintTop_toBottomOf="@+id/etx_profile_name" />
 
             <EditText
-                android:id="@+id/editText88"
+                android:id="@+id/etx_profile_phone"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -186,10 +186,10 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText87" />
+                app:layout_constraintTop_toBottomOf="@+id/etx_profile_email" />
 
             <Button
-                android:id="@+id/button33"
+                android:id="@+id/btn_accept"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -210,7 +210,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText88"
+                app:layout_constraintTop_toBottomOf="@+id/etx_profile_phone"
                 tools:ignore="RtlCompat" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

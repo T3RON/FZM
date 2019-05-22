@@ -13,14 +13,17 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
-import ir.mseif.app.com.fzm.MainActivity;
 import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -32,10 +35,15 @@ public class E_Device extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
+    @BindView(R.id.imgbtn_up) ImageButton Inc_number;
+    @BindView(R.id.imgbtn_down) ImageButton Dec_number;
+    @BindView(R.id.txt_number) TextView device_num;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_e__device);
+        setContentView(R.layout.activity_e_device);
+        ButterKnife.bind(this);
 
         drawerLayout = findViewById(R.id.drawer_e_device);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
@@ -54,6 +62,22 @@ public class E_Device extends AppCompatActivity {
         btn_nav = findViewById(R.id.btn_nav);
 
 
+        Inc_number.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String A = INC(String.valueOf(device_num.getText()));
+                device_num.setText(A);
+            }
+        });
+
+
+        Dec_number.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String A = DEC(String.valueOf(device_num.getText()));
+                device_num.setText(A);
+            }
+        });
 
 
         nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -98,6 +122,24 @@ public class E_Device extends AppCompatActivity {
     }
 
 
+    // Increas the number of asansor
+    private String INC (String a){
+        int b = Integer.parseInt(a);
+        b++;
+        return String.valueOf(b);
+
+    }
+
+    // Decrease the number of asansor
+    private String DEC (String a){
+        int b = Integer.parseInt(a);
+        if (b>0) {
+            b--;
+        }else {
+            b=0;
+        }
+        return String.valueOf(b);
+    }
 
     // Go To Time Activity
     public void Go_To_Location (View v){
