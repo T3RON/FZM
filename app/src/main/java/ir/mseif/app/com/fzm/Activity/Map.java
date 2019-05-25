@@ -13,6 +13,9 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.android.gms.maps.MapView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +29,8 @@ public class Map extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
+    @BindView(R.id.mapView) MapView mapView;
+    @BindView(R.id.btn_accept) Button btn_accept;
 
 
     @Override

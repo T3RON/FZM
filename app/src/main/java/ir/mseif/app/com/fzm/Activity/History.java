@@ -9,10 +9,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +28,7 @@ public class History extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
+    @BindView(R.id.rcy_history) RecyclerView rcy_history;
 
 
     @Override

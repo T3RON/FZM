@@ -143,7 +143,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
-                android:onClick="Send_again"
+                android:onClick="SendAgain"
                 android:text="ارسال مجدد کد فعال سازی ؟"
                 android:textAlignment="center"
                 android:textColor="@color/color_sms_orange"

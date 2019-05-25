@@ -22,7 +22,10 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activity.Profile"></activity>
+        <activity android:name=".Services.ShutterDoor" />
+        <activity android:name=".Services.ElectronicPanel" />
+        <activity android:name=".Services.ElectronicDevice" />
+        <activity android:name=".Activity.Profile" />
         <activity android:name=".Activity.About" />
         <activity android:name=".Activity.Time" />
         <activity android:name=".Activity.History" />
@@ -31,19 +34,16 @@
         <activity android:name=".Activity.Map" />
         <activity android:name=".Services.Lighting" />
         <activity android:name=".Services.Chandelier" />
-        <activity android:name=".Services.E_Device" />
         <activity android:name=".Services.Socket" />
         <activity android:name=".Services.Generator" />
         <activity android:name=".Services.Security" />
-        <activity android:name=".Services.Shutter_Door" />
         <activity android:name=".Services.Cooler" />
-        <activity android:name=".Services.E_panel" />
         <activity android:name=".Services.Antenna" />
         <activity android:name=".Services.Wiring" />
         <activity android:name=".Services.Santeral" />
         <activity android:name=".Services.Iphon" />
         <activity android:name=".Services.Camera" />
-        <activity android:name=".Asansor" />
+        <activity android:name=".Services.Asansor" />
         <activity
             android:name=".Panels.Sms"
             android:theme="@style/AppTheme.NoActionBar"
@@ -51,19 +51,15 @@
         <activity
             android:name=".Panels.Login"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden" >
-
-        </activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="stateHidden">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <meta-data

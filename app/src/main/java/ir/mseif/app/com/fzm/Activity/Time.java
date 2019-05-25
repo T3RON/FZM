@@ -13,6 +13,8 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +28,16 @@ public class Time extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
+    @BindView(R.id.txt_today) TextView txt_today;
+    @BindView(R.id.txt_tomottow) TextView txt_tomottow;
+    @BindView(R.id.txt_other_day) TextView txt_other_day;
+    @BindView(R.id.imgbtn_hour_up) ImageButton imgbtn_hour_up;
+    @BindView(R.id.imgbtn_minute_up) ImageButton imgbtn_minute_up;
+    @BindView(R.id.txt_minute) TextView txt_minute;
+    @BindView(R.id.txt_hour) TextView txt_hour;
+    @BindView(R.id.imgbtn_hour_down) ImageButton imgbtn_hour_down;
+    @BindView(R.id.imgbtn_minute_down) ImageButton imgbtn_minute_down;
+    @BindView(R.id.btn_accept) Button btn_accept;
 
 
     @Override

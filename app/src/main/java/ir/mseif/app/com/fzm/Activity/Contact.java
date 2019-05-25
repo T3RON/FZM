@@ -13,6 +13,9 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +29,10 @@ public class Contact extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
+    @BindView(R.id.etx_tittle_request) EditText etx_tittle_request;
+    @BindView(R.id.spn_kind) Spinner spn_kind;
+    @BindView(R.id.etx_request) EditText etx_request;
+    @BindView(R.id.btn_accept) Button btn_accept;
 
 
     @Override
