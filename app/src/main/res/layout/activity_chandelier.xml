@@ -58,8 +58,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_job"
                 android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/rbtn_nasb_cheragh"
+                <CheckBox
+                    android:id="@+id/cb_nasb_cheragh"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -79,11 +79,11 @@
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rbtn_afzayesh"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_afzayesh"
                     tools:ignore="RtlHardcoded" />
 
-                <RadioButton
-                    android:id="@+id/rbtn_afzayesh"
+                <CheckBox
+                    android:id="@+id/cb_afzayesh"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -103,11 +103,11 @@
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rbtn_taghsim"
-                    tools:ignore="RtlHardcoded" />
+                    app:layout_constraintTop_toBottomOf="@+id/cb_taghsim"
+                    tools:ignore="RtlHardcoded"/>
 
-                <RadioButton
-                    android:id="@+id/rbtn_taghsim"
+                <CheckBox
+                    android:id="@+id/cb_taghsim"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -130,8 +130,8 @@
                     app:layout_constraintTop_toBottomOf="parent"
                     tools:ignore="RtlHardcoded" />
 
-                <RadioButton
-                    android:id="@+id/rbtn_nasb_chandelier"
+                <CheckBox
+                    android:id="@+id/cb_nasb_chandelier"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -151,8 +151,9 @@
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rbtn_nasb_cheragh"
-                    tools:ignore="RtlHardcoded" />
+                    app:layout_constraintTop_toBottomOf="@+id/cb_nasb_cheragh"
+                    tools:ignore="RtlHardcoded"/>
+
 
             </LinearLayout>
 
@@ -262,7 +263,7 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/style_asansor_corner"
             android:drawableStart="@drawable/ic_location"
-            android:onClick="Go_To_Location"
+            android:onClick="GoToLocation"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:text="@string/Location"
@@ -310,7 +311,7 @@
             android:background="@drawable/style_asansor_corner"
             android:drawableStart="@drawable/ic_arrow_left_blue"
             android:gravity="right"
-            android:onClick="Go_To_Time"
+            android:onClick="GoToTime"
             android:paddingStart="15dp"
             android:paddingTop="@dimen/dimen_lvl2"
             android:paddingEnd="15dp"

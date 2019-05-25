@@ -13,39 +13,54 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.security.SecurityPermission;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
+import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
-import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class E_Device extends AppCompatActivity {
+public class ElectronicDevice extends AppCompatActivity {
 
 
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
+    @BindView(R.id.spn_place) Spinner spn_place;
+    @BindView(R.id.etx_device_name) EditText etx_device_name;
+
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
     @BindView(R.id.imgbtn_down) ImageButton Dec_number;
     @BindView(R.id.txt_number) TextView device_num;
 
+    @BindView(R.id.btn_location) Button btn_location;
+    @BindView(R.id.etx_address) EditText etx_address;
+    @BindView(R.id.etx_alley) EditText etx_alley;
+    @BindView(R.id.etx_unit) EditText etx_unit;
+    @BindView(R.id.etx_plaque) EditText etx_plaque;
+    @BindView(R.id.etx_description_address) EditText etx_description_address;
+    @BindView(R.id.btn_accept) Button btn_accept;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_e_device);
+        setContentView(R.layout.activity_electronic_device);
         ButterKnife.bind(this);
 
-        drawerLayout = findViewById(R.id.drawer_e_device);
+        drawerLayout = findViewById(R.id.drawer_electronic_device);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
 
@@ -142,14 +157,14 @@ public class E_Device extends AppCompatActivity {
     }
 
     // Go To Time Activity
-    public void Go_To_Location (View v){
+    public void GoToLocation(View v){
         Intent intent = new Intent(getApplicationContext(), Map.class);
         startActivity(intent);
     }
 
 
     // Go To Time Activity
-    public void Go_To_Time (View v){
+    public void GoToTime(View v){
         Intent intent = new Intent(getApplicationContext(), Time.class);
         startActivity(intent);
     }

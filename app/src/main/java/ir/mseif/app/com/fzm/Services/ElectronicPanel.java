@@ -13,18 +13,23 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
+import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
-import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class Shutter_Door extends AppCompatActivity {
+public class ElectronicPanel extends AppCompatActivity {
+
 
 
     public DrawerLayout drawerLayout;
@@ -33,12 +38,24 @@ public class Shutter_Door extends AppCompatActivity {
 
 
 
+    @BindView(R.id.spn_place) Spinner spn_place;
+    @BindView(R.id.etx_description_karshenas) EditText etx_description_karshenas;
+
+    @BindView(R.id.btn_location) Button btn_location;
+    @BindView(R.id.etx_address) EditText etx_address;
+    @BindView(R.id.etx_alley) EditText etx_alley;
+    @BindView(R.id.etx_unit) EditText etx_unit;
+    @BindView(R.id.etx_plaque) EditText etx_plaque;
+    @BindView(R.id.etx_description_address) EditText etx_description_address;
+    @BindView(R.id.btn_accept) Button btn_accept;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shutter_door);
+        setContentView(R.layout.activity_electronic_panel);
+        ButterKnife.bind(this);
 
-        drawerLayout = findViewById(R.id.drawer_shutter_door);
+        drawerLayout = findViewById(R.id.drawer_electronic_panel);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
 
@@ -101,14 +118,14 @@ public class Shutter_Door extends AppCompatActivity {
 
 
     // Go To Time Activity
-    public void Go_To_Location (View v){
+    public void GoToLocation(View v){
         Intent intent = new Intent(getApplicationContext(), Map.class);
         startActivity(intent);
     }
 
 
     // Go To Time Activity
-    public void Go_To_Time (View v){
+    public void GoToTime(View v){
         Intent intent = new Intent(getApplicationContext(), Time.class);
         startActivity(intent);
     }

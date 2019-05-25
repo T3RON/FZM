@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -19,6 +20,7 @@ public class Sms extends AppCompatActivity {
 
 
     @BindView(R.id.btn_verify) Button btn_sms;
+    @BindView(R.id.etx_verify) EditText etx_verify;
 
 
     @Override
@@ -44,8 +46,8 @@ public class Sms extends AppCompatActivity {
 
 
     // Send SMS Verification Again
-    public void Send_again (View v){
-        Toast.makeText(this, "Sendding SMS Verification", Toast.LENGTH_SHORT).show();
+    public void SendAgain(View v){
+        Toast.makeText(this, "Sending SMS Verification", Toast.LENGTH_SHORT).show();
     }
 
 

@@ -31,7 +31,7 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:drawableStart="@drawable/ic_location"
-            android:onClick="Go_To_Location"
+            android:onClick="GoToLocation"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:text="@string/Location"
@@ -153,79 +153,80 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_tittle_job"
                 android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/rbtn_nasb"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/style_asansor_corner"
-                android:button="@null"
-                android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="10dp"
-                android:text="نصب و راه اندازی"
-                android:textColor="@color/colorPrimary"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="RtlHardcoded" />
+                <CheckBox
+                    android:id="@+id/cb_nasb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/style_asansor_corner"
+                    android:button="@null"
+                    android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="نصب و راه اندازی"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlHardcoded" />
 
-            <RadioButton
-                android:id="@+id/rbtn_repair"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/style_asansor_corner"
-                android:button="@null"
-                android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="10dp"
-                android:text="تعمیر و نگهداری"
-                android:textColor="@color/colorPrimary"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rbtn_nasb"
-                tools:ignore="RtlHardcoded" />
+                <CheckBox
+                    android:id="@+id/cb_repair"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/style_asansor_corner"
+                    android:button="@null"
+                    android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="تعمیر و نگهداری"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_nasb"
+                    tools:ignore="RtlHardcoded"/>
 
-            <RadioButton
-                android:id="@+id/rbtn_other_kind"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/style_asansor_corner"
-                android:button="@null"
-                android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="10dp"
-                android:text="سایر"
-                android:textColor="@color/colorPrimary"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rbtn_repair"
-                tools:ignore="RtlHardcoded" />
+                <CheckBox
+                    android:id="@+id/cb_other_kind"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/style_asansor_corner"
+                    android:button="@null"
+                    android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+                    android:paddingStart="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="سایر"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_repair"
+                    tools:ignore="RtlHardcoded" />
+
             </LinearLayout>
 
         <TextView
@@ -271,7 +272,7 @@
 
 
             <RadioButton
-                android:id="@+id/rbtn_nimeEsteal_nime"
+                android:id="@+id/rb_nimeEsteal_nime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -295,7 +296,7 @@
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/rbtn_nimeEsteal_auto"
+                android:id="@+id/rb_nimeEsteal_auto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -315,11 +316,11 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rbtn_nimeEsteal_nime"
+                app:layout_constraintTop_toBottomOf="@+id/rb_nimeEsteal_nime"
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/rbtn_tamamEsteal_nime"
+                android:id="@+id/rb_tamamEsteal_nime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -339,11 +340,11 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rbtn_nimeEsteal_auto"
+                app:layout_constraintTop_toBottomOf="@+id/rb_nimeEsteal_auto"
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/rbtn_tamamEsteal_tamam"
+                android:id="@+id/rb_tamamEsteal_tamam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -365,7 +366,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rbtn_tamamEsteal_nime"
+                app:layout_constraintTop_toBottomOf="@+id/rb_tamamEsteal_nime"
                 tools:ignore="RtlHardcoded" />
 
         </RadioGroup>
@@ -413,7 +414,7 @@
 
 
             <RadioButton
-                android:id="@+id/rbtn_nemidanam"
+                android:id="@+id/rb_nemidanam"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -433,7 +434,7 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/rbtn_irani"
+                app:layout_constraintEnd_toStartOf="@+id/rb_irani"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
@@ -441,7 +442,7 @@
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/rbtn_irani"
+                android:id="@+id/rb_irani"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -459,14 +460,14 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/rbtn_khareji"
+                app:layout_constraintEnd_toStartOf="@+id/rb_khareji"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/rbtn_irani"
+                app:layout_constraintStart_toEndOf="@+id/rb_irani"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="RtlHardcoded" />
 
             <RadioButton
-                android:id="@+id/rbtn_khareji"
+                android:id="@+id/rb_khareji"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -486,7 +487,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/rbtn_irani"
+                app:layout_constraintStart_toEndOf="@+id/rb_irani"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="RtlHardcoded" />
 
@@ -627,7 +628,7 @@
             android:background="@drawable/style_asansor_corner"
             android:drawableStart="@drawable/ic_arrow_left_blue"
             android:gravity="right"
-            android:onClick="Go_To_Time"
+            android:onClick="GoToTime"
             android:paddingStart="15dp"
             android:paddingTop="@dimen/dimen_lvl2"
             android:paddingEnd="15dp"

@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawer_shutter_door">
+    android:id="@+id/drawer_electronic_device">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Services.shutter_door">
+        tools:context=".Services.electronic_device">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/place_main"
@@ -18,7 +18,7 @@
             android:focusableInTouchMode="true">
 
             <Spinner
-                android:id="@+id/spn_brand"
+                android:id="@+id/spn_place"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="8dp"
@@ -31,36 +31,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Spinner
-                android:id="@+id/spn_job"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/style_asansor_corner"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spn_brand" />
-
-            <Spinner
-                android:id="@+id/spn_kind"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/style_asansor_corner"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spn_job" />
-
             <EditText
-                android:id="@+id/etx_number_remote"
+                android:id="@+id/etx_device_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -70,30 +42,7 @@
                 android:layout_marginRight="8dp"
                 android:background="@drawable/style_asansor_corner"
                 android:gravity="top"
-                android:hint="در صورت نیاز به اضافه شدن ریموت تعداد را وارد کنید"
-                android:inputType="number"
-                android:paddingStart="15dp"
-                android:paddingTop="10dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="10dp"
-                android:textColorHint="@color/color_hint"
-                android:textSize="13sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spn_kind" />
-
-            <EditText
-                android:id="@+id/etx_description_karshenas"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/style_asansor_corner"
-                android:gravity="top"
-                android:hint="توضیحی که نیاز است متخصص باید بداند"
+                android:hint="نام دستگاه و ایراد"
                 android:inputType="textMultiLine"
                 android:minLines="4"
                 android:paddingStart="15dp"
@@ -104,7 +53,95 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etx_number_remote" />
+                app:layout_constraintTop_toBottomOf="@+id/spn_place" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/place_number_tools"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_location"
+                app:layout_constraintTop_toBottomOf="@+id/etx_device_name">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_down"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/style_asansor_corner"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_bottom_blue"
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+                <TextView
+                    android:id="@+id/txt_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="0"
+                    android:textColor="@color/color_asansor_num"
+                    app:layout_constraintEnd_toStartOf="@+id/imgbtn_down"
+                    app:layout_constraintStart_toEndOf="@+id/imgbtn_up"
+                    app:layout_constraintTop_toTopOf="@+id/imgbtn_down" />
+
+                <TextView
+                    android:id="@+id/txt_tools_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="تعداد لوازم"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imgbtn_up"
+                    app:layout_constraintStart_toEndOf="@+id/imgbtn_down" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_up"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/style_asansor_corner"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_top_blue"
+                    tools:ignore="ContentDescription,VectorDrawableCompat" />
+            </android.support.constraint.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/style_asansor_corner"
+                android:drawableStart="@drawable/ic_location"
+                android:onClick="GoToLocation"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:text="@string/Location"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/place_number_tools"
+                app:layout_constraintEnd_toStartOf="@+id/place_number_tools"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/place_number_tools"
+                tools:ignore="RtlCompat" />
 
             <EditText
                 android:id="@+id/etx_address"
@@ -112,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:background="@drawable/style_asansor_corner"
@@ -129,7 +166,7 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etx_description_karshenas" />
+                app:layout_constraintTop_toBottomOf="@+id/place_number_tools" />
 
             <EditText
                 android:id="@+id/etx_alley"
@@ -202,28 +239,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etx_address" />
 
-            <Button
-                android:id="@+id/btn_location"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/style_asansor_corner"
-                android:drawableStart="@drawable/ic_location"
-                android:onClick="GoToLocation"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
-                android:text="@string/Location"
-                android:textColor="@color/colorPrimary"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etx_unit"
-                tools:ignore="RtlCompat" />
-
             <EditText
                 android:id="@+id/etx_description_address"
                 android:layout_width="0dp"
@@ -246,7 +261,7 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_location" />
+                app:layout_constraintTop_toBottomOf="@+id/etx_unit" />
 
             <Button
                 android:id="@+id/btn_accept"
@@ -268,7 +283,6 @@
                 android:paddingBottom="12dp"
                 android:text="@string/register"
                 android:textColor="@color/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etx_description_address"

@@ -96,7 +96,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_tittle_wiring">
 
             <RadioButton
-                android:id="@+id/rbtn_nemidanam"
+                android:id="@+id/rb_nemidanam"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -116,12 +116,12 @@
                 android:text="نمی دانم"
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@+id/rbtn_no"
+                app:layout_constraintEnd_toStartOf="@+id/rb_no"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <RadioButton
-                android:id="@+id/rbtn_no"
+                android:id="@+id/rb_no"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -139,12 +139,12 @@
                 android:text="خیر"
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
-                app:layout_constraintEnd_toStartOf="@+id/rbtn_nemidanam"
+                app:layout_constraintEnd_toStartOf="@+id/rb_nemidanam"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/rbtn_no" />
+                app:layout_constraintStart_toEndOf="@+id/rb_no" />
 
             <RadioButton
-                android:id="@+id/rbtn_yes"
+                android:id="@+id/rb_yes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -164,7 +164,7 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/rbtn_no"
+                app:layout_constraintStart_toEndOf="@+id/rb_no"
                 app:layout_constraintTop_toBottomOf="parent" />
         </RadioGroup>
 
@@ -300,7 +300,7 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/style_asansor_corner"
             android:drawableStart="@drawable/ic_location"
-            android:onClick="Go_To_Location"
+            android:onClick="GoToLocation"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:text="@string/Location"
@@ -349,7 +349,7 @@
             android:background="@drawable/style_asansor_corner"
             android:drawableStart="@drawable/ic_arrow_left_blue"
             android:gravity="right"
-            android:onClick="Go_To_Time"
+            android:onClick="GoToTime"
             android:paddingStart="15dp"
             android:paddingTop="@dimen/dimen_lvl2"
             android:paddingEnd="15dp"

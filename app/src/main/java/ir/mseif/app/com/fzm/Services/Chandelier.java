@@ -13,7 +13,11 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
 
+import butterknife.BindView;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
@@ -31,6 +35,20 @@ public class Chandelier extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
+
+
+    @BindView(R.id.cb_nasb_cheragh) CheckBox cb_nasb_cheragh;
+    @BindView(R.id.cb_afzayesh) CheckBox cb_afzayesh;
+    @BindView(R.id.cb_taghsim) CheckBox cb_taghsim;
+    @BindView(R.id.cb_nasb_chandelier) CheckBox cb_nasb_chandelier;
+
+    @BindView(R.id.btn_location) Button btn_location;
+    @BindView(R.id.etx_address) EditText etx_address;
+    @BindView(R.id.etx_alley) EditText etx_alley;
+    @BindView(R.id.etx_unit) EditText etx_unit;
+    @BindView(R.id.etx_plaque) EditText etx_plaque;
+    @BindView(R.id.etx_description_address) EditText etx_description_address;
+    @BindView(R.id.btn_accept) Button btn_accept;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,14 +118,14 @@ public class Chandelier extends AppCompatActivity {
 
 
     // Go To Time Activity
-    public void Go_To_Location (View v){
+    public void GoToLocation(View v){
         Intent intent = new Intent(getApplicationContext(), Map.class);
         startActivity(intent);
     }
 
 
     // Go To Time Activity
-    public void Go_To_Time (View v){
+    public void GoToTime(View v){
         Intent intent = new Intent(getApplicationContext(), Time.class);
         startActivity(intent);
     }

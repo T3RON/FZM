@@ -13,6 +13,10 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +30,14 @@ public class Profile extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
+    @BindView(R.id.img_profile) ImageView img_profile;
+    @BindView(R.id.imgbtn_edit_img_profile) ImageButton imgbtn_edit_img_profile;
+    @BindView(R.id.txt_profile_name) TextView txt_profile_name;
+    @BindView(R.id.txt_profile_wallet) TextView txt_profile_wallet;
+    @BindView(R.id.etx_profile_name) EditText etx_profile_name;
+    @BindView(R.id.etx_profile_email) EditText etx_profile_email;
+    @BindView(R.id.etx_profile_phone) EditText etx_profile_phone;
+    @BindView(R.id.btn_accept) Button btn_accept;
 
 
     @Override

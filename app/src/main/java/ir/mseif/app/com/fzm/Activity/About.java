@@ -13,6 +13,8 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +28,7 @@ public class About extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
+    @BindView(R.id.txt_main_description) TextView txt_main_description;
 
 
     @Override

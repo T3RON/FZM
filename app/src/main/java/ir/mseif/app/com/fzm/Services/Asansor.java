@@ -1,4 +1,4 @@
-package ir.mseif.app.com.fzm;
+package ir.mseif.app.com.fzm.Services;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,10 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -23,7 +26,10 @@ import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
 import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.Activity.Profile;
+import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
+import ir.mseif.app.com.fzm.MainActivity;
+import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Asansor extends AppCompatActivity {
@@ -36,6 +42,27 @@ public class Asansor extends AppCompatActivity {
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
     @BindView(R.id.imgbtn_down) ImageButton Dec_number;
     @BindView(R.id.txt_number) TextView asansor_num;
+
+    @BindView(R.id.cb_nasb) CheckBox cb_nasb;
+    @BindView(R.id.cb_repair) CheckBox cb_repair;
+    @BindView(R.id.cb_other_kind) CheckBox cb_other_kind;
+
+    @BindView(R.id.rb_nimeEsteal_nime) RadioButton rb_nimeEsteal_nime;
+    @BindView(R.id.rb_nimeEsteal_auto) RadioButton rb_nimeEsteal_auto;
+    @BindView(R.id.rb_tamamEsteal_nime) RadioButton rb_tamamEsteal_nime;
+    @BindView(R.id.rb_tamamEsteal_tamam) RadioButton rb_tamamEsteal_tamam;
+
+    @BindView(R.id.rb_nemidanam) RadioButton rb_nemidanam;
+    @BindView(R.id.rb_irani) RadioButton rb_irani;
+    @BindView(R.id.rb_khareji) RadioButton rb_khareji;
+
+    @BindView(R.id.btn_location) Button btn_location;
+    @BindView(R.id.etx_address) EditText etx_address;
+    @BindView(R.id.etx_alley) EditText etx_alley;
+    @BindView(R.id.etx_unit) EditText etx_unit;
+    @BindView(R.id.etx_plaque) EditText etx_plaque;
+    @BindView(R.id.etx_description_address) EditText etx_description_address;
+    @BindView(R.id.btn_accept) Button btn_accept;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,7 +182,7 @@ public class Asansor extends AppCompatActivity {
 
 
     // Go To Time Activity
-    public void Go_To_Location (View v){
+    public void GoToLocation (View v){
         Intent intent = new Intent(getApplicationContext(), Map.class);
         startActivity(intent);
     }
@@ -164,8 +191,8 @@ public class Asansor extends AppCompatActivity {
 
 
     // Go To Time Activity
-    public void Go_To_Time (View v){
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+    public void GoToTime (View v){
+        Intent intent = new Intent(getApplicationContext(), Time.class);
         startActivity(intent);
     }
 
