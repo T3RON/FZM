@@ -2,34 +2,48 @@ package ir.mseif.app.com.fzm.Activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.location.LocationManager;
+
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-import com.google.android.gms.maps.MapView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.R;
+import ir.mseif.app.com.fzm.Utils.WorkaroundMapFragment;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class Map extends AppCompatActivity {
+public class Map extends AppCompatActivity implements OnMapReadyCallback {
 
+    private LocationManager locationManager;
+    private GoogleMap gmap;
+    private Bitmap smallMarker;
+    double lat , lang = 0.0f;
 
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
-    @BindView(R.id.mapView) MapView mapView;
     @BindView(R.id.btn_accept) Button btn_accept;
 
 
@@ -97,11 +111,70 @@ public class Map extends AppCompatActivity {
                 }
             }
         });
+
+
+        //--------------------------------------------- Map ----------------------------------
+
+        ((WorkaroundMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_map)).getMapAsync(this);
+        ((WorkaroundMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_map)).setListener(new WorkaroundMapFragment.OnTouchListener() {
+            @Override
+            public void onTouch() {
+                //scr_takhfif.requestDisallowInterceptTouchEvent(true);
+            }
+        });
+        int height = 180;
+        int width = 180;
+        BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.ic_phone_android);
+        Bitmap b=bitmapdraw.getBitmap();
+        smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+
+
+
+
     }
 
 
 
+    public void onMapReady(GoogleMap googleMap) {
+        gmap = googleMap;
+        gmap.getUiSettings().setAllGesturesEnabled(true);
+        gmap.getUiSettings().setScrollGesturesEnabled(true);
+        gmap.setMinZoomPreference(12);
+        gmap.setIndoorEnabled(true);
+        UiSettings uiSettings = gmap.getUiSettings();
+        uiSettings.setIndoorLevelPickerEnabled(true);
+        uiSettings.setMyLocationButtonEnabled(true);
+        uiSettings.setMapToolbarEnabled(true);
+        uiSettings.setCompassEnabled(true);
+        uiSettings.setZoomControlsEnabled(true);
+        LatLng ny = new LatLng(33.897064, 48.764803);
+        MarkerOptions markerOptions = new MarkerOptions();
+        markerOptions.icon(BitmapDescriptorFactory.fromBitmap(smallMarker));
+        markerOptions.position(ny);
+        gmap.addMarker(markerOptions);
+        gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
+        gmap.setMinZoomPreference(8);
+        gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
 
+
+        gmap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+
+            @Override
+            public void onMapClick(LatLng latLng) {
+                MarkerOptions markerOptions = new MarkerOptions();
+                markerOptions.icon(BitmapDescriptorFactory.fromBitmap(smallMarker));
+                markerOptions.position(latLng);
+                lat = latLng.latitude;
+                lang = latLng.longitude;
+                gmap.clear();
+                markerOptions.title(lat + " : " + lang);
+                gmap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+                gmap.addMarker(markerOptions);
+            }
+        });
+
+    }
 
 
 

@@ -2,21 +2,27 @@ package ir.mseif.app.com.fzm.Services;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,7 +32,6 @@ import ir.mseif.app.com.fzm.Activity.History;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
-import ir.mseif.app.com.fzm.MainActivity;
 import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -34,9 +39,9 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class Antenna extends AppCompatActivity {
 
 
-    public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
+    String antenJobText;
 
     @BindView(R.id.spn_place) Spinner spn_place;
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
@@ -50,6 +55,10 @@ public class Antenna extends AppCompatActivity {
     @BindView(R.id.etx_plaque) EditText etx_plaque;
     @BindView(R.id.etx_description_address) EditText etx_description_address;
     @BindView(R.id.btn_accept) Button btn_accept;
+    @BindView(R.id.drawer_antenna)
+    DrawerLayout drawerLayout;
+    @BindView(R.id.nav_view)
+    NavigationView nav_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +66,6 @@ public class Antenna extends AppCompatActivity {
         setContentView(R.layout.activity_antenna);
         ButterKnife.bind(this);
 
-        drawerLayout = findViewById(R.id.drawer_antenna);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
 
@@ -65,15 +73,12 @@ public class Antenna extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-        NavigationView nav_view = findViewById(R.id.nav_view);
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.app_title);
 
 
         btn_nav = findViewById(R.id.btn_nav);
-
-
 
 
 
@@ -93,6 +98,10 @@ public class Antenna extends AppCompatActivity {
                 asansor_num.setText(A);
             }
         });
+
+
+        AntenJobs();
+
 
         nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -168,6 +177,28 @@ public class Antenna extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void AntenJobs() {
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("وصل کردن دوربین مداربسته به آنتن مرکزی");
+        arrayList.add("نصب آنتن دیجیتال");
+        arrayList.add("نصب آنتن مرکزی");
+        arrayList.add("تحویل داخل هر واحد");
+        arrayList.add("تنظیم آنتن");
+        arrayList.add("رفع ایراد سیم\u200Cکشی");
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, arrayList);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spn_place.setAdapter(arrayAdapter);
+        spn_place.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                antenJobText = parent.getItemAtPosition(position).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
 
     @Override
     protected void attachBaseContext(Context newBase) {
