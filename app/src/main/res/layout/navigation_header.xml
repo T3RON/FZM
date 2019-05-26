@@ -10,7 +10,7 @@
     android:orientation="vertical"
     >
 
-    <androidx.constraintlayout.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             app:layout_constraintTop_toTopOf="@+id/view23"
             app:srcCompat="@drawable/ic_user"
             tools:ignore="VectorDrawableCompat" />
-    </androidx.constraintlayout.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/place_profile_info"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,7 +12,7 @@
     android:focusableInTouchMode="true"
     tools:context=".Activity.Time">
 
-    <androidx.constraintlayout.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -32,7 +32,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/place_day"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_tittle_time">
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/place_today"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -70,9 +70,9 @@
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp" />
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/place_tomorrow"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -97,10 +97,10 @@
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp" />
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/place_other_day"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -126,10 +126,10 @@
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp" />
-            </android.support.v7.widget.CardView>
-        </android.support.constraint.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/place_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -291,7 +291,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view20"
                 app:srcCompat="@drawable/ic_arrow_bottom_blue"
                 tools:ignore="VectorDrawableCompat" />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/btn_accept"
@@ -315,7 +315,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/place_time"
             tools:ignore="RtlCompat" />
-    </androidx.constraintlayout.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 
 
@@ -329,6 +329,6 @@
         android:layout_gravity="right"
         android:fitsSystemWindows="true"
         app:rtl_menu="@menu/navigation_menu"
-        app:headerLayout="@layout/navigation_header"/>
+        app:headerLayout="@layout/navigation_header" tools:ignore="RtlHardcoded" />
 
-</androidx.core.widget.DrawerLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

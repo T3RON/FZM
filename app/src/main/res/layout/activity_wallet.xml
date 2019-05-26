@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawer_wallet">
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_wallet">
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.Wallet">
 
-    <androidx.constraintlayout.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -87,7 +86,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_your_wallet" />
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/place_go_to_dargah"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -179,9 +178,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etx_verify_code" />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcy_wallet"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -200,7 +199,7 @@
             app:layout_constraintTop_toBottomOf="@+id/place_go_to_dargah"
             app:reverseLayout="true"
             app:stackFromEnd="true" />
-    </androidx.constraintlayout.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
 
 
@@ -214,6 +213,6 @@
         android:layout_gravity="right"
         android:fitsSystemWindows="true"
         app:rtl_menu="@menu/navigation_menu"
-        app:headerLayout="@layout/navigation_header"/>
+        app:headerLayout="@layout/navigation_header" tools:ignore="RtlHardcoded" />
 
-</androidx.core.widget.DrawerLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
