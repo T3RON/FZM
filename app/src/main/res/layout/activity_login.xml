@@ -15,7 +15,7 @@
         android:focusable="true"
         android:focusableInTouchMode="true" >
 
-        <androidx.constraintlayout.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
@@ -176,6 +176,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_phone_number" />
 
 
-        </androidx.constraintlayout.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </ScrollView>

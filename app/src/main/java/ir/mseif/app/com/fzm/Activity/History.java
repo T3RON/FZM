@@ -2,7 +2,6 @@ package ir.mseif.app.com.fzm.Activity;
 
 import android.content.Context;
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
