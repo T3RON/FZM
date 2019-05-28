@@ -57,7 +57,6 @@ public class Asansor extends AppCompatActivity {
     @BindView(R.id.rb_irani) RadioButton rb_irani;
     @BindView(R.id.rb_khareji) RadioButton rb_khareji;
 
-    @BindView(R.id.btn_location) Button btn_location;
     @BindView(R.id.etx_address) EditText etx_address;
     @BindView(R.id.etx_alley) EditText etx_alley;
     @BindView(R.id.etx_unit) EditText etx_unit;

@@ -3,6 +3,7 @@ package ir.mseif.app.com.fzm.Services;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +21,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.google.android.material.navigation.NavigationView;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 
@@ -29,11 +36,13 @@ import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
+import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
-import ir.mseif.app.com.fzm.Activity.Map;
+import ir.mseif.app.com.fzm.Model.AntenaModel;
 import ir.mseif.app.com.fzm.R;
+import ir.mseif.app.com.fzm.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Antenna extends AppCompatActivity {
@@ -42,13 +51,13 @@ public class Antenna extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
     String antenJobText;
+    String lat,lang;
 
     @BindView(R.id.spn_place) Spinner spn_place;
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
     @BindView(R.id.imgbtn_down) ImageButton Dec_number;
     @BindView(R.id.txt_number) TextView asansor_num;
 
-    @BindView(R.id.btn_location) Button btn_location;
     @BindView(R.id.etx_address) EditText etx_address;
     @BindView(R.id.etx_alley) EditText etx_alley;
     @BindView(R.id.etx_unit) EditText etx_unit;
@@ -65,6 +74,12 @@ public class Antenna extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_antenna);
         ButterKnife.bind(this);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            lat = bundle.getString("lat");
+            lang = bundle.getString("lang");
+        }
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
@@ -142,6 +157,34 @@ public class Antenna extends AppCompatActivity {
                 }
             }
         });
+
+
+
+        btn_accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent antena_intent = new Intent(Antenna.this,Time.class);
+                antena_intent.putExtra("name", "antena");
+                AntenaModel.service_antenna_job = antenJobText;
+                AntenaModel.service_antenna_number = asansor_num.getText().toString();
+                AntenaModel.service_antenna_address = etx_address.getText().toString();
+                AntenaModel.service_antenna_alley = etx_alley.getText() + "";
+                AntenaModel.service_antenna_plaque = etx_plaque.getText() + "";
+                AntenaModel.service_antenna_unit = etx_unit.getText().toString();
+                AntenaModel.service_antenna_text = etx_description_address.getText().toString();
+                AntenaModel.service_antenna_lat = lat;
+                AntenaModel.service_antenna_sat = lang;
+                AntenaModel.id = "1";
+                AntenaModel.state_id = "1";
+                startActivity(antena_intent);
+            }
+        });
+
+
+
+
+
+
     }
 
     // Increas the number of asansor
@@ -167,15 +210,10 @@ public class Antenna extends AppCompatActivity {
     // Go To Time Activity
     public void GoToLocation(View v){
         Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "antena");
         startActivity(intent);
     }
 
-
-    // Go To Time Activity
-    public void GoToTime(View v){
-        Intent intent = new Intent(getApplicationContext(), Time.class);
-        startActivity(intent);
-    }
 
 
     public void AntenJobs() {

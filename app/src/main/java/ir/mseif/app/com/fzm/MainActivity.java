@@ -2,11 +2,13 @@ package ir.mseif.app.com.fzm;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -15,27 +17,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.mohamadamin.persianmaterialdatetimepicker.date.DatePickerDialog;
+import com.mohamadamin.persianmaterialdatetimepicker.utils.PersianCalendar;
+
 
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
+import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Wallet;
-import ir.mseif.app.com.fzm.Services.Antenna;
-import ir.mseif.app.com.fzm.Services.Asansor;
-import ir.mseif.app.com.fzm.Services.Camera;
-import ir.mseif.app.com.fzm.Services.Chandelier;
-import ir.mseif.app.com.fzm.Services.Cooler;
-import ir.mseif.app.com.fzm.Services.ElectronicDevice;
-import ir.mseif.app.com.fzm.Services.ElectronicPanel;
-import ir.mseif.app.com.fzm.Services.Generator;
-import ir.mseif.app.com.fzm.Services.Iphon;
-import ir.mseif.app.com.fzm.Services.Lighting;
-import ir.mseif.app.com.fzm.Services.Santeral;
-import ir.mseif.app.com.fzm.Services.Security;
-import ir.mseif.app.com.fzm.Services.ShutterDoor;
-import ir.mseif.app.com.fzm.Services.Socket;
-import ir.mseif.app.com.fzm.Services.Wiring;
+import ir.mseif.app.com.fzm.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,91 +109,109 @@ public class MainActivity extends AppCompatActivity {
 
     // Go to Camera Page
     public void PageCamera(View v){
-        Intent intent = new Intent(getApplicationContext(), Camera.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "camera");
         startActivity(intent);
     }
 
     // Go to Iphon Page
     public void PageIphon(View v){
-        Intent intent = new Intent(getApplicationContext(), Iphon.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "iphon");
         startActivity(intent);
+
+
+
     }
 
     // Go to Asansor Page
     public void PageAsansor(View v){
-        Intent intent = new Intent(getApplicationContext(), Asansor.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "asansor");
         startActivity(intent);
     }
 
     // Go to Santeral Page
     public void PageSanteral(View v){
-        Intent intent = new Intent(getApplicationContext(), Santeral.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "santral");
         startActivity(intent);
     }
 
     // Go to ElectronicDevice Page
     public void PageElectronicDevice(View v){
-        Intent intent = new Intent(getApplicationContext(), ElectronicDevice.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "electronicdevice");
         startActivity(intent);
     }
 
     // Go to Wiring Page
     public void PageWiring(View v){
-        Intent intent = new Intent(getApplicationContext(), Wiring.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "wiring");
         startActivity(intent);
     }
 
     // Go to ElectronicPanel Page
     public void PageElectronicPanel(View v){
-        Intent intent = new Intent(getApplicationContext(), ElectronicPanel.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "electronicpanel");
         startActivity(intent);
     }
 
     // Go to Shutter_Door Page
     public void PageShutterDoor(View v){
-        Intent intent = new Intent(getApplicationContext(), ShutterDoor.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "shutterdoor");
         startActivity(intent);
     }
 
     // Go to Antenna Page
     public void PageAntenna(View v){
-        Intent intent = new Intent(getApplicationContext(), Antenna.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "antena");
         startActivity(intent);
     }
 
     // Go to Lighting Page
     public void PageLighting(View v){
-        Intent intent = new Intent(getApplicationContext(), Lighting.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "lighting");
         startActivity(intent);
     }
 
     // Go to Security Page
     public void PageSecurity(View v){
-        Intent intent = new Intent(getApplicationContext(), Security.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "security");
         startActivity(intent);
     }
 
     // Go to Generator Page
     public void PageGenerator(View v){
-        Intent intent = new Intent(getApplicationContext(), Generator.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "generator");
         startActivity(intent);
     }
 
     // Go to Cooler Page
     public void PageCooler(View v){
-        Intent intent = new Intent(getApplicationContext(), Cooler.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "cooler");
         startActivity(intent);
     }
 
     // Go to Chandelier Page
     public void PageChandelier(View v){
-        Intent intent = new Intent(getApplicationContext(), Chandelier.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "chandelier");
         startActivity(intent);
     }
 
     // Go to Socket Page
     public void PageSocket(View v){
-        Intent intent = new Intent(getApplicationContext(), Socket.class);
+        Intent intent = new Intent(getApplicationContext(), Map.class);
+        intent.putExtra("name", "socket");
         startActivity(intent);
     }
 

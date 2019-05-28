@@ -20,7 +20,7 @@
         <Spinner
             android:id="@+id/spn_place"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
@@ -66,12 +66,13 @@
             android:id="@+id/place_number_unit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btn_location"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_tittle_number">
 
             <ImageButton
@@ -128,29 +129,6 @@
                 tools:ignore="ContentDescription,VectorDrawableCompat" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        <Button
-            android:id="@+id/btn_location"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/style_asansor_corner"
-            android:drawableStart="@drawable/ic_location"
-            android:onClick="GoToLocation"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:text="@string/Location"
-            android:textColor="@color/colorPrimary"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/place_number_unit"
-            app:layout_constraintEnd_toStartOf="@+id/place_number_unit"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/place_number_unit"
-            tools:ignore="RtlCompat" />
 
         <EditText
             android:id="@+id/etx_address"

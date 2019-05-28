@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.location.LocationManager;
-
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -21,6 +20,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -30,7 +30,8 @@ import com.google.android.material.navigation.NavigationView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.R;
-import ir.mseif.app.com.fzm.Utils.WorkaroundMapFragment;
+import ir.mseif.app.com.fzm.Services.Antenna;
+import ir.mseif.app.com.fzm.Services.Asansor;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Map extends AppCompatActivity implements OnMapReadyCallback {
@@ -38,14 +39,18 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
     private LocationManager locationManager;
     private GoogleMap gmap;
     private Bitmap smallMarker;
-    double lat , lang = 0.0f;
+    String lat , lang ;
+    private SupportMapFragment map;
+
+
 
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
-    @BindView(R.id.btn_accept) Button btn_accept;
-
+    @BindView(R.id.btn_accept)
+    Button btn_accept;
+    String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +58,16 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         setContentView(R.layout.activity_map);
         ButterKnife.bind(this);
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            type = bundle.getString("name");
+        }
+
+        map = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_map);
+        map.getMapAsync(this);
+
         drawerLayout = findViewById(R.id.drawer_map);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.Open, R.string.Close);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
 
 
@@ -67,9 +80,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         getSupportActionBar().setCustomView(R.layout.app_title);
 
 
-
         btn_nav = findViewById(R.id.btn_nav);
-
 
 
         nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -77,22 +88,22 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id = menuItem.getItemId();
 
-                if(id == R.id.profile){
+                if (id == R.id.profile) {
                     Intent intent = new Intent(getApplicationContext(), Profile.class);
                     startActivity(intent);
-                }else if(id == R.id.lastservice){
+                } else if (id == R.id.lastservice) {
                     Intent intent = new Intent(getApplicationContext(), History.class);
                     startActivity(intent);
-                }else if(id == R.id.wallet){
+                } else if (id == R.id.wallet) {
                     Intent intent = new Intent(getApplicationContext(), Wallet.class);
                     startActivity(intent);
-                }else if(id == R.id.contact){
+                } else if (id == R.id.contact) {
                     Intent intent = new Intent(getApplicationContext(), Contact.class);
                     startActivity(intent);
-                }else if(id == R.id.about){
+                } else if (id == R.id.about) {
                     Intent intent = new Intent(getApplicationContext(), About.class);
                     startActivity(intent);
-                }else if(id == R.id.exit_app){
+                } else if (id == R.id.exit_app) {
                 }
 
 
@@ -112,27 +123,38 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
             }
         });
 
+        btn_accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    switch(type) {
+                        case "antena":
+                            Intent antena = new Intent(getApplicationContext(), Antenna.class);
+                            antena.putExtra("lat", lat);
+                            antena.putExtra("lang", lang);
+                            startActivity(antena);
+                            finish();
+                            break;
+                        case "asansor":
+                            Intent asansor = new Intent(getApplicationContext(), Asansor.class);
+                            startActivity(asansor);
+                            asansor.putExtra("lat", lat);
+                            asansor.putExtra("lang", lang);
+                            startActivity(asansor);
+                            finish();
+                            break;
+                    }
+                }
+        });
 
         //--------------------------------------------- Map ----------------------------------
 
-        ((WorkaroundMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_map)).getMapAsync(this);
-        ((WorkaroundMapFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_map)).setListener(new WorkaroundMapFragment.OnTouchListener() {
-            @Override
-            public void onTouch() {
-                //scr_takhfif.requestDisallowInterceptTouchEvent(true);
-            }
-        });
         int height = 180;
         int width = 180;
-        BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.ic_phone_android);
+        BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.marker);
         Bitmap b=bitmapdraw.getBitmap();
         smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
-
-
-
-
-
     }
+
 
 
 
@@ -148,7 +170,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         uiSettings.setMapToolbarEnabled(true);
         uiSettings.setCompassEnabled(true);
         uiSettings.setZoomControlsEnabled(true);
-        LatLng ny = new LatLng(33.897064, 48.764803);
+        LatLng ny = new LatLng(35.685050, 51.395248);
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.icon(BitmapDescriptorFactory.fromBitmap(smallMarker));
         markerOptions.position(ny);
@@ -165,8 +187,8 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
                 MarkerOptions markerOptions = new MarkerOptions();
                 markerOptions.icon(BitmapDescriptorFactory.fromBitmap(smallMarker));
                 markerOptions.position(latLng);
-                lat = latLng.latitude;
-                lang = latLng.longitude;
+                lat = latLng.latitude + "";
+                lang = latLng.longitude + "";
                 gmap.clear();
                 markerOptions.title(lat + " : " + lang);
                 gmap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
