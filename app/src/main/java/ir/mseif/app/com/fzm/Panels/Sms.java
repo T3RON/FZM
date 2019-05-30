@@ -2,6 +2,7 @@ package ir.mseif.app.com.fzm.Panels;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.bvapp.directionalsnackbar.SnackbarUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,13 +38,24 @@ public class Sms extends AppCompatActivity {
 
 
     btn_sms.setOnClickListener(v -> {
+        if (etx_verify.getText().length() != 0){
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
 
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
+        }else{
+            SnackbarUtil.setSnackBarWithNoActionButton(v,"کد فعال سازی نامعتبر است",
+            Color.rgb(255,255,255),
+            Color.rgb(232,59,58)
+            ,null,12, SnackbarUtil.RTL_DIRECTION);
+        }
+
     });
 
     txt_send_again.setOnClickListener(v -> {
-        Toast.makeText(this, "Sending SMS Verification", Toast.LENGTH_SHORT).show();
+        SnackbarUtil.setSnackBarWithNoActionButton(v,"کد فعال سازی مجددا ارسال شد",
+                Color.rgb(255,255,255),
+                Color.rgb(35,144,3)
+            ,null,12, SnackbarUtil.RTL_DIRECTION);
 
     });
 

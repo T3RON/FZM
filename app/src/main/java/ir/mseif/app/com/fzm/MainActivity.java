@@ -17,8 +17,10 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.ViewCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.mohamadamin.persianmaterialdatetimepicker.date.DatePickerDialog;
@@ -210,27 +212,20 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Map.class);
         intent.putExtra("name", "socket");
         startActivity(intent);
+
     }
 
+//snack red
+//        SnackbarUtil.setSnackBarWithNoActionButton(v,"شماره همراه نامعتبر است",
+//        Color.rgb(255,255,255),
+//        Color.rgb(232,59,58)
+//            ,null,12, SnackbarUtil.RTL_DIRECTION);
 
-//    Snackbar snackbar = Snackbar
-//            .make(drawerLayout, "No internet connection!", Snackbar.LENGTH_LONG)
-//            .setAction("RETRY", new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                }
-//            });
-//
-//    // Changing message text color
-//        snackbar.setActionTextColor(Color.RED);
-//
-//    // Changing action button text color
-//    View sbView = snackbar.getView();
-//    TextView textView = (TextView) sbView.findViewById(R.id.snackbar_text);
-//        textView.setTextColor(Color.YELLOW);
-//
-//        snackbar.show();
-
+//    snack green
+//        SnackbarUtil.setSnackBarWithNoActionButton(v,"شماره همراه نامعتبر است",
+//        Color.rgb(255,255,255),
+//        Color.rgb(35,144,3)
+//            ,null,12, SnackbarUtil.RTL_DIRECTION);
 
 
     @Override

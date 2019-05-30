@@ -24,6 +24,7 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONArrayRequestListener;
+import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 import com.mohamadamin.persianmaterialdatetimepicker.date.DatePickerDialog;
 import com.mohamadamin.persianmaterialdatetimepicker.utils.PersianCalendar;
@@ -152,21 +153,25 @@ public class Time extends AppCompatActivity {
 
 
         minute_up.setOnClickListener(v -> {
-            String A = INC(String.valueOf(txt_m.getText()));
+            String A = INCM(String.valueOf(txt_m.getText()));
             txt_m.setText(A);
             m = A;
         });
 
 
         minute_down.setOnClickListener(v -> {
-            String A = DEC(String.valueOf(txt_m.getText()));
+            String A = DECM(String.valueOf(txt_m.getText()));
             txt_m.setText(A);
             m = A;
         });
 
-
-
-        btn_accept.setOnClickListener(v -> AntenaPost());
+        btn_accept.setOnClickListener(v -> {
+            AntenaPost();
+            SnackbarUtil.setSnackBarWithNoActionButton(v,"سرویس مورد نظر ثبت شد",
+            Color.rgb(255,255,255),
+            Color.rgb(35,144,3)
+                ,null,12, SnackbarUtil.RTL_DIRECTION);
+        });
 
         Log.i("sdas" , AntenaModel.service_antenna_job+"");
         Log.i("sdas" , AntenaModel.service_antenna_number+"");
@@ -211,21 +216,43 @@ public class Time extends AppCompatActivity {
     }
 
 
-    // Increas the number of asansor
+    // Increas the Hour
     private String INC (String a){
         int b = Integer.parseInt(a);
-        b++;
+        if (b<23) {
+            b++;
+        }else {
+            b=0;
+        }
         return String.valueOf(b);
-
     }
-
-    // Decrease the number of asansor
+    // Decrease the Hour
     private String DEC (String a){
         int b = Integer.parseInt(a);
         if (b>0) {
             b--;
         }else {
+            b=23;
+        }
+        return String.valueOf(b);
+    }
+    // Increas the Minute
+    private String INCM (String a){
+        int b = Integer.parseInt(a);
+        if (b<59) {
+            b++;
+        }else {
             b=0;
+        }
+        return String.valueOf(b);
+    }
+    // Decrease the Minute
+    private String DECM (String a){
+        int b = Integer.parseInt(a);
+        if (b>0) {
+            b--;
+        }else {
+            b=59;
         }
         return String.valueOf(b);
     }
@@ -235,4 +262,5 @@ public class Time extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
+
 }

@@ -2,10 +2,9 @@ package ir.mseif.app.com.fzm.Services;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,19 +14,13 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.androidnetworking.AndroidNetworking;
-import com.androidnetworking.common.Priority;
-import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.JSONArrayRequestListener;
+import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
-
-import org.json.JSONArray;
 
 import java.util.ArrayList;
 
@@ -36,13 +29,11 @@ import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
-import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
 import ir.mseif.app.com.fzm.Model.AntenaModel;
 import ir.mseif.app.com.fzm.R;
-import ir.mseif.app.com.fzm.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Antenna extends AppCompatActivity {
@@ -147,20 +138,69 @@ public class Antenna extends AppCompatActivity {
 
 
         btn_accept.setOnClickListener(v -> {
-            Intent antena_intent = new Intent(Antenna.this,Time.class);
-            antena_intent.putExtra("name", "antena");
-            AntenaModel.service_antenna_job = antenJobText;
-            AntenaModel.service_antenna_number = asansor_num.getText().toString();
-            AntenaModel.service_antenna_address = etx_address.getText().toString();
-            AntenaModel.service_antenna_alley = etx_alley.getText() + "";
-            AntenaModel.service_antenna_plaque = etx_plaque.getText() + "";
-            AntenaModel.service_antenna_unit = etx_unit.getText().toString();
-            AntenaModel.service_antenna_text = etx_description_address.getText().toString();
-            AntenaModel.service_antenna_lat = lat;
-            AntenaModel.service_antenna_sat = lang;
-            AntenaModel.id = "1";
-            AntenaModel.state_id = "1";
-            startActivity(antena_intent);
+
+            if (Integer.parseInt((asansor_num.getText().toString())) == 0){
+                SnackbarUtil.setSnackBarWithNoActionButton(v,"تعداد واحد نمی تواند ۰ باشد",
+                        Color.rgb(255,255,255),
+                        Color.rgb(232,59,58)
+                        ,null,12, SnackbarUtil.RTL_DIRECTION);
+            }else{
+                if (etx_address.getText().toString().length() == 0){
+                    SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد آدرس نمی تواند خالی باشد",
+                            Color.rgb(255,255,255),
+                            Color.rgb(232,59,58)
+                            ,null,12, SnackbarUtil.RTL_DIRECTION);
+
+                }else{
+                    if (etx_alley.getText().toString().length() == 0){
+                        SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد کوچه نمی تواند خالی باشد",
+                                Color.rgb(255,255,255),
+                                Color.rgb(232,59,58)
+                                ,null,12, SnackbarUtil.RTL_DIRECTION);
+
+                    }else{
+                        if(etx_plaque.getText().toString().length() == 0){
+                            SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد پلاک نمی تواند خالی باشد",
+                                    Color.rgb(255,255,255),
+                                    Color.rgb(232,59,58)
+                                    ,null,12, SnackbarUtil.RTL_DIRECTION);
+
+                        }else{
+                            if(etx_unit.getText().toString().length() == 0){
+                                SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد واحد نمی تواند خالی باشد",
+                                        Color.rgb(255,255,255),
+                                        Color.rgb(232,59,58)
+                                        ,null,12, SnackbarUtil.RTL_DIRECTION);
+
+                            }else{
+                                if(etx_description_address.getText().toString().length() == 0){
+                                    SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد توضیحات نمی تواند خالی باشد",
+                                            Color.rgb(255,255,255),
+                                            Color.rgb(232,59,58)
+                                            ,null,12, SnackbarUtil.RTL_DIRECTION);
+
+                                }else{
+                                    Intent antena_intent = new Intent(Antenna.this,Time.class);
+                                    antena_intent.putExtra("name", "antena");
+                                    AntenaModel.service_antenna_job = antenJobText;
+                                    AntenaModel.service_antenna_number = asansor_num.getText().toString();
+                                    AntenaModel.service_antenna_address = etx_address.getText().toString();
+                                    AntenaModel.service_antenna_alley = etx_alley.getText() + "";
+                                    AntenaModel.service_antenna_plaque = etx_plaque.getText() + "";
+                                    AntenaModel.service_antenna_unit = etx_unit.getText().toString();
+                                    AntenaModel.service_antenna_text = etx_description_address.getText().toString();
+                                    AntenaModel.service_antenna_lat = lat;
+                                    AntenaModel.service_antenna_sat = lang;
+                                    AntenaModel.id = "1";
+                                    AntenaModel.state_id = "1";
+                                    startActivity(antena_intent);
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         });
 
 

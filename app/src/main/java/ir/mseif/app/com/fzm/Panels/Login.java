@@ -2,6 +2,7 @@ package ir.mseif.app.com.fzm.Panels;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,8 @@ import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.bvapp.directionalsnackbar.SnackbarUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,7 +40,10 @@ public class Login extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),Sms.class);
                 startActivity(intent);
             }else {
-                Toast.makeText(Login.this, "Wrong Number", Toast.LENGTH_SHORT).show();
+                SnackbarUtil.setSnackBarWithNoActionButton(v,"شماره همراه نامعتبر است",
+                        Color.rgb(255,255,255),
+                        Color.rgb(232,59,58),
+                        null,12, SnackbarUtil.RTL_DIRECTION);
             }
         });
 
