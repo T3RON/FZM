@@ -606,7 +606,6 @@
             android:background="@drawable/style_asansor_corner"
             android:drawableStart="@drawable/ic_arrow_left_blue"
             android:gravity="right"
-            android:onClick="GoToTime"
             android:paddingStart="15dp"
             android:paddingTop="@dimen/dimen_lvl2"
             android:paddingEnd="15dp"

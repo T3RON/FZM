@@ -86,116 +86,87 @@ public class Time extends AppCompatActivity {
 
 
 
-        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id = menuItem.getItemId();
+        nav_view.setNavigationItemSelectedListener(menuItem -> {
+            int id = menuItem.getItemId();
 
-                if(id == R.id.profile){
-                    Intent intent = new Intent(getApplicationContext(), Profile.class);
-                    startActivity(intent);
-                }else if(id == R.id.lastservice){
-                    Intent intent = new Intent(getApplicationContext(), History.class);
-                    startActivity(intent);
-                }else if(id == R.id.wallet){
-                    Intent intent = new Intent(getApplicationContext(), Wallet.class);
-                    startActivity(intent);
-                }else if(id == R.id.contact){
-                    Intent intent = new Intent(getApplicationContext(), Contact.class);
-                    startActivity(intent);
-                }else if(id == R.id.about){
-                    Intent intent = new Intent(getApplicationContext(), About.class);
-                    startActivity(intent);
-                }else if(id == R.id.exit_app){
-                }
+            if(id == R.id.profile){
+                Intent intent = new Intent(getApplicationContext(), Profile.class);
+                startActivity(intent);
+            }else if(id == R.id.lastservice){
+                Intent intent = new Intent(getApplicationContext(), History.class);
+                startActivity(intent);
+            }else if(id == R.id.wallet){
+                Intent intent = new Intent(getApplicationContext(), Wallet.class);
+                startActivity(intent);
+            }else if(id == R.id.contact){
+                Intent intent = new Intent(getApplicationContext(), Contact.class);
+                startActivity(intent);
+            }else if(id == R.id.about){
+                Intent intent = new Intent(getApplicationContext(), About.class);
+                startActivity(intent);
+            }else if(id == R.id.exit_app){
+            }
 
 
-                return true;
+            return true;
+        });
+
+
+        btn_nav.setOnClickListener(v -> {
+            if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+                drawerLayout.closeDrawer(Gravity.RIGHT);
+            } else {
+                drawerLayout.openDrawer(Gravity.RIGHT);
             }
         });
 
 
-        btn_nav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
-                    drawerLayout.closeDrawer(Gravity.RIGHT);
-                } else {
-                    drawerLayout.openDrawer(Gravity.RIGHT);
-                }
-            }
+        place_other_day.setOnClickListener(v -> {
+
+            PersianCalendar now = new PersianCalendar();
+            DatePickerDialog datePickerDialog = DatePickerDialog.newInstance((view, year, monthOfYear, dayOfMonth) -> {
+                txt_date_picker.setText("تاریخ : "  + year + "/" + monthOfYear + "/" + dayOfMonth);
+                date = year + "/" + monthOfYear + "/" + dayOfMonth;
+            }, now.getPersianYear(),
+                    now.getPersianMonth(),
+                    now.getPersianDay());
+
+            datePickerDialog.setThemeDark(false);
+            datePickerDialog.show(getFragmentManager(), "tpd");
+
         });
 
 
-        place_other_day.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                PersianCalendar now = new PersianCalendar();
-                DatePickerDialog datePickerDialog = DatePickerDialog.newInstance(new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-                    txt_date_picker.setText("تاریخ : "  + year + "/" + monthOfYear + "/" + dayOfMonth);
-                    date = year + "/" + monthOfYear + "/" + dayOfMonth;
-                }
-                }, now.getPersianYear(),
-                        now.getPersianMonth(),
-                        now.getPersianDay());
-
-                datePickerDialog.setThemeDark(false);
-                datePickerDialog.show(getFragmentManager(), "tpd");
-
-            }
+        hour_up.setOnClickListener(v -> {
+            String A = INC(String.valueOf(txt_h.getText()));
+            txt_h.setText(A);
+            h = A;
         });
 
 
-        hour_up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String A = INC(String.valueOf(txt_h.getText()));
-                txt_h.setText(A);
-                h = A;
-            }
+        hour_down.setOnClickListener(v -> {
+            String A = DEC(String.valueOf(txt_h.getText()));
+            txt_h.setText(A);
+            h = A;
         });
 
 
-        hour_down.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String A = DEC(String.valueOf(txt_h.getText()));
-                txt_h.setText(A);
-                h = A;
-            }
+        minute_up.setOnClickListener(v -> {
+            String A = INC(String.valueOf(txt_m.getText()));
+            txt_m.setText(A);
+            m = A;
         });
 
 
-        minute_up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String A = INC(String.valueOf(txt_m.getText()));
-                txt_m.setText(A);
-                m = A;
-            }
-        });
-
-
-        minute_down.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String A = DEC(String.valueOf(txt_m.getText()));
-                txt_m.setText(A);
-                m = A;
-            }
+        minute_down.setOnClickListener(v -> {
+            String A = DEC(String.valueOf(txt_m.getText()));
+            txt_m.setText(A);
+            m = A;
         });
 
 
 
-        btn_accept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AntenaPost();
-            }
-        });
+        btn_accept.setOnClickListener(v -> AntenaPost());
 
         Log.i("sdas" , AntenaModel.service_antenna_job+"");
         Log.i("sdas" , AntenaModel.service_antenna_number+"");

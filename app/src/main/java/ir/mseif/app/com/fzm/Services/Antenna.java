@@ -64,10 +64,8 @@ public class Antenna extends AppCompatActivity {
     @BindView(R.id.etx_plaque) EditText etx_plaque;
     @BindView(R.id.etx_description_address) EditText etx_description_address;
     @BindView(R.id.btn_accept) Button btn_accept;
-    @BindView(R.id.drawer_antenna)
-    DrawerLayout drawerLayout;
-    @BindView(R.id.nav_view)
-    NavigationView nav_view;
+    @BindView(R.id.drawer_antenna) DrawerLayout drawerLayout;
+    @BindView(R.id.nav_view) NavigationView nav_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,87 +95,72 @@ public class Antenna extends AppCompatActivity {
 
 
 
-        Inc_number.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String A = INC(String.valueOf(asansor_num.getText()));
-                asansor_num.setText(A);
-            }
+        Inc_number.setOnClickListener(v -> {
+            String A = INC(String.valueOf(asansor_num.getText()));
+            asansor_num.setText(A);
         });
 
 
-        Dec_number.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String A = DEC(String.valueOf(asansor_num.getText()));
-                asansor_num.setText(A);
-            }
+        Dec_number.setOnClickListener(v -> {
+            String A = DEC(String.valueOf(asansor_num.getText()));
+            asansor_num.setText(A);
         });
 
 
         AntenJobs();
 
 
-        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id = menuItem.getItemId();
+        nav_view.setNavigationItemSelectedListener(menuItem -> {
+            int id = menuItem.getItemId();
 
-                if(id == R.id.profile){
-                    Intent intent = new Intent(getApplicationContext(), Profile.class);
-                    startActivity(intent);
-                }else if(id == R.id.lastservice){
-                    Intent intent = new Intent(getApplicationContext(), History.class);
-                    startActivity(intent);
-                }else if(id == R.id.wallet){
-                    Intent intent = new Intent(getApplicationContext(), Wallet.class);
-                    startActivity(intent);
-                }else if(id == R.id.contact){
-                    Intent intent = new Intent(getApplicationContext(), Contact.class);
-                    startActivity(intent);
-                }else if(id == R.id.about){
-                    Intent intent = new Intent(getApplicationContext(), About.class);
-                    startActivity(intent);
-                }else if(id == R.id.exit_app){
-                }
-
-
-                return true;
+            if(id == R.id.profile){
+                Intent intent = new Intent(getApplicationContext(), Profile.class);
+                startActivity(intent);
+            }else if(id == R.id.lastservice){
+                Intent intent = new Intent(getApplicationContext(), History.class);
+                startActivity(intent);
+            }else if(id == R.id.wallet){
+                Intent intent = new Intent(getApplicationContext(), Wallet.class);
+                startActivity(intent);
+            }else if(id == R.id.contact){
+                Intent intent = new Intent(getApplicationContext(), Contact.class);
+                startActivity(intent);
+            }else if(id == R.id.about){
+                Intent intent = new Intent(getApplicationContext(), About.class);
+                startActivity(intent);
+            }else if(id == R.id.exit_app){
             }
+
+
+            return true;
         });
 
 
-        btn_nav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
-                    drawerLayout.closeDrawer(Gravity.RIGHT);
-                } else {
-                    drawerLayout.openDrawer(Gravity.RIGHT);
-                }
+        btn_nav.setOnClickListener(v -> {
+            if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+                drawerLayout.closeDrawer(Gravity.RIGHT);
+            } else {
+                drawerLayout.openDrawer(Gravity.RIGHT);
             }
         });
 
 
 
-        btn_accept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent antena_intent = new Intent(Antenna.this,Time.class);
-                antena_intent.putExtra("name", "antena");
-                AntenaModel.service_antenna_job = antenJobText;
-                AntenaModel.service_antenna_number = asansor_num.getText().toString();
-                AntenaModel.service_antenna_address = etx_address.getText().toString();
-                AntenaModel.service_antenna_alley = etx_alley.getText() + "";
-                AntenaModel.service_antenna_plaque = etx_plaque.getText() + "";
-                AntenaModel.service_antenna_unit = etx_unit.getText().toString();
-                AntenaModel.service_antenna_text = etx_description_address.getText().toString();
-                AntenaModel.service_antenna_lat = lat;
-                AntenaModel.service_antenna_sat = lang;
-                AntenaModel.id = "1";
-                AntenaModel.state_id = "1";
-                startActivity(antena_intent);
-            }
+        btn_accept.setOnClickListener(v -> {
+            Intent antena_intent = new Intent(Antenna.this,Time.class);
+            antena_intent.putExtra("name", "antena");
+            AntenaModel.service_antenna_job = antenJobText;
+            AntenaModel.service_antenna_number = asansor_num.getText().toString();
+            AntenaModel.service_antenna_address = etx_address.getText().toString();
+            AntenaModel.service_antenna_alley = etx_alley.getText() + "";
+            AntenaModel.service_antenna_plaque = etx_plaque.getText() + "";
+            AntenaModel.service_antenna_unit = etx_unit.getText().toString();
+            AntenaModel.service_antenna_text = etx_description_address.getText().toString();
+            AntenaModel.service_antenna_lat = lat;
+            AntenaModel.service_antenna_sat = lang;
+            AntenaModel.id = "1";
+            AntenaModel.state_id = "1";
+            startActivity(antena_intent);
         });
 
 
@@ -206,13 +189,6 @@ public class Antenna extends AppCompatActivity {
         return String.valueOf(b);
     }
 
-
-    // Go To Time Activity
-    public void GoToLocation(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "antena");
-        startActivity(intent);
-    }
 
 
 

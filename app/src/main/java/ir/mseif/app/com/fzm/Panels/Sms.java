@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -23,6 +24,7 @@ public class Sms extends AppCompatActivity {
 
     @BindView(R.id.btn_verify) Button btn_sms;
     @BindView(R.id.etx_verify) EditText etx_verify;
+    @BindView(R.id.txt_send_again) TextView txt_send_again;
 
 
     @Override
@@ -32,25 +34,22 @@ public class Sms extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-    btn_sms.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
+    btn_sms.setOnClickListener(v -> {
 
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    });
+
+    txt_send_again.setOnClickListener(v -> {
+        Toast.makeText(this, "Sending SMS Verification", Toast.LENGTH_SHORT).show();
+
     });
 
 
 
-
     }
 
 
-    // Send SMS Verification Again
-    public void SendAgain(View v){
-        Toast.makeText(this, "Sending SMS Verification", Toast.LENGTH_SHORT).show();
-    }
 
 
     @Override

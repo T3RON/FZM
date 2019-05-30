@@ -31,9 +31,7 @@ public class Login extends AppCompatActivity {
 
 
 
-        btn_sms.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
+        btn_sms.setOnClickListener(v -> {
             String Num = String.valueOf(editText.getText());
             if(Num.length() == 11 && Num.startsWith("09")){
                 Intent intent = new Intent(getApplicationContext(),Sms.class);
@@ -41,8 +39,7 @@ public class Login extends AppCompatActivity {
             }else {
                 Toast.makeText(Login.this, "Wrong Number", Toast.LENGTH_SHORT).show();
             }
-        }
-    });
+        });
 
 
     }
