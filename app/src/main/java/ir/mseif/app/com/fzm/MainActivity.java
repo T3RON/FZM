@@ -8,23 +8,29 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.mohamadamin.persianmaterialdatetimepicker.date.DatePickerDialog;
 import com.mohamadamin.persianmaterialdatetimepicker.utils.PersianCalendar;
 
 
+import butterknife.BindView;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
 import ir.mseif.app.com.fzm.Activity.Map;
+import ir.mseif.app.com.fzm.Activity.PayForService;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Wallet;
 import ir.mseif.app.com.fzm.Utils.Global;
@@ -36,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,45 +68,39 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id = menuItem.getItemId();
+        nav_view.setNavigationItemSelectedListener(menuItem -> {
+            int id = menuItem.getItemId();
 
-                if(id == R.id.profile){
-                    Intent intent = new Intent(getApplicationContext(), Profile.class);
-                    startActivity(intent);
-                }else if(id == R.id.lastservice){
-                    Intent intent = new Intent(getApplicationContext(), History.class);
-                    startActivity(intent);
-                }else if(id == R.id.wallet){
-                    Intent intent = new Intent(getApplicationContext(), Wallet.class);
-                    startActivity(intent);
-                }else if(id == R.id.contact){
-                    Intent intent = new Intent(getApplicationContext(), Contact.class);
-                    startActivity(intent);
-                }else if(id == R.id.about){
-                    Intent intent = new Intent(getApplicationContext(), About.class);
-                    startActivity(intent);
-                }else if(id == R.id.exit_app){
-                }
-
-
-                return true;
+            if(id == R.id.profile){
+                Intent intent = new Intent(getApplicationContext(), Profile.class);
+                startActivity(intent);
+            }else if(id == R.id.lastservice){
+                Intent intent = new Intent(getApplicationContext(), History.class);
+                startActivity(intent);
+            }else if(id == R.id.wallet){
+                Intent intent = new Intent(getApplicationContext(), Wallet.class);
+                startActivity(intent);
+            }else if(id == R.id.contact){
+                Intent intent = new Intent(getApplicationContext(), Contact.class);
+                startActivity(intent);
+            }else if(id == R.id.about){
+                Intent intent = new Intent(getApplicationContext(), About.class);
+                startActivity(intent);
+            }else if(id == R.id.exit_app){
+                Intent intent = new Intent(getApplicationContext(), PayForService.class);
+                startActivity(intent);
             }
+
+
+            return true;
         });
 
 
-        btn_nav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
-                    drawerLayout.closeDrawer(Gravity.RIGHT);
-                } else {
-                    drawerLayout.openDrawer(Gravity.RIGHT);
-                }
-            }
+        btn_nav.setOnClickListener(v -> {
+            Snackbar snackbar = Snackbar.make(drawerLayout, "Simple Snackbar", Snackbar.LENGTH_LONG);
+            snackbar.show();
         });
+
     }
 
 
@@ -119,9 +120,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Map.class);
         intent.putExtra("name", "iphon");
         startActivity(intent);
-
-
-
     }
 
     // Go to Asansor Page
@@ -169,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
     // Go to Antenna Page
     public void PageAntenna(View v){
         Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "antena");
+        intent.putExtra("name", "antenna");
         startActivity(intent);
     }
 
@@ -207,7 +205,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("name", "chandelier");
         startActivity(intent);
     }
-
     // Go to Socket Page
     public void PageSocket(View v){
         Intent intent = new Intent(getApplicationContext(), Map.class);
@@ -216,7 +213,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+//    Snackbar snackbar = Snackbar
+//            .make(drawerLayout, "No internet connection!", Snackbar.LENGTH_LONG)
+//            .setAction("RETRY", new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                }
+//            });
+//
+//    // Changing message text color
+//        snackbar.setActionTextColor(Color.RED);
+//
+//    // Changing action button text color
+//    View sbView = snackbar.getView();
+//    TextView textView = (TextView) sbView.findViewById(R.id.snackbar_text);
+//        textView.setTextColor(Color.YELLOW);
+//
+//        snackbar.show();
 
 
 

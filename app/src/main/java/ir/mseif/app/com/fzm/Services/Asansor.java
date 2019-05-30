@@ -30,6 +30,7 @@ import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
+import ir.mseif.app.com.fzm.Model.AntenaModel;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -39,6 +40,7 @@ public class Asansor extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
+    String lat,lang;
 
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
     @BindView(R.id.imgbtn_down) ImageButton Dec_number;
@@ -70,24 +72,24 @@ public class Asansor extends AppCompatActivity {
         setContentView(R.layout.activity_asansor);
         ButterKnife.bind(this);
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            lat = bundle.getString("lat");
+            lang = bundle.getString("lang");
+        }
 
 
 
-        Inc_number.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String A = INC(String.valueOf(asansor_num.getText()));
-                asansor_num.setText(A);
-            }
+
+        Inc_number.setOnClickListener(v -> {
+            String A = INC(String.valueOf(asansor_num.getText()));
+            asansor_num.setText(A);
         });
 
 
-        Dec_number.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String A = DEC(String.valueOf(asansor_num.getText()));
-                asansor_num.setText(A);
-            }
+        Dec_number.setOnClickListener(v -> {
+            String A = DEC(String.valueOf(asansor_num.getText()));
+            asansor_num.setText(A);
         });
 
 
@@ -118,44 +120,43 @@ public class Asansor extends AppCompatActivity {
 
 
 
-        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id = menuItem.getItemId();
+        nav_view.setNavigationItemSelectedListener(menuItem -> {
+            int id = menuItem.getItemId();
 
-                if(id == R.id.profile){
-                    Intent intent = new Intent(getApplicationContext(), Profile.class);
-                    startActivity(intent);
-                }else if(id == R.id.lastservice){
-                    Intent intent = new Intent(getApplicationContext(), History.class);
-                    startActivity(intent);
-                }else if(id == R.id.wallet){
-                    Intent intent = new Intent(getApplicationContext(), Wallet.class);
-                    startActivity(intent);
-                }else if(id == R.id.contact){
-                    Intent intent = new Intent(getApplicationContext(), Contact.class);
-                    startActivity(intent);
-                }else if(id == R.id.about){
-                    Intent intent = new Intent(getApplicationContext(), About.class);
-                    startActivity(intent);
-                }else if(id == R.id.exit_app){
-                }
-
-
-                return true;
+            if(id == R.id.profile){
+                Intent intent = new Intent(getApplicationContext(), Profile.class);
+                startActivity(intent);
+            }else if(id == R.id.lastservice){
+                Intent intent = new Intent(getApplicationContext(), History.class);
+                startActivity(intent);
+            }else if(id == R.id.wallet){
+                Intent intent = new Intent(getApplicationContext(), Wallet.class);
+                startActivity(intent);
+            }else if(id == R.id.contact){
+                Intent intent = new Intent(getApplicationContext(), Contact.class);
+                startActivity(intent);
+            }else if(id == R.id.about){
+                Intent intent = new Intent(getApplicationContext(), About.class);
+                startActivity(intent);
+            }else if(id == R.id.exit_app){
             }
+
+
+            return true;
         });
 
 
-        btn_nav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
-                    drawerLayout.closeDrawer(Gravity.RIGHT);
-                } else {
-                    drawerLayout.openDrawer(Gravity.RIGHT);
-                }
+        btn_nav.setOnClickListener(v -> {
+            if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+                drawerLayout.closeDrawer(Gravity.RIGHT);
+            } else {
+                drawerLayout.openDrawer(Gravity.RIGHT);
             }
+
+
+        });btn_accept.setOnClickListener(v -> {
+            Intent antena_intent = new Intent(Asansor.this,Time.class);
+            startActivity(antena_intent);
         });
 
     }
@@ -181,20 +182,6 @@ public class Asansor extends AppCompatActivity {
     }
 
 
-    // Go To Time Activity
-    public void GoToLocation (View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        startActivity(intent);
-    }
-
-
-
-
-    // Go To Time Activity
-    public void GoToTime (View v){
-        Intent intent = new Intent(getApplicationContext(), Time.class);
-        startActivity(intent);
-    }
 
 
     @Override

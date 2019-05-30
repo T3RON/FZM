@@ -32,6 +32,19 @@ import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.R;
 import ir.mseif.app.com.fzm.Services.Antenna;
 import ir.mseif.app.com.fzm.Services.Asansor;
+import ir.mseif.app.com.fzm.Services.Camera;
+import ir.mseif.app.com.fzm.Services.Chandelier;
+import ir.mseif.app.com.fzm.Services.Cooler;
+import ir.mseif.app.com.fzm.Services.ElectronicDevice;
+import ir.mseif.app.com.fzm.Services.ElectronicPanel;
+import ir.mseif.app.com.fzm.Services.Generator;
+import ir.mseif.app.com.fzm.Services.Iphon;
+import ir.mseif.app.com.fzm.Services.Lighting;
+import ir.mseif.app.com.fzm.Services.Santeral;
+import ir.mseif.app.com.fzm.Services.Security;
+import ir.mseif.app.com.fzm.Services.ShutterDoor;
+import ir.mseif.app.com.fzm.Services.Socket;
+import ir.mseif.app.com.fzm.Services.Wiring;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Map extends AppCompatActivity implements OnMapReadyCallback {
@@ -83,68 +96,149 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         btn_nav = findViewById(R.id.btn_nav);
 
 
-        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id = menuItem.getItemId();
+        nav_view.setNavigationItemSelectedListener(menuItem -> {
+            int id = menuItem.getItemId();
 
-                if (id == R.id.profile) {
-                    Intent intent = new Intent(getApplicationContext(), Profile.class);
-                    startActivity(intent);
-                } else if (id == R.id.lastservice) {
-                    Intent intent = new Intent(getApplicationContext(), History.class);
-                    startActivity(intent);
-                } else if (id == R.id.wallet) {
-                    Intent intent = new Intent(getApplicationContext(), Wallet.class);
-                    startActivity(intent);
-                } else if (id == R.id.contact) {
-                    Intent intent = new Intent(getApplicationContext(), Contact.class);
-                    startActivity(intent);
-                } else if (id == R.id.about) {
-                    Intent intent = new Intent(getApplicationContext(), About.class);
-                    startActivity(intent);
-                } else if (id == R.id.exit_app) {
-                }
+            if (id == R.id.profile) {
+                Intent intent = new Intent(getApplicationContext(), Profile.class);
+                startActivity(intent);
+            } else if (id == R.id.lastservice) {
+                Intent intent = new Intent(getApplicationContext(), History.class);
+                startActivity(intent);
+            } else if (id == R.id.wallet) {
+                Intent intent = new Intent(getApplicationContext(), Wallet.class);
+                startActivity(intent);
+            } else if (id == R.id.contact) {
+                Intent intent = new Intent(getApplicationContext(), Contact.class);
+                startActivity(intent);
+            } else if (id == R.id.about) {
+                Intent intent = new Intent(getApplicationContext(), About.class);
+                startActivity(intent);
+            } else if (id == R.id.exit_app) {
+            }
 
 
-                return true;
+            return true;
+        });
+
+
+        btn_nav.setOnClickListener(v -> {
+            if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+                drawerLayout.closeDrawer(Gravity.RIGHT);
+            } else {
+                drawerLayout.openDrawer(Gravity.RIGHT);
             }
         });
 
-
-        btn_nav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
-                    drawerLayout.closeDrawer(Gravity.RIGHT);
-                } else {
-                    drawerLayout.openDrawer(Gravity.RIGHT);
+        btn_accept.setOnClickListener(v -> {
+                switch(type) {
+                    case "antenna":
+                        Intent antenna = new Intent(getApplicationContext(), Antenna.class);
+                        antenna.putExtra("lat", lat);
+                        antenna.putExtra("lang", lang);
+                        startActivity(antenna);
+                        finish();
+                        break;
+                    case "asansor":
+                        Intent asansor = new Intent(getApplicationContext(), Asansor.class);
+                        asansor.putExtra("lat", lat);
+                        asansor.putExtra("lang", lang);
+                        startActivity(asansor);
+                        finish();
+                        break;
+                    case "camera":
+                        Intent camera = new Intent(getApplicationContext(), Camera.class);
+                        camera.putExtra("lat", lat);
+                        camera.putExtra("lang", lang);
+                        startActivity(camera);
+                        finish();
+                        break;
+                    case "chandelier":
+                        Intent chandelier = new Intent(getApplicationContext(), Chandelier.class);
+                        chandelier.putExtra("lat", lat);
+                        chandelier.putExtra("lang", lang);
+                        startActivity(chandelier);
+                        finish();
+                        break;
+                    case "cooler":
+                        Intent cooler = new Intent(getApplicationContext(), Cooler.class);
+                        cooler.putExtra("lat", lat);
+                        cooler.putExtra("lang", lang);
+                        startActivity(cooler);
+                        finish();
+                        break;
+                    case "electronicdevice":
+                        Intent electronicDevice = new Intent(getApplicationContext(), ElectronicDevice.class);
+                        electronicDevice.putExtra("lat", lat);
+                        electronicDevice.putExtra("lang", lang);
+                        startActivity(electronicDevice);
+                        finish();
+                        break;
+                    case "electronicpanel":
+                        Intent electronicPanel = new Intent(getApplicationContext(), ElectronicPanel.class);
+                        electronicPanel.putExtra("lat", lat);
+                        electronicPanel.putExtra("lang", lang);
+                        startActivity(electronicPanel);
+                        finish();
+                        break;
+                    case "generator":
+                        Intent generator = new Intent(getApplicationContext(), Generator.class);
+                        generator.putExtra("lat", lat);
+                        generator.putExtra("lang", lang);
+                        startActivity(generator);
+                        finish();
+                        break;
+                    case "iphon":
+                        Intent iphon = new Intent(getApplicationContext(), Iphon.class);
+                        iphon.putExtra("lat", lat);
+                        iphon.putExtra("lang", lang);
+                        startActivity(iphon);
+                        finish();
+                        break;
+                    case "lighting":
+                        Intent lighting = new Intent(getApplicationContext(), Lighting.class);
+                        lighting.putExtra("lat", lat);
+                        lighting.putExtra("lang", lang);
+                        startActivity(lighting);
+                        finish();
+                        break;
+                    case "santeral":
+                        Intent santeral = new Intent(getApplicationContext(), Santeral.class);
+                        santeral.putExtra("lat", lat);
+                        santeral.putExtra("lang", lang);
+                        startActivity(santeral);
+                        finish();
+                        break;
+                    case "security":
+                        Intent security = new Intent(getApplicationContext(), Security.class);
+                        security.putExtra("lat", lat);
+                        security.putExtra("lang", lang);
+                        startActivity(security);
+                        finish();
+                        break;
+                    case "shutterDoor":
+                        Intent shutterDoor = new Intent(getApplicationContext(), ShutterDoor.class);
+                        shutterDoor.putExtra("lat", lat);
+                        shutterDoor.putExtra("lang", lang);
+                        startActivity(shutterDoor);
+                        finish();
+                        break;
+                    case "socket":
+                        Intent socket = new Intent(getApplicationContext(), Socket.class);
+                        socket.putExtra("lat", lat);
+                        socket.putExtra("lang", lang);
+                        startActivity(socket);
+                        finish();
+                        break;
+                    case "wiring":
+                        Intent wiring = new Intent(getApplicationContext(), Wiring.class);
+                        wiring.putExtra("lat", lat);
+                        wiring.putExtra("lang", lang);
+                        startActivity(wiring);
+                        finish();
+                        break;
                 }
-            }
-        });
-
-        btn_accept.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    switch(type) {
-                        case "antena":
-                            Intent antena = new Intent(getApplicationContext(), Antenna.class);
-                            antena.putExtra("lat", lat);
-                            antena.putExtra("lang", lang);
-                            startActivity(antena);
-                            finish();
-                            break;
-                        case "asansor":
-                            Intent asansor = new Intent(getApplicationContext(), Asansor.class);
-                            startActivity(asansor);
-                            asansor.putExtra("lat", lat);
-                            asansor.putExtra("lang", lang);
-                            startActivity(asansor);
-                            finish();
-                            break;
-                    }
-                }
-        });
+            });
 
         //--------------------------------------------- Map ----------------------------------
 
@@ -180,20 +274,16 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
         gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
 
 
-        gmap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-
-            @Override
-            public void onMapClick(LatLng latLng) {
-                MarkerOptions markerOptions = new MarkerOptions();
-                markerOptions.icon(BitmapDescriptorFactory.fromBitmap(smallMarker));
-                markerOptions.position(latLng);
-                lat = latLng.latitude + "";
-                lang = latLng.longitude + "";
-                gmap.clear();
-                markerOptions.title(lat + " : " + lang);
-                gmap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-                gmap.addMarker(markerOptions);
-            }
+        gmap.setOnMapClickListener(latLng -> {
+            MarkerOptions markerOptions1 = new MarkerOptions();
+            markerOptions1.icon(BitmapDescriptorFactory.fromBitmap(smallMarker));
+            markerOptions1.position(latLng);
+            lat = latLng.latitude + "";
+            lang = latLng.longitude + "";
+            gmap.clear();
+            markerOptions1.title(lat + " : " + lang);
+            gmap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+            gmap.addMarker(markerOptions1);
         });
 
     }

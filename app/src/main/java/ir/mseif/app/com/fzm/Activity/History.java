@@ -58,43 +58,37 @@ public class History extends AppCompatActivity {
 
 
 
-        nav_view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id = menuItem.getItemId();
+        nav_view.setNavigationItemSelectedListener(menuItem -> {
+            int id = menuItem.getItemId();
 
-                if(id == R.id.profile){
-                    Intent intent = new Intent(getApplicationContext(), Profile.class);
-                    startActivity(intent);
-                }else if(id == R.id.lastservice){
-                    Intent intent = new Intent(getApplicationContext(), History.class);
-                    startActivity(intent);
-                }else if(id == R.id.wallet){
-                    Intent intent = new Intent(getApplicationContext(), Wallet.class);
-                    startActivity(intent);
-                }else if(id == R.id.contact){
-                    Intent intent = new Intent(getApplicationContext(), Contact.class);
-                    startActivity(intent);
-                }else if(id == R.id.about){
-                    Intent intent = new Intent(getApplicationContext(), About.class);
-                    startActivity(intent);
-                }else if(id == R.id.exit_app){
-                }
-
-
-                return true;
+            if(id == R.id.profile){
+                Intent intent = new Intent(getApplicationContext(), Profile.class);
+                startActivity(intent);
+            }else if(id == R.id.lastservice){
+                Intent intent = new Intent(getApplicationContext(), History.class);
+                startActivity(intent);
+            }else if(id == R.id.wallet){
+                Intent intent = new Intent(getApplicationContext(), Wallet.class);
+                startActivity(intent);
+            }else if(id == R.id.contact){
+                Intent intent = new Intent(getApplicationContext(), Contact.class);
+                startActivity(intent);
+            }else if(id == R.id.about){
+                Intent intent = new Intent(getApplicationContext(), About.class);
+                startActivity(intent);
+            }else if(id == R.id.exit_app){
             }
+
+
+            return true;
         });
 
 
-        btn_nav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
-                    drawerLayout.closeDrawer(Gravity.RIGHT);
-                } else {
-                    drawerLayout.openDrawer(Gravity.RIGHT);
-                }
+        btn_nav.setOnClickListener(v -> {
+            if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+                drawerLayout.closeDrawer(Gravity.RIGHT);
+            } else {
+                drawerLayout.openDrawer(Gravity.RIGHT);
             }
         });
     }
