@@ -46,6 +46,7 @@ public class Asansor extends AppCompatActivity {
 
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
     @BindView(R.id.imgbtn_down) ImageButton Dec_number;
+    @BindView(R.id.txt_number) TextView txt_number;
 
     @BindView(R.id.cb_nasb) CheckBox cb_nasb;
     @BindView(R.id.cb_repair) CheckBox cb_repair;
