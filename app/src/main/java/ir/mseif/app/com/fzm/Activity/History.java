@@ -29,8 +29,7 @@ public class History extends AppCompatActivity {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
-    @BindView(R.id.rcy_history)
-    RecyclerView rcy_history;
+    @BindView(R.id.rcy_history) RecyclerView rcy_history;
 
 
     @Override

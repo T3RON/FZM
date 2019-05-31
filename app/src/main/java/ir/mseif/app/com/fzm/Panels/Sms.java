@@ -56,7 +56,6 @@ public class Sms extends AppCompatActivity {
                 Color.rgb(255,255,255),
                 Color.rgb(35,144,3)
             ,null,12, SnackbarUtil.RTL_DIRECTION);
-
     });
 
 

@@ -6,15 +6,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,7 +29,6 @@ import org.json.JSONArray;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import ir.mseif.app.com.fzm.MainActivity;
 import ir.mseif.app.com.fzm.Model.AntenaModel;
 import ir.mseif.app.com.fzm.R;
 import ir.mseif.app.com.fzm.Utils.Global;
@@ -47,7 +42,6 @@ public class Time extends AppCompatActivity {
     String date,h,m;
 
     @BindView(R.id.txt_date_picker) TextView txt_date_picker;
-    @BindView(R.id.txt_other_day) TextView txt_other_day;
     @BindView(R.id.btn_accept) Button btn_accept;
     @BindView(R.id.place_other_day) ViewGroup place_other_day;
 

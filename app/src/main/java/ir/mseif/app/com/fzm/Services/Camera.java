@@ -124,56 +124,58 @@ public class Camera extends AppCompatActivity {
 
         btn_accept.setOnClickListener(v -> {
 
-            if (Integer.parseInt((cb_repair.getText().toString())) == 0){
-                SnackbarUtil.setSnackBarWithNoActionButton(v,"تعداد واحد نمی تواند ۰ باشد",
-                        Color.rgb(255,255,255),
-                        Color.rgb(232,59,58)
-                        ,null,12, SnackbarUtil.RTL_DIRECTION);
-            }else{
-                if (etx_address.getText().toString().length() == 0){
-                    SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد آدرس نمی تواند خالی باشد",
+           if ((!(cb_repair.isChecked())) &&
+                   (!(cb_nasb.isChecked())) &&
+                        (!(cb_tanzim.isChecked()))  ){
+                    SnackbarUtil.setSnackBarWithNoActionButton(v,"بخش خدمت درخواستی نمی تواند خالی باشد",
                             Color.rgb(255,255,255),
                             Color.rgb(232,59,58)
                             ,null,12, SnackbarUtil.RTL_DIRECTION);
 
                 }else{
-                    if (etx_alley.getText().toString().length() == 0){
-                        SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد کوچه نمی تواند خالی باشد",
-                                Color.rgb(255,255,255),
-                                Color.rgb(232,59,58)
-                                ,null,12, SnackbarUtil.RTL_DIRECTION);
+               if (etx_address.getText().toString().length() == 0) {
+                                SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد آدرس نمی تواند خالی باشد",
+                                        Color.rgb(255, 255, 255),
+                                        Color.rgb(232, 59, 58)
+                                        , null, 12, SnackbarUtil.RTL_DIRECTION);
 
-                    }else{
-                        if(etx_plaque.getText().toString().length() == 0){
-                            SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد پلاک نمی تواند خالی باشد",
-                                    Color.rgb(255,255,255),
-                                    Color.rgb(232,59,58)
-                                    ,null,12, SnackbarUtil.RTL_DIRECTION);
+                            } else {
+                   if (etx_alley.getText().toString().length() == 0) {
+                                    SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد کوچه نمی تواند خالی باشد",
+                                            Color.rgb(255, 255, 255),
+                                            Color.rgb(232, 59, 58)
+                                            , null, 12, SnackbarUtil.RTL_DIRECTION);
 
-                        }else{
-                            if(etx_unit.getText().toString().length() == 0){
-                                SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد واحد نمی تواند خالی باشد",
-                                        Color.rgb(255,255,255),
-                                        Color.rgb(232,59,58)
-                                        ,null,12, SnackbarUtil.RTL_DIRECTION);
+                                } else {
+                       if (etx_plaque.getText().toString().length() == 0) {
+                                        SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد پلاک نمی تواند خالی باشد",
+                                                Color.rgb(255, 255, 255),
+                                                Color.rgb(232, 59, 58)
+                                                , null, 12, SnackbarUtil.RTL_DIRECTION);
 
-                            }else{
-                                if(etx_description_address.getText().toString().length() == 0){
-                                    SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد توضیحات نمی تواند خالی باشد",
-                                            Color.rgb(255,255,255),
-                                            Color.rgb(232,59,58)
-                                            ,null,12, SnackbarUtil.RTL_DIRECTION);
+                                    } else {
+                           if (etx_unit.getText().toString().length() == 0) {
+                                            SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد واحد نمی تواند خالی باشد",
+                                                    Color.rgb(255, 255, 255),
+                                                    Color.rgb(232, 59, 58)
+                                                    , null, 12, SnackbarUtil.RTL_DIRECTION);
 
-                                }else{
-                                    Intent camera_intent = new Intent(Camera.this,Time.class);
-                                    startActivity(camera_intent);
+                                        } else {
+                               if (etx_description_address.getText().toString().length() == 0) {
+                                                SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد توضیحات نمی تواند خالی باشد",
+                                                        Color.rgb(255, 255, 255),
+                                                        Color.rgb(232, 59, 58)
+                                                        , null, 12, SnackbarUtil.RTL_DIRECTION);
 
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+                                            } else {
+                                   Intent camera_intent = new Intent(Camera.this, Time.class);
+                                   startActivity(camera_intent);
+                               }
+                           }
+                       }
+                   }
+               }
+           }
         });
 
     }

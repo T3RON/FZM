@@ -61,8 +61,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
 
-    @BindView(R.id.btn_accept)
-    Button btn_accept;
+    @BindView(R.id.btn_accept) Button btn_accept;
     String type;
 
     @Override
@@ -216,7 +215,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback {
                         startActivity(security);
                         finish();
                         break;
-                    case "shutterDoor":
+                    case "shutterdoor":
                         Intent shutterDoor = new Intent(getApplicationContext(), ShutterDoor.class);
                         shutterDoor.putExtra("lat", lat);
                         shutterDoor.putExtra("lang", lang);

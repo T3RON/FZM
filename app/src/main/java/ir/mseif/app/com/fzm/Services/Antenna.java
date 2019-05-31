@@ -47,7 +47,7 @@ public class Antenna extends AppCompatActivity {
     @BindView(R.id.spn_place) Spinner spn_place;
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
     @BindView(R.id.imgbtn_down) ImageButton Dec_number;
-    @BindView(R.id.txt_number) TextView asansor_num;
+    @BindView(R.id.txt_number) TextView txt_number;
 
     @BindView(R.id.etx_address) EditText etx_address;
     @BindView(R.id.etx_alley) EditText etx_alley;
@@ -87,14 +87,14 @@ public class Antenna extends AppCompatActivity {
 
 
         Inc_number.setOnClickListener(v -> {
-            String A = INC(String.valueOf(asansor_num.getText()));
-            asansor_num.setText(A);
+            String A = INC(String.valueOf(txt_number.getText()));
+            txt_number.setText(A);
         });
 
 
         Dec_number.setOnClickListener(v -> {
-            String A = DEC(String.valueOf(asansor_num.getText()));
-            asansor_num.setText(A);
+            String A = DEC(String.valueOf(txt_number.getText()));
+            txt_number.setText(A);
         });
 
 
@@ -139,7 +139,7 @@ public class Antenna extends AppCompatActivity {
 
         btn_accept.setOnClickListener(v -> {
 
-            if (Integer.parseInt((asansor_num.getText().toString())) == 0){
+            if (Integer.parseInt((txt_number.getText().toString())) == 0){
                 SnackbarUtil.setSnackBarWithNoActionButton(v,"تعداد واحد نمی تواند ۰ باشد",
                         Color.rgb(255,255,255),
                         Color.rgb(232,59,58)
@@ -183,7 +183,7 @@ public class Antenna extends AppCompatActivity {
                                     Intent antena_intent = new Intent(Antenna.this,Time.class);
                                     antena_intent.putExtra("name", "antena");
                                     AntenaModel.service_antenna_job = antenJobText;
-                                    AntenaModel.service_antenna_number = asansor_num.getText().toString();
+                                    AntenaModel.service_antenna_number = txt_number.getText().toString();
                                     AntenaModel.service_antenna_address = etx_address.getText().toString();
                                     AntenaModel.service_antenna_alley = etx_alley.getText() + "";
                                     AntenaModel.service_antenna_plaque = etx_plaque.getText() + "";

@@ -1,8 +1,8 @@
 package ir.mseif.app.com.fzm.Activity;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -15,15 +15,19 @@ import android.widget.TextView;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import ir.mseif.app.com.fzm.Model.AntenaModel;
 import ir.mseif.app.com.fzm.R;
+import ir.mseif.app.com.fzm.Services.Antenna;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Profile extends AppCompatActivity {
@@ -58,6 +62,7 @@ public class Profile extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
 
         NavigationView nav_view = findViewById(R.id.nav_view);
+
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.app_title);
@@ -100,6 +105,14 @@ public class Profile extends AppCompatActivity {
             } else {
                 drawerLayout.openDrawer(Gravity.RIGHT);
             }
+        });
+
+        btn_accept.setOnClickListener(v -> {
+            SnackbarUtil.setSnackBarWithNoActionButton(v,"تغییرات ثبت شد",
+                    Color.rgb(255,255,255),
+                    Color.rgb(35,144,3)
+                    ,null,12, SnackbarUtil.RTL_DIRECTION);
+
         });
     }
 
