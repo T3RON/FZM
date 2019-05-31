@@ -2,30 +2,23 @@ package ir.mseif.app.com.fzm;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
-import com.mohamadamin.persianmaterialdatetimepicker.date.DatePickerDialog;
-import com.mohamadamin.persianmaterialdatetimepicker.utils.PersianCalendar;
 
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
@@ -33,10 +26,26 @@ import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.Activity.PayForService;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Wallet;
-import ir.mseif.app.com.fzm.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    @BindView(R.id.place_antenna) CardView place_antenna;
+    @BindView(R.id.place_asansor) CardView place_asansor;
+    @BindView(R.id.place_camera) CardView place_camera;
+    @BindView(R.id.place_chandelier) CardView place_chandelier;
+    @BindView(R.id.place_cooler) CardView place_cooler;
+    @BindView(R.id.place_electronicdevice) CardView place_electronicdevice;
+    @BindView(R.id.place_electronicpanel) CardView place_electronicpanel;
+    @BindView(R.id.place_generator) CardView place_generator;
+    @BindView(R.id.place_iphon) CardView place_iphon;
+    @BindView(R.id.place_lighting) CardView place_lighting;
+    @BindView(R.id.place_santeral) CardView place_santeral;
+    @BindView(R.id.place_security) CardView place_security;
+    @BindView(R.id.place_shutterdoor) CardView place_shutterdoor;
+    @BindView(R.id.place_socket) CardView place_socket;
+    @BindView(R.id.place_wiring) CardView place_wiring;
 
 
     public DrawerLayout drawerLayout;
@@ -48,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         drawerLayout = findViewById(R.id.drawer_main);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
@@ -97,140 +107,136 @@ public class MainActivity extends AppCompatActivity {
 
 
         btn_nav.setOnClickListener(v -> {
-            Snackbar snackbar = Snackbar.make(drawerLayout, "Simple Snackbar", Snackbar.LENGTH_LONG);
-            snackbar.show();
+            if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+                drawerLayout.closeDrawer(Gravity.RIGHT);
+            } else {
+                drawerLayout.openDrawer(Gravity.RIGHT);
+            }
         });
 
+
+        // Go to Antenna Page
+        place_antenna.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "antenna");
+            startActivity(intent);
+        });
+
+
+        // Go to Asansor Page
+        place_asansor.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "asansor");
+            startActivity(intent);
+        });
+
+
+        // Go to Camera Page
+        place_camera.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "camera");
+            startActivity(intent);
+        });
+
+
+        // Go to Chandelier Page
+        place_chandelier.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "chandelier");
+            startActivity(intent);
+        });
+
+
+        // Go to Cooler Page
+        place_cooler.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "cooler");
+            startActivity(intent);
+        });
+
+
+        // Go to ElectronicDevice Page
+        place_electronicdevice.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "electronicdevice");
+            startActivity(intent);
+        });
+
+
+        // Go to ElectronicPanel Page
+        place_electronicpanel.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "electronicpanel");
+            startActivity(intent);
+        });
+
+
+        // Go to Generator Page
+        place_generator.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "generator");
+            startActivity(intent);
+        });
+
+
+        // Go to Iphon Page
+        place_iphon.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "iphon");
+            startActivity(intent);
+        });
+
+
+        // Go to Lighting Page
+        place_lighting.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "lighting");
+            startActivity(intent);
+        });
+
+
+        // Go to Santeral Page
+        place_santeral.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "santeral");
+            startActivity(intent);
+        });
+
+
+        // Go to Security Page
+        place_security.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "security");
+            startActivity(intent);
+        });
+
+
+        // Go to Shutter_Door Page
+        place_shutterdoor.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "shutterdoor");
+            startActivity(intent);
+        });
+
+
+        // Go to Socket Page
+        place_socket.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "socket");
+            startActivity(intent);
+        });
+
+
+        // Go to Wiring Page
+        place_wiring.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Map.class);
+            intent.putExtra("name", "wiring");
+            startActivity(intent);
+        });
+
+
+
     }
-
-
-
-
-
-
-    // Go to Camera Page
-    public void PageCamera(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "camera");
-        startActivity(intent);
-    }
-
-    // Go to Iphon Page
-    public void PageIphon(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "iphon");
-        startActivity(intent);
-    }
-
-    // Go to Asansor Page
-    public void PageAsansor(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "asansor");
-        startActivity(intent);
-    }
-
-    // Go to Santeral Page
-    public void PageSanteral(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "santral");
-        startActivity(intent);
-    }
-
-    // Go to ElectronicDevice Page
-    public void PageElectronicDevice(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "electronicdevice");
-        startActivity(intent);
-    }
-
-    // Go to Wiring Page
-    public void PageWiring(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "wiring");
-        startActivity(intent);
-    }
-
-    // Go to ElectronicPanel Page
-    public void PageElectronicPanel(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "electronicpanel");
-        startActivity(intent);
-    }
-
-    // Go to Shutter_Door Page
-    public void PageShutterDoor(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "shutterdoor");
-        startActivity(intent);
-    }
-
-    // Go to Antenna Page
-    public void PageAntenna(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "antenna");
-        startActivity(intent);
-    }
-
-    // Go to Lighting Page
-    public void PageLighting(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "lighting");
-        startActivity(intent);
-    }
-
-    // Go to Security Page
-    public void PageSecurity(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "security");
-        startActivity(intent);
-    }
-
-    // Go to Generator Page
-    public void PageGenerator(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "generator");
-        startActivity(intent);
-    }
-
-    // Go to Cooler Page
-    public void PageCooler(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "cooler");
-        startActivity(intent);
-    }
-
-    // Go to Chandelier Page
-    public void PageChandelier(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "chandelier");
-        startActivity(intent);
-    }
-    // Go to Socket Page
-    public void PageSocket(View v){
-        Intent intent = new Intent(getApplicationContext(), Map.class);
-        intent.putExtra("name", "socket");
-        startActivity(intent);
-    }
-
-
-//    Snackbar snackbar = Snackbar
-//            .make(drawerLayout, "No internet connection!", Snackbar.LENGTH_LONG)
-//            .setAction("RETRY", new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                }
-//            });
-//
-//    // Changing message text color
-//        snackbar.setActionTextColor(Color.RED);
-//
-//    // Changing action button text color
-//    View sbView = snackbar.getView();
-//    TextView textView = (TextView) sbView.findViewById(R.id.snackbar_text);
-//        textView.setTextColor(Color.YELLOW);
-//
-//        snackbar.show();
-
 
 
     @Override

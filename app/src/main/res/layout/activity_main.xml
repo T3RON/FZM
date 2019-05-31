@@ -162,7 +162,7 @@
                         android:onClick="PageAsansor"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/place_e_device"
+                        app:layout_constraintBottom_toTopOf="@+id/place_electronicdevice"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/place_iphon"
@@ -217,7 +217,7 @@
                         android:onClick="PageSanteral"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/place_e_panel"
+                        app:layout_constraintBottom_toTopOf="@+id/place_electronicpanel"
                         app:layout_constraintEnd_toStartOf="@+id/place_wiring"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
@@ -269,8 +269,8 @@
                         android:onClick="PageWiring"
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/place_shutter_door"
-                        app:layout_constraintEnd_toStartOf="@+id/place_e_device"
+                        app:layout_constraintBottom_toTopOf="@+id/place_shutterdoor"
+                        app:layout_constraintEnd_toStartOf="@+id/place_electronicdevice"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/place_santeral"
                         app:layout_constraintTop_toBottomOf="@+id/place_iphon">
@@ -312,7 +312,7 @@
 
                     <!-- Column 3 -->
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/place_e_device"
+                        android:id="@+id/place_electronicdevice"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -369,7 +369,7 @@
 
                     <!-- Column 1 -->
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/place_e_panel"
+                        android:id="@+id/place_electronicpanel"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -379,7 +379,7 @@
                         app:cardCornerRadius="8dp"
                         app:cardElevation="8dp"
                         app:layout_constraintBottom_toTopOf="@+id/place_lighting"
-                        app:layout_constraintEnd_toStartOf="@+id/place_shutter_door"
+                        app:layout_constraintEnd_toStartOf="@+id/place_shutterdoor"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/place_santeral">
@@ -421,7 +421,7 @@
 
                     <!-- Column 2 -->
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/place_shutter_door"
+                        android:id="@+id/place_shutterdoor"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -433,7 +433,7 @@
                         app:layout_constraintBottom_toTopOf="@+id/place_security"
                         app:layout_constraintEnd_toStartOf="@+id/place_antenna"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/place_e_panel"
+                        app:layout_constraintStart_toEndOf="@+id/place_electronicpanel"
                         app:layout_constraintTop_toBottomOf="@+id/place_wiring">
 
                         <LinearLayout
@@ -487,8 +487,8 @@
                         app:layout_constraintBottom_toTopOf="@+id/place_generator"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/place_shutter_door"
-                        app:layout_constraintTop_toBottomOf="@+id/place_e_device">
+                        app:layout_constraintStart_toEndOf="@+id/place_shutterdoor"
+                        app:layout_constraintTop_toBottomOf="@+id/place_electronicdevice">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -543,7 +543,7 @@
                         app:layout_constraintEnd_toStartOf="@+id/place_security"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/place_e_panel">
+                        app:layout_constraintTop_toBottomOf="@+id/place_electronicpanel">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -594,7 +594,7 @@
                         app:layout_constraintEnd_toStartOf="@+id/place_generator"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/place_lighting"
-                        app:layout_constraintTop_toBottomOf="@+id/place_shutter_door">
+                        app:layout_constraintTop_toBottomOf="@+id/place_shutterdoor">
 
                         <LinearLayout
                             android:layout_width="wrap_content"

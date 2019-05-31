@@ -2,6 +2,7 @@ package ir.mseif.app.com.fzm.Activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -17,11 +18,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.R;
+import ir.mseif.app.com.fzm.Services.ElectronicPanel;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Contact extends AppCompatActivity {
@@ -94,6 +97,33 @@ public class Contact extends AppCompatActivity {
             } else {
                 drawerLayout.openDrawer(Gravity.RIGHT);
             }
+        });
+
+
+        btn_accept.setOnClickListener(v -> {
+
+
+            if (etx_tittle_request.getText().toString().length() == 0){
+                SnackbarUtil.setSnackBarWithNoActionButton(v,"عنوان درخواست نمی تواند خالی باشد",
+                        Color.rgb(255,255,255),
+                        Color.rgb(232,59,58)
+                        ,null,12, SnackbarUtil.RTL_DIRECTION);
+
+            }else{
+                if (etx_request.getText().toString().length() == 0) {
+                    SnackbarUtil.setSnackBarWithNoActionButton(v, "متن درخواست نمی تواند خالی باشد",
+                            Color.rgb(255, 255, 255),
+                            Color.rgb(232, 59, 58)
+                            , null, 12, SnackbarUtil.RTL_DIRECTION);
+
+                } else {
+                    SnackbarUtil.setSnackBarWithNoActionButton(v,"پیام شما برای پشتیبانی ارسال شد",
+                            Color.rgb(255,255,255),
+                            Color.rgb(35,144,3)
+                            ,null,12, SnackbarUtil.RTL_DIRECTION);
+                }
+            }
+
         });
     }
 

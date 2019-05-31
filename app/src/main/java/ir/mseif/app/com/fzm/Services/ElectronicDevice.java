@@ -2,6 +2,7 @@ package ir.mseif.app.com.fzm.Services;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -18,6 +19,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
@@ -45,7 +47,7 @@ public class ElectronicDevice extends AppCompatActivity {
 
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
     @BindView(R.id.imgbtn_down) ImageButton Dec_number;
-    @BindView(R.id.txt_number) TextView device_num;
+    @BindView(R.id.txt_number) TextView txt_number;
 
     @BindView(R.id.etx_address) EditText etx_address;
     @BindView(R.id.etx_alley) EditText etx_alley;
@@ -84,14 +86,14 @@ public class ElectronicDevice extends AppCompatActivity {
 
 
         Inc_number.setOnClickListener(v -> {
-            String A = INC(String.valueOf(device_num.getText()));
-            device_num.setText(A);
+            String A = INC(String.valueOf(txt_number.getText()));
+            txt_number.setText(A);
         });
 
 
         Dec_number.setOnClickListener(v -> {
-            String A = DEC(String.valueOf(device_num.getText()));
-            device_num.setText(A);
+            String A = DEC(String.valueOf(txt_number.getText()));
+            txt_number.setText(A);
         });
 
 
@@ -131,8 +133,64 @@ public class ElectronicDevice extends AppCompatActivity {
 
 
         btn_accept.setOnClickListener(v -> {
-            Intent antena_intent = new Intent(ElectronicDevice.this,Time.class);
-            startActivity(antena_intent);
+
+            if (etx_device_name.getText().toString().length() == 0){
+                SnackbarUtil.setSnackBarWithNoActionButton(v,"نام دستگاه نمی تواند خالی باشد",
+                        Color.rgb(255,255,255),
+                        Color.rgb(232,59,58)
+                        ,null,12, SnackbarUtil.RTL_DIRECTION);
+            }else{
+                if (Integer.parseInt(txt_number.getText().toString()) == 0){
+                    SnackbarUtil.setSnackBarWithNoActionButton(v,"تعداد دستگاه نمی تواند ۰ باشد",
+                            Color.rgb(255,255,255),
+                            Color.rgb(232,59,58)
+                            ,null,12, SnackbarUtil.RTL_DIRECTION);
+
+                }else{
+                    if (etx_address.getText().toString().length() == 0) {
+                                SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد آدرس نمی تواند خالی باشد",
+                                        Color.rgb(255, 255, 255),
+                                        Color.rgb(232, 59, 58)
+                                        , null, 12, SnackbarUtil.RTL_DIRECTION);
+
+                            } else {
+                        if (etx_alley.getText().toString().length() == 0) {
+                                    SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد کوچه نمی تواند خالی باشد",
+                                            Color.rgb(255, 255, 255),
+                                            Color.rgb(232, 59, 58)
+                                            , null, 12, SnackbarUtil.RTL_DIRECTION);
+
+                                } else {
+                            if (etx_plaque.getText().toString().length() == 0) {
+                                        SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد پلاک نمی تواند خالی باشد",
+                                                Color.rgb(255, 255, 255),
+                                                Color.rgb(232, 59, 58)
+                                                , null, 12, SnackbarUtil.RTL_DIRECTION);
+
+                                    } else {
+                                if (etx_unit.getText().toString().length() == 0) {
+                                            SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد واحد نمی تواند خالی باشد",
+                                                    Color.rgb(255, 255, 255),
+                                                    Color.rgb(232, 59, 58)
+                                                    , null, 12, SnackbarUtil.RTL_DIRECTION);
+
+                                        } else {
+                                    if (etx_description_address.getText().toString().length() == 0) {
+                                                SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد توضیحات نمی تواند خالی باشد",
+                                                        Color.rgb(255, 255, 255),
+                                                        Color.rgb(232, 59, 58)
+                                                        , null, 12, SnackbarUtil.RTL_DIRECTION);
+
+                                            } else {
+                                        Intent electronicedvice_intent = new Intent(ElectronicDevice.this, Time.class);
+                                        startActivity(electronicedvice_intent);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         });
     }
 

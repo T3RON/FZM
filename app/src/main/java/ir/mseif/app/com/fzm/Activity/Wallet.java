@@ -37,8 +37,7 @@ public class Wallet extends AppCompatActivity {
     @BindView(R.id.etx_verify_code) EditText etx_verify_code;
     @BindView(R.id.txt_verify_code) TextView txt_verify_code;
     @BindView(R.id.btn_go_to_dargah) Button btn_go_to_dargah;
-    @BindView(R.id.rcy_wallet)
-    RecyclerView rcy_wallet;
+    @BindView(R.id.rcy_wallet) RecyclerView rcy_wallet;
 
 
     @Override

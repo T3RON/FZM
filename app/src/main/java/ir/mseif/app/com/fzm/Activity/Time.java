@@ -6,15 +6,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +20,7 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONArrayRequestListener;
+import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 import com.mohamadamin.persianmaterialdatetimepicker.date.DatePickerDialog;
 import com.mohamadamin.persianmaterialdatetimepicker.utils.PersianCalendar;
@@ -32,7 +29,6 @@ import org.json.JSONArray;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import ir.mseif.app.com.fzm.MainActivity;
 import ir.mseif.app.com.fzm.Model.AntenaModel;
 import ir.mseif.app.com.fzm.R;
 import ir.mseif.app.com.fzm.Utils.Global;
@@ -46,7 +42,6 @@ public class Time extends AppCompatActivity {
     String date,h,m;
 
     @BindView(R.id.txt_date_picker) TextView txt_date_picker;
-    @BindView(R.id.txt_other_day) TextView txt_other_day;
     @BindView(R.id.btn_accept) Button btn_accept;
     @BindView(R.id.place_other_day) ViewGroup place_other_day;
 
@@ -152,21 +147,25 @@ public class Time extends AppCompatActivity {
 
 
         minute_up.setOnClickListener(v -> {
-            String A = INC(String.valueOf(txt_m.getText()));
+            String A = INCM(String.valueOf(txt_m.getText()));
             txt_m.setText(A);
             m = A;
         });
 
 
         minute_down.setOnClickListener(v -> {
-            String A = DEC(String.valueOf(txt_m.getText()));
+            String A = DECM(String.valueOf(txt_m.getText()));
             txt_m.setText(A);
             m = A;
         });
 
-
-
-        btn_accept.setOnClickListener(v -> AntenaPost());
+        btn_accept.setOnClickListener(v -> {
+            AntenaPost();
+            SnackbarUtil.setSnackBarWithNoActionButton(v,"سرویس مورد نظر ثبت شد",
+            Color.rgb(255,255,255),
+            Color.rgb(35,144,3)
+                ,null,12, SnackbarUtil.RTL_DIRECTION);
+        });
 
         Log.i("sdas" , AntenaModel.service_antenna_job+"");
         Log.i("sdas" , AntenaModel.service_antenna_number+"");
@@ -211,21 +210,43 @@ public class Time extends AppCompatActivity {
     }
 
 
-    // Increas the number of asansor
+    // Increas the Hour
     private String INC (String a){
         int b = Integer.parseInt(a);
-        b++;
+        if (b<23) {
+            b++;
+        }else {
+            b=0;
+        }
         return String.valueOf(b);
-
     }
-
-    // Decrease the number of asansor
+    // Decrease the Hour
     private String DEC (String a){
         int b = Integer.parseInt(a);
         if (b>0) {
             b--;
         }else {
+            b=23;
+        }
+        return String.valueOf(b);
+    }
+    // Increas the Minute
+    private String INCM (String a){
+        int b = Integer.parseInt(a);
+        if (b<59) {
+            b++;
+        }else {
             b=0;
+        }
+        return String.valueOf(b);
+    }
+    // Decrease the Minute
+    private String DECM (String a){
+        int b = Integer.parseInt(a);
+        if (b>0) {
+            b--;
+        }else {
+            b=59;
         }
         return String.valueOf(b);
     }
@@ -235,4 +256,5 @@ public class Time extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
+
 }
