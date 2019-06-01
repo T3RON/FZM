@@ -44,8 +44,7 @@ public class Antenna extends AppCompatActivity {
     String antenJobText;
     String lat,lang;
 
-    @BindView(R.id.spn_place)
-    RtlMaterialSpinner spn_place;
+    @BindView(R.id.spn_job) RtlMaterialSpinner spn_job;
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
     @BindView(R.id.imgbtn_down) ImageButton Dec_number;
     @BindView(R.id.txt_number) TextView txt_number;
@@ -285,8 +284,8 @@ public class Antenna extends AppCompatActivity {
         arrayList.add("رفع ایراد سیم\u200Cکشی");
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.spinner_top, arrayList);
         arrayAdapter.setDropDownViewResource(R.layout.spinner_item);
-        spn_place.setAdapter(arrayAdapter);
-        spn_place.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spn_job.setAdapter(arrayAdapter);
+        spn_job.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 antenJobText = parent.getItemAtPosition(position).toString();

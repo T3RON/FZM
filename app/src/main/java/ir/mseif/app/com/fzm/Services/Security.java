@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -16,9 +19,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.mateware.snacky.Snacky;
+import ir.hamsaa.RtlMaterialSpinner;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
@@ -34,9 +40,10 @@ public class Security extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
+    String securityplaceText;
     String lat,lang;
 
-    @BindView(R.id.spn_place) Spinner spn_place;
+    @BindView(R.id.spn_place) RtlMaterialSpinner spn_place;
     @BindView(R.id.etx_number_unit) EditText etx_number_unit;
     @BindView(R.id.etx_description_karshenas) EditText etx_description_karshenas;
 
@@ -78,6 +85,7 @@ public class Security extends AppCompatActivity {
         btn_nav = findViewById(R.id.btn_nav);
 
 
+        SecurityPlaces();
 
 
         nav_view.setNavigationItemSelectedListener(menuItem -> {
@@ -230,6 +238,28 @@ public class Security extends AppCompatActivity {
 
 
 
+
+    public void SecurityPlaces() {
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("وصل کردن دوربین مداربسته به آنتن مرکزی");
+        arrayList.add("نصب آنتن دیجیتال");
+        arrayList.add("نصب آنتن مرکزی");
+        arrayList.add("تحویل داخل هر واحد");
+        arrayList.add("تنظیم آنتن");
+        arrayList.add("رفع ایراد سیم\u200Cکشی");
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.spinner_top, arrayList);
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+        spn_place.setAdapter(arrayAdapter);
+        spn_place.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                securityplaceText = parent.getItemAtPosition(position).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
 
     @Override
     protected void attachBaseContext(Context newBase) {
