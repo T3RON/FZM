@@ -18,12 +18,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.mateware.snacky.Snacky;
 import ir.mseif.app.com.fzm.R;
+import ir.mseif.app.com.fzm.Services.Asansor;
 import ir.mseif.app.com.fzm.Services.ElectronicPanel;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -104,23 +105,44 @@ public class Contact extends AppCompatActivity {
 
 
             if (etx_tittle_request.getText().toString().length() == 0){
-                SnackbarUtil.setSnackBarWithNoActionButton(v,"عنوان درخواست نمی تواند خالی باشد",
-                        Color.rgb(255,255,255),
-                        Color.rgb(232,59,58)
-                        ,null,12, SnackbarUtil.RTL_DIRECTION);
+                        Snacky.builder()
+                                .setActivity(Contact.this)
+                                .setActionClickListener(v1 -> {
+                                    //do something
+                                })
+                                .setText("عنوان درخواست نمی تواند خالی باشد")
+                                .setTextColor(Color.rgb(255,255,255))
+                                .setBackgroundColor(Color.rgb(232,59,58))
+                                .setDuration(Snacky.LENGTH_LONG)
+                                .build()
+                                .show();
 
             }else{
                 if (etx_request.getText().toString().length() == 0) {
-                    SnackbarUtil.setSnackBarWithNoActionButton(v, "متن درخواست نمی تواند خالی باشد",
-                            Color.rgb(255, 255, 255),
-                            Color.rgb(232, 59, 58)
-                            , null, 12, SnackbarUtil.RTL_DIRECTION);
+                            Snacky.builder()
+                                    .setActivity(Contact.this)
+                                    .setActionClickListener(v1 -> {
+                                        //do something
+                                    })
+                                    .setText("متن درخواست نمی تواند خالی باشد")
+                                    .setTextColor(Color.rgb(255,255,255))
+                                    .setBackgroundColor(Color.rgb(232,59,58))
+                                    .setDuration(Snacky.LENGTH_LONG)
+                                    .build()
+                                    .show();
 
                 } else {
-                    SnackbarUtil.setSnackBarWithNoActionButton(v,"پیام شما برای پشتیبانی ارسال شد",
-                            Color.rgb(255,255,255),
-                            Color.rgb(35,144,3)
-                            ,null,12, SnackbarUtil.RTL_DIRECTION);
+                            Snacky.builder()
+                                    .setActivity(Contact.this)
+                                    .setActionClickListener(v1 -> {
+                                        //do something
+                                    })
+                                    .setText("پیام شما برای پشتیبانی ارسال شد")
+                                    .setTextColor(Color.rgb(255,255,255))
+                                    .setBackgroundColor(Color.rgb(35,144,3))
+                                    .setDuration(Snacky.LENGTH_LONG)
+                                    .build()
+                                    .show();
                 }
             }
 

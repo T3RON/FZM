@@ -18,11 +18,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.mateware.snacky.Snacky;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
@@ -126,61 +126,117 @@ public class Socket extends AppCompatActivity {
         btn_accept.setOnClickListener(v -> {
 
             if (etx_number_tools.getText().toString().length() == 0){
-                SnackbarUtil.setSnackBarWithNoActionButton(v,"تعداد لوازم نمی تواند ۰ باشد",
-                        Color.rgb(255,255,255),
-                        Color.rgb(232,59,58)
-                        ,null,12, SnackbarUtil.RTL_DIRECTION);
+                Snacky.builder()
+                        .setActivity(Socket.this)
+                        .setActionClickListener(v1 -> {
+                            //do something
+                        })
+                        .setText("تعداد لوازم نمی تواند ۰ باشد")
+                        .setTextColor(Color.rgb(255,255,255))
+                        .setBackgroundColor(Color.rgb(232,59,58))
+                        .setDuration(Snacky.LENGTH_LONG)
+                        .build()
+                        .show();
             }else{
                 if ((!(rb_nemidanam.isChecked())) &&
                         (!(rb_no.isChecked())) &&
                         (!(rb_yes.isChecked()))  ){
-                    SnackbarUtil.setSnackBarWithNoActionButton(v,"بخش نیاز به سیم کشی نمی تواند خالی باشد",
-                            Color.rgb(255,255,255),
-                            Color.rgb(232,59,58)
-                            ,null,12, SnackbarUtil.RTL_DIRECTION);
+                        Snacky.builder()
+                                .setActivity(Socket.this)
+                                .setActionClickListener(v1 -> {
+                                    //do something
+                                })
+                                .setText("بخش نیاز به سیم کشی نمی تواند خالی باشد")
+                                .setTextColor(Color.rgb(255,255,255))
+                                .setBackgroundColor(Color.rgb(232,59,58))
+                                .setDuration(Snacky.LENGTH_LONG)
+                                .build()
+                                .show();
 
                 }else{
                     if (etx_description_karshenas.getText().toString().length() == 0){
-                        SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد توضیحات کارشناس نمی تواند خالی باشد",
-                                Color.rgb(255,255,255),
-                                Color.rgb(232,59,58)
-                                ,null,12, SnackbarUtil.RTL_DIRECTION);
+                        Snacky.builder()
+                                .setActivity(Socket.this)
+                                .setActionClickListener(v1 -> {
+                                    //do something
+                                })
+                                .setText("فیلد توضیحات کارشناس نمی تواند خالی باشد")
+                                .setTextColor(Color.rgb(255,255,255))
+                                .setBackgroundColor(Color.rgb(232,59,58))
+                                .setDuration(Snacky.LENGTH_LONG)
+                                .build()
+                                .show();
                     }else{
                         if (etx_address.getText().toString().length() == 0) {
-                                SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد آدرس نمی تواند خالی باشد",
-                                        Color.rgb(255, 255, 255),
-                                        Color.rgb(232, 59, 58)
-                                        , null, 12, SnackbarUtil.RTL_DIRECTION);
+                            Snacky.builder()
+                                    .setActivity(Socket.this)
+                                    .setActionClickListener(v1 -> {
+                                        //do something
+                                    })
+                                    .setText("فیلد آدرس نمی تواند خالی باشد")
+                                    .setTextColor(Color.rgb(255,255,255))
+                                    .setBackgroundColor(Color.rgb(232,59,58))
+                                    .setDuration(Snacky.LENGTH_LONG)
+                                    .build()
+                                    .show();
+
+                        } else {
+                            if (etx_alley.getText().toString().length() == 0) {
+                                Snacky.builder()
+                                        .setActivity(Socket.this)
+                                        .setActionClickListener(v1 -> {
+                                            //do something
+                                        })
+                                        .setText("فیلد کوچه نمی تواند خالی باشد")
+                                        .setTextColor(Color.rgb(255,255,255))
+                                        .setBackgroundColor(Color.rgb(232,59,58))
+                                        .setDuration(Snacky.LENGTH_LONG)
+                                        .build()
+                                        .show();
 
                             } else {
-                                if (etx_alley.getText().toString().length() == 0) {
-                                    SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد کوچه نمی تواند خالی باشد",
-                                            Color.rgb(255, 255, 255),
-                                            Color.rgb(232, 59, 58)
-                                            , null, 12, SnackbarUtil.RTL_DIRECTION);
+                                if (etx_plaque.getText().toString().length() == 0) {
+                                    Snacky.builder()
+                                            .setActivity(Socket.this)
+                                            .setActionClickListener(v1 -> {
+                                                //do something
+                                            })
+                                            .setText("فیلد پلاک نمی تواند خالی باشد")
+                                            .setTextColor(Color.rgb(255,255,255))
+                                            .setBackgroundColor(Color.rgb(232,59,58))
+                                            .setDuration(Snacky.LENGTH_LONG)
+                                            .build()
+                                            .show();
 
                                 } else {
-                                    if (etx_plaque.getText().toString().length() == 0) {
-                                        SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد پلاک نمی تواند خالی باشد",
-                                                Color.rgb(255, 255, 255),
-                                                Color.rgb(232, 59, 58)
-                                                , null, 12, SnackbarUtil.RTL_DIRECTION);
+                                    if (etx_unit.getText().toString().length() == 0) {
+                                        Snacky.builder()
+                                                .setActivity(Socket.this)
+                                                .setActionClickListener(v1 -> {
+                                                    //do something
+                                                })
+                                                .setText("فیلد واحد نمی تواند خالی باشد")
+                                                .setTextColor(Color.rgb(255,255,255))
+                                                .setBackgroundColor(Color.rgb(232,59,58))
+                                                .setDuration(Snacky.LENGTH_LONG)
+                                                .build()
+                                                .show();
 
                                     } else {
-                                        if (etx_unit.getText().toString().length() == 0) {
-                                            SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد واحد نمی تواند خالی باشد",
-                                                    Color.rgb(255, 255, 255),
-                                                    Color.rgb(232, 59, 58)
-                                                    , null, 12, SnackbarUtil.RTL_DIRECTION);
+                                        if (etx_description_address.getText().toString().length() == 0) {
+                                            Snacky.builder()
+                                                    .setActivity(Socket.this)
+                                                    .setActionClickListener(v1 -> {
+                                                        //do something
+                                                    })
+                                                    .setText("فیلد توضیحات نمی تواند خالی باشد")
+                                                    .setTextColor(Color.rgb(255,255,255))
+                                                    .setBackgroundColor(Color.rgb(232,59,58))
+                                                    .setDuration(Snacky.LENGTH_LONG)
+                                                    .build()
+                                                    .show();
 
                                         } else {
-                                            if (etx_description_address.getText().toString().length() == 0) {
-                                                SnackbarUtil.setSnackBarWithNoActionButton(v, "فیلد توضیحات نمی تواند خالی باشد",
-                                                        Color.rgb(255, 255, 255),
-                                                        Color.rgb(232, 59, 58)
-                                                        , null, 12, SnackbarUtil.RTL_DIRECTION);
-
-                                            } else {
                                                 Intent Socket_intent = new Intent(Socket.this, Time.class);
                                                 startActivity(Socket_intent);
 

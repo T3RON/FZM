@@ -12,11 +12,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bvapp.directionalsnackbar.SnackbarUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.mateware.snacky.Snacky;
 import ir.mseif.app.com.fzm.R;
+import ir.mseif.app.com.fzm.Services.Asansor;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Login extends AppCompatActivity {
@@ -40,10 +41,17 @@ public class Login extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),Sms.class);
                 startActivity(intent);
             }else {
-                SnackbarUtil.setSnackBarWithNoActionButton(v,"شماره همراه نامعتبر است",
-                        Color.rgb(255,255,255),
-                        Color.rgb(232,59,58),
-                        null,12, SnackbarUtil.RTL_DIRECTION);
+                        Snacky.builder()
+                                .setActivity(Login.this)
+                                .setActionClickListener(v1 -> {
+                                    //do something
+                                })
+                                .setText("شماره همراه نامعتبر است")
+                                .setTextColor(Color.rgb(255,255,255))
+                                .setBackgroundColor(Color.rgb(232,59,58))
+                                .setDuration(Snacky.LENGTH_LONG)
+                                .build()
+                                .show();
             }
         });
 

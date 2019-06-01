@@ -20,11 +20,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.mateware.snacky.Snacky;
 import ir.mseif.app.com.fzm.Model.AntenaModel;
 import ir.mseif.app.com.fzm.R;
 import ir.mseif.app.com.fzm.Services.Antenna;
@@ -108,10 +108,17 @@ public class Profile extends AppCompatActivity {
         });
 
         btn_accept.setOnClickListener(v -> {
-            SnackbarUtil.setSnackBarWithNoActionButton(v,"تغییرات ثبت شد",
-                    Color.rgb(255,255,255),
-                    Color.rgb(35,144,3)
-                    ,null,12, SnackbarUtil.RTL_DIRECTION);
+                    Snacky.builder()
+                            .setActivity(Profile.this)
+                            .setActionClickListener(v1 -> {
+                                //do something
+                            })
+                            .setText("تغییرات ثبت شد")
+                            .setTextColor(Color.rgb(255,255,255))
+                            .setBackgroundColor(Color.rgb(35,144,3))
+                            .setDuration(Snacky.LENGTH_LONG)
+                            .build()
+                            .show();
 
         });
     }

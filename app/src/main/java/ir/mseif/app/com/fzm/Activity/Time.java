@@ -20,7 +20,6 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONArrayRequestListener;
-import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 import com.mohamadamin.persianmaterialdatetimepicker.date.DatePickerDialog;
 import com.mohamadamin.persianmaterialdatetimepicker.utils.PersianCalendar;
@@ -29,8 +28,10 @@ import org.json.JSONArray;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.mateware.snacky.Snacky;
 import ir.mseif.app.com.fzm.Model.AntenaModel;
 import ir.mseif.app.com.fzm.R;
+import ir.mseif.app.com.fzm.Services.Asansor;
 import ir.mseif.app.com.fzm.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -161,10 +162,17 @@ public class Time extends AppCompatActivity {
 
         btn_accept.setOnClickListener(v -> {
             AntenaPost();
-            SnackbarUtil.setSnackBarWithNoActionButton(v,"سرویس مورد نظر ثبت شد",
-            Color.rgb(255,255,255),
-            Color.rgb(35,144,3)
-                ,null,12, SnackbarUtil.RTL_DIRECTION);
+            Snacky.builder()
+                    .setActivity(Time.this)
+                    .setActionClickListener(v1 -> {
+                        //do something
+                    })
+                    .setText("سرویس مورد نظر ثبت شد")
+                    .setTextColor(Color.rgb(255,255,255))
+                    .setBackgroundColor(Color.rgb(35,144,3))
+                    .setDuration(Snacky.LENGTH_LONG)
+                    .build()
+                    .show();
         });
 
         Log.i("sdas" , AntenaModel.service_antenna_job+"");
