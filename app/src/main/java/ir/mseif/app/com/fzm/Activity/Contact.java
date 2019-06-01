@@ -5,14 +5,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,8 +20,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.mateware.snacky.Snacky;
 import ir.mseif.app.com.fzm.R;
-import ir.mseif.app.com.fzm.Services.Asansor;
-import ir.mseif.app.com.fzm.Services.ElectronicPanel;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Contact extends AppCompatActivity {

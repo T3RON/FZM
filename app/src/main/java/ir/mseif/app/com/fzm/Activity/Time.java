@@ -31,7 +31,6 @@ import butterknife.ButterKnife;
 import de.mateware.snacky.Snacky;
 import ir.mseif.app.com.fzm.Model.AntenaModel;
 import ir.mseif.app.com.fzm.R;
-import ir.mseif.app.com.fzm.Services.Asansor;
 import ir.mseif.app.com.fzm.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
