@@ -17,16 +17,23 @@
             android:focusable="true"
             android:focusableInTouchMode="true">
 
-            <Spinner
+            <ir.hamsaa.RtlMaterialSpinner
                 android:id="@+id/spn_place"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:background="@drawable/style_asansor_corner"
+                android:paddingRight="1dp"
+                app:ms_alignLabels="false"
+                app:ms_arrowColor="@color/colorPrimary"
+                app:ms_arrowSize="15dp"
+                app:ms_baseColor="@color/colorPrimary"
+                app:ms_enableErrorLabel="false"
+                app:ms_enableFloatingLabel="false"
+                app:ms_floatingLabelText="floating label"
+                app:ms_highlightColor="@color/colorPrimary"
+                app:ms_isRtl="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
