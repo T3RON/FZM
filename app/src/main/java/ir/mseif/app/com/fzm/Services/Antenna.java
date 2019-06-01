@@ -181,7 +181,7 @@ public class Antenna extends AppCompatActivity {
 
                                 }else{
                                     Intent antena_intent = new Intent(Antenna.this,Time.class);
-                                    antena_intent.putExtra("name", "antena");
+                                    antena_intent.putExtra("name", "antenna");
                                     AntenaModel.service_antenna_job = antenJobText;
                                     AntenaModel.service_antenna_number = txt_number.getText().toString();
                                     AntenaModel.service_antenna_address = etx_address.getText().toString();

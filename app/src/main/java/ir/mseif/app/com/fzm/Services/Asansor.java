@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -14,7 +16,6 @@ import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,16 +24,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
-import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
-import ir.mseif.app.com.fzm.Model.AntenaModel;
+import ir.mseif.app.com.fzm.Model.AsansorModel;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -42,6 +44,9 @@ public class Asansor extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
+    String asansorJobText;
+    String engineText;
+    String kindText;
     String lat,lang;
 
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
@@ -79,7 +84,6 @@ public class Asansor extends AppCompatActivity {
             lat = bundle.getString("lat");
             lang = bundle.getString("lang");
         }
-
 
 
 
@@ -154,8 +158,6 @@ public class Asansor extends AppCompatActivity {
             } else {
                 drawerLayout.openDrawer(Gravity.RIGHT);
             }
-
-
         });
 
 
@@ -230,6 +232,25 @@ public class Asansor extends AppCompatActivity {
 
                                                 } else {
                                                     Intent asansor_intent = new Intent(Asansor.this, Time.class);
+                                                    asansor_intent.putExtra("name", "asansor");
+                                                    AsansorModel.service_asansor_number =txt_number.getText().toString();
+                                                    AsansorModel.service_asansor_job = asansorJobText;
+                                                    AsansorModel.service_asansor_kind = kindText;
+                                                    AsansorModel.service_asansor_engine = engineText;
+                                                    AsansorModel.service_asansor_address = etx_address.getText().toString();
+                                                    AsansorModel.service_asansor_alley = etx_alley.getText().toString();
+                                                    AsansorModel.service_asansor_unit = etx_unit.getText().toString();
+                                                    AsansorModel.service_asansor_plaque = etx_plaque.getText().toString();
+                                                    AsansorModel.service_asansor_text = etx_description_address.getText().toString();
+                                                    AsansorModel.service_asansor_lat = lat;
+                                                    AsansorModel.service_asansor_sat = lang;
+                                                    AsansorModel.id = "1";
+                                                    AsansorModel.state_id = "1";
+
+//                                                    Log.i("ss",AsansorModel.service_asansor_lat + "");
+//                                                    Log.i("ss",AsansorModel.service_asansor_sat + "");
+
+
                                                     startActivity(asansor_intent);
 
                                                 }
@@ -264,7 +285,6 @@ public class Asansor extends AppCompatActivity {
         }
         return String.valueOf(b);
     }
-
 
 
 

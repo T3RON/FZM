@@ -14,5 +14,7 @@ public class AntenaModel {
      public static String service_antenna_sat;
      public static String id;
      public static String state_id;
+     public static String price;
+     public static String service_man_id;
 
 }
