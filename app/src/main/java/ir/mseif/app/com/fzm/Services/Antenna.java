@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
@@ -19,13 +18,14 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.mateware.snacky.Snacky;
+import ir.hamsaa.RtlMaterialSpinner;
 import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
@@ -44,7 +44,7 @@ public class Antenna extends AppCompatActivity {
     String antenJobText;
     String lat,lang;
 
-    @BindView(R.id.spn_place) Spinner spn_place;
+    @BindView(R.id.spn_job) RtlMaterialSpinner spn_job;
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
     @BindView(R.id.imgbtn_down) ImageButton Dec_number;
     @BindView(R.id.txt_number) TextView txt_number;
@@ -140,48 +140,90 @@ public class Antenna extends AppCompatActivity {
         btn_accept.setOnClickListener(v -> {
 
             if (Integer.parseInt((txt_number.getText().toString())) == 0){
-                SnackbarUtil.setSnackBarWithNoActionButton(v,"تعداد واحد نمی تواند ۰ باشد",
-                        Color.rgb(255,255,255),
-                        Color.rgb(232,59,58)
-                        ,null,12, SnackbarUtil.RTL_DIRECTION);
+                Snacky.builder()
+                        .setActivity(Antenna.this)
+                        .setActionClickListener(v1 -> {
+                            //do something
+                        })
+                        .setText("تعداد واحد نمی تواند ۰ باشد")
+                        .setTextColor(Color.rgb(255,255,255))
+                        .setBackgroundColor(Color.rgb(232,59,58))
+                        .setDuration(Snacky.LENGTH_LONG)
+                        .build()
+                        .show();
             }else{
-                if (etx_address.getText().toString().length() == 0){
-                    SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد آدرس نمی تواند خالی باشد",
-                            Color.rgb(255,255,255),
-                            Color.rgb(232,59,58)
-                            ,null,12, SnackbarUtil.RTL_DIRECTION);
+                if (etx_address.getText().toString().length() == 0) {
+                    Snacky.builder()
+                            .setActivity(Antenna.this)
+                            .setActionClickListener(v1 -> {
+                                //do something
+                            })
+                            .setText("فیلد آدرس نمی تواند خالی باشد")
+                            .setTextColor(Color.rgb(255,255,255))
+                            .setBackgroundColor(Color.rgb(232,59,58))
+                            .setDuration(Snacky.LENGTH_LONG)
+                            .build()
+                            .show();
 
-                }else{
-                    if (etx_alley.getText().toString().length() == 0){
-                        SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد کوچه نمی تواند خالی باشد",
-                                Color.rgb(255,255,255),
-                                Color.rgb(232,59,58)
-                                ,null,12, SnackbarUtil.RTL_DIRECTION);
+                } else {
+                    if (etx_alley.getText().toString().length() == 0) {
+                        Snacky.builder()
+                                .setActivity(Antenna.this)
+                                .setActionClickListener(v1 -> {
+                                    //do something
+                                })
+                                .setText("فیلد کوچه نمی تواند خالی باشد")
+                                .setTextColor(Color.rgb(255,255,255))
+                                .setBackgroundColor(Color.rgb(232,59,58))
+                                .setDuration(Snacky.LENGTH_LONG)
+                                .build()
+                                .show();
 
-                    }else{
-                        if(etx_plaque.getText().toString().length() == 0){
-                            SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد پلاک نمی تواند خالی باشد",
-                                    Color.rgb(255,255,255),
-                                    Color.rgb(232,59,58)
-                                    ,null,12, SnackbarUtil.RTL_DIRECTION);
+                    } else {
+                        if (etx_plaque.getText().toString().length() == 0) {
+                            Snacky.builder()
+                                    .setActivity(Antenna.this)
+                                    .setActionClickListener(v1 -> {
+                                        //do something
+                                    })
+                                    .setText("فیلد پلاک نمی تواند خالی باشد")
+                                    .setTextColor(Color.rgb(255,255,255))
+                                    .setBackgroundColor(Color.rgb(232,59,58))
+                                    .setDuration(Snacky.LENGTH_LONG)
+                                    .build()
+                                    .show();
 
-                        }else{
-                            if(etx_unit.getText().toString().length() == 0){
-                                SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد واحد نمی تواند خالی باشد",
-                                        Color.rgb(255,255,255),
-                                        Color.rgb(232,59,58)
-                                        ,null,12, SnackbarUtil.RTL_DIRECTION);
+                        } else {
+                            if (etx_unit.getText().toString().length() == 0) {
+                                Snacky.builder()
+                                        .setActivity(Antenna.this)
+                                        .setActionClickListener(v1 -> {
+                                            //do something
+                                        })
+                                        .setText("فیلد واحد نمی تواند خالی باشد")
+                                        .setTextColor(Color.rgb(255,255,255))
+                                        .setBackgroundColor(Color.rgb(232,59,58))
+                                        .setDuration(Snacky.LENGTH_LONG)
+                                        .build()
+                                        .show();
 
-                            }else{
-                                if(etx_description_address.getText().toString().length() == 0){
-                                    SnackbarUtil.setSnackBarWithNoActionButton(v,"فیلد توضیحات نمی تواند خالی باشد",
-                                            Color.rgb(255,255,255),
-                                            Color.rgb(232,59,58)
-                                            ,null,12, SnackbarUtil.RTL_DIRECTION);
+                            } else {
+                                if (etx_description_address.getText().toString().length() == 0) {
+                                    Snacky.builder()
+                                            .setActivity(Antenna.this)
+                                            .setActionClickListener(v1 -> {
+                                                //do something
+                                            })
+                                            .setText("فیلد توضیحات نمی تواند خالی باشد")
+                                            .setTextColor(Color.rgb(255,255,255))
+                                            .setBackgroundColor(Color.rgb(232,59,58))
+                                            .setDuration(Snacky.LENGTH_LONG)
+                                            .build()
+                                            .show();
 
-                                }else{
-                                    Intent antena_intent = new Intent(Antenna.this,Time.class);
-                                    antena_intent.putExtra("name", "antenna");
+                                } else {
+                                    Intent antenna_intent = new Intent(Antenna.this, Time.class);
+                                    antenna_intent.putExtra("name", "antena");
                                     AntenaModel.service_antenna_job = antenJobText;
                                     AntenaModel.service_antenna_number = txt_number.getText().toString();
                                     AntenaModel.service_antenna_address = etx_address.getText().toString();
@@ -193,7 +235,7 @@ public class Antenna extends AppCompatActivity {
                                     AntenaModel.service_antenna_sat = lang;
                                     AntenaModel.id = "1";
                                     AntenaModel.state_id = "1";
-                                    startActivity(antena_intent);
+                                    startActivity(antenna_intent);
 
                                 }
                             }
@@ -240,10 +282,10 @@ public class Antenna extends AppCompatActivity {
         arrayList.add("تحویل داخل هر واحد");
         arrayList.add("تنظیم آنتن");
         arrayList.add("رفع ایراد سیم\u200Cکشی");
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, arrayList);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spn_place.setAdapter(arrayAdapter);
-        spn_place.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.spinner_top, arrayList);
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+        spn_job.setAdapter(arrayAdapter);
+        spn_job.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 antenJobText = parent.getItemAtPosition(position).toString();

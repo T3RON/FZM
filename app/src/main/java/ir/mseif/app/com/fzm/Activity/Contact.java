@@ -5,26 +5,27 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.mateware.snacky.Snacky;
+import ir.hamsaa.RtlMaterialSpinner;
 import ir.mseif.app.com.fzm.R;
-import ir.mseif.app.com.fzm.Services.ElectronicPanel;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Contact extends AppCompatActivity {
@@ -33,9 +34,10 @@ public class Contact extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
+    String contactkindText;
 
     @BindView(R.id.etx_tittle_request) EditText etx_tittle_request;
-    @BindView(R.id.spn_kind) Spinner spn_kind;
+    @BindView(R.id.spn_kind) RtlMaterialSpinner spn_kind;
     @BindView(R.id.etx_request) EditText etx_request;
     @BindView(R.id.btn_accept) Button btn_accept;
 
@@ -63,6 +65,7 @@ public class Contact extends AppCompatActivity {
         btn_nav = findViewById(R.id.btn_nav);
 
 
+        ContactKinds();
 
 
         nav_view.setNavigationItemSelectedListener(menuItem -> {
@@ -104,23 +107,44 @@ public class Contact extends AppCompatActivity {
 
 
             if (etx_tittle_request.getText().toString().length() == 0){
-                SnackbarUtil.setSnackBarWithNoActionButton(v,"عنوان درخواست نمی تواند خالی باشد",
-                        Color.rgb(255,255,255),
-                        Color.rgb(232,59,58)
-                        ,null,12, SnackbarUtil.RTL_DIRECTION);
+                        Snacky.builder()
+                                .setActivity(Contact.this)
+                                .setActionClickListener(v1 -> {
+                                    //do something
+                                })
+                                .setText("عنوان درخواست نمی تواند خالی باشد")
+                                .setTextColor(Color.rgb(255,255,255))
+                                .setBackgroundColor(Color.rgb(232,59,58))
+                                .setDuration(Snacky.LENGTH_LONG)
+                                .build()
+                                .show();
 
             }else{
                 if (etx_request.getText().toString().length() == 0) {
-                    SnackbarUtil.setSnackBarWithNoActionButton(v, "متن درخواست نمی تواند خالی باشد",
-                            Color.rgb(255, 255, 255),
-                            Color.rgb(232, 59, 58)
-                            , null, 12, SnackbarUtil.RTL_DIRECTION);
+                            Snacky.builder()
+                                    .setActivity(Contact.this)
+                                    .setActionClickListener(v1 -> {
+                                        //do something
+                                    })
+                                    .setText("متن درخواست نمی تواند خالی باشد")
+                                    .setTextColor(Color.rgb(255,255,255))
+                                    .setBackgroundColor(Color.rgb(232,59,58))
+                                    .setDuration(Snacky.LENGTH_LONG)
+                                    .build()
+                                    .show();
 
                 } else {
-                    SnackbarUtil.setSnackBarWithNoActionButton(v,"پیام شما برای پشتیبانی ارسال شد",
-                            Color.rgb(255,255,255),
-                            Color.rgb(35,144,3)
-                            ,null,12, SnackbarUtil.RTL_DIRECTION);
+                            Snacky.builder()
+                                    .setActivity(Contact.this)
+                                    .setActionClickListener(v1 -> {
+                                        //do something
+                                    })
+                                    .setText("پیام شما برای پشتیبانی ارسال شد")
+                                    .setTextColor(Color.rgb(255,255,255))
+                                    .setBackgroundColor(Color.rgb(35,144,3))
+                                    .setDuration(Snacky.LENGTH_LONG)
+                                    .build()
+                                    .show();
                 }
             }
 
@@ -129,6 +153,28 @@ public class Contact extends AppCompatActivity {
 
 
 
+
+    public void ContactKinds() {
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("وصل کردن دوربین مداربسته به آنتن مرکزی");
+        arrayList.add("نصب آنتن دیجیتال");
+        arrayList.add("نصب آنتن مرکزی");
+        arrayList.add("تحویل داخل هر واحد");
+        arrayList.add("تنظیم آنتن");
+        arrayList.add("رفع ایراد سیم\u200Cکشی");
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,R.layout.spinner_top, arrayList);
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_item);
+        spn_kind.setAdapter(arrayAdapter);
+        spn_kind.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                contactkindText = parent.getItemAtPosition(position).toString();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
 
 
 

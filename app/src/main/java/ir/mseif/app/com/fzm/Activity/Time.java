@@ -30,6 +30,7 @@ import org.json.JSONArray;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.mateware.snacky.Snacky;
 import ir.mseif.app.com.fzm.Model.AntenaModel;
 import ir.mseif.app.com.fzm.Model.AsansorModel;
 import ir.mseif.app.com.fzm.R;
@@ -183,85 +184,24 @@ public class Time extends AppCompatActivity {
         });
 
         btn_accept.setOnClickListener(v -> {
-            switch(type) {
-                case "antenna":
-                    AntenaPost();
-//                    Intent antenna = new Intent(getApplicationContext(), Antenna.class);
-//                    startActivity(antenna);
-//                    finish();
-                    break;
-                case "asansor":
-                    AsansorPost();
-//                    Intent asansor = new Intent(getApplicationContext(), Asansor.class);
-//                    startActivity(asansor);
-//                    finish();
-                    break;
-                case "camera":
-                    Intent camera = new Intent(getApplicationContext(), Camera.class);
-                    startActivity(camera);
-                    finish();
-                    break;
-                case "chandelier":
-                    Intent chandelier = new Intent(getApplicationContext(), Chandelier.class);
-                    startActivity(chandelier);
-                    finish();
-                    break;
-                case "cooler":
-                    Intent cooler = new Intent(getApplicationContext(), Cooler.class);
-                    startActivity(cooler);
-                    finish();
-                    break;
-                case "electronicdevice":
-                    Intent electronicDevice = new Intent(getApplicationContext(), ElectronicDevice.class);
-                    startActivity(electronicDevice);
-                    finish();
-                    break;
-                case "electronicpanel":
-                    Intent electronicPanel = new Intent(getApplicationContext(), ElectronicPanel.class);
-                    startActivity(electronicPanel);
-                    finish();
-                    break;
-                case "generator":
-                    Intent generator = new Intent(getApplicationContext(), Generator.class);
-                    startActivity(generator);
-                    finish();
-                    break;
-                case "iphon":
-                    Intent iphon = new Intent(getApplicationContext(), Iphon.class);
-                    startActivity(iphon);
-                    finish();
-                    break;
-                case "lighting":
-                    Intent lighting = new Intent(getApplicationContext(), Lighting.class);
-                    startActivity(lighting);
-                    finish();
-                    break;
-                case "santeral":
-                    Intent santeral = new Intent(getApplicationContext(), Santeral.class);
-                    startActivity(santeral);
-                    finish();
-                    break;
-                case "security":
-                    Intent security = new Intent(getApplicationContext(), Security.class);
-                    startActivity(security);
-                    finish();
-                    break;
-                case "shutterdoor":
-                    Intent shutterDoor = new Intent(getApplicationContext(), ShutterDoor.class);
-                    startActivity(shutterDoor);
-                    finish();
-                    break;
-                case "socket":
-                    Intent socket = new Intent(getApplicationContext(), Socket.class);
-                    startActivity(socket);
-                    finish();
-                    break;
-                case "wiring":
-                    Intent wiring = new Intent(getApplicationContext(), Wiring.class);
-                    startActivity(wiring);
-                    finish();
-                    break;
-            }
+            AntenaPost();
+            Snacky.builder()
+                    .setActivity(Time.this)
+                    .setActionClickListener(v1 -> {
+                        //do something
+                    })
+                    .setText("سرویس مورد نظر ثبت شد")
+                    .setTextColor(Color.rgb(255,255,255))
+                    .setBackgroundColor(Color.rgb(35,144,3))
+                    .setDuration(Snacky.LENGTH_LONG)
+                    .build()
+                    .show();
+        });
+
+        Log.i("sdas" , AntenaModel.service_antenna_job+"");
+        Log.i("sdas" , AntenaModel.service_antenna_number+"");
+        Log.i("sdas" , AntenaModel.service_antenna_address+"");
+        Log.i("sdas" , h+":"+m);
 
 
         });
