@@ -24,7 +24,7 @@ public class Sms extends AppCompatActivity {
     @BindView(R.id.btn_verify) Button btn_sms;
     @BindView(R.id.etx_verify) EditText etx_verify;
     @BindView(R.id.txt_send_again) TextView txt_send_again;
-
+    String randomDigit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +32,14 @@ public class Sms extends AppCompatActivity {
         setContentView(R.layout.activity_sms);
         ButterKnife.bind(this);
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            randomDigit = bundle.getString("randDigit");
+        }
+
 
     btn_sms.setOnClickListener(v -> {
-        if (etx_verify.getText().length() != 0){
+        if (etx_verify.getText().toString().equals(randomDigit.trim())){
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
 

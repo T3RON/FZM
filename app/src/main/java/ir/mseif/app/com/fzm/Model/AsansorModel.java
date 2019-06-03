@@ -12,8 +12,8 @@ public class AsansorModel {
      public static String service_asansor_text;
      public static String service_asansor_date;
      public static String service_asansor_hour;
-     public static String service_asansor_lat;
-     public static String service_asansor_sat;
+     public static String service_lat;
+     public static String service_sat;
      public static String id;
      public static String state_id;
      public static String price;

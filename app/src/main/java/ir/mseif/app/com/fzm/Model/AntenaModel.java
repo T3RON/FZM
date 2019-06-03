@@ -10,8 +10,8 @@ public class AntenaModel {
      public static String service_antenna_text;
      public static String service_antenna_date;
      public static String service_antenna_hour;
-     public static String service_antenna_lat;
-     public static String service_antenna_sat;
+     public static String service_lat;
+     public static String service_sat;
      public static String id;
      public static String state_id;
      public static String price;

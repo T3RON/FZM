@@ -223,7 +223,7 @@ public class Antenna extends AppCompatActivity {
 
                                 } else {
                                     Intent antenna_intent = new Intent(Antenna.this, Time.class);
-                                    antenna_intent.putExtra("name", "antena");
+                                    antenna_intent.putExtra("name", "antenna");
                                     AntenaModel.service_antenna_job = antenJobText;
                                     AntenaModel.service_antenna_number = txt_number.getText().toString();
                                     AntenaModel.service_antenna_address = etx_address.getText().toString();
@@ -231,8 +231,8 @@ public class Antenna extends AppCompatActivity {
                                     AntenaModel.service_antenna_plaque = etx_plaque.getText() + "";
                                     AntenaModel.service_antenna_unit = etx_unit.getText().toString();
                                     AntenaModel.service_antenna_text = etx_description_address.getText().toString();
-                                    AntenaModel.service_antenna_lat = lat;
-                                    AntenaModel.service_antenna_sat = lang;
+                                    AntenaModel.service_lat = lat;
+                                    AntenaModel.service_sat = lang;
                                     AntenaModel.id = "1";
                                     AntenaModel.state_id = "1";
                                     startActivity(antenna_intent);

@@ -21,7 +21,6 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.androidnetworking.interfaces.OkHttpResponseListener;
-import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 import com.mohamadamin.persianmaterialdatetimepicker.date.DatePickerDialog;
 import com.mohamadamin.persianmaterialdatetimepicker.utils.PersianCalendar;
@@ -31,6 +30,7 @@ import org.json.JSONArray;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.mateware.snacky.Snacky;
+import ir.mseif.app.com.fzm.MainActivity;
 import ir.mseif.app.com.fzm.Model.AntenaModel;
 import ir.mseif.app.com.fzm.Model.AsansorModel;
 import ir.mseif.app.com.fzm.R;
@@ -58,8 +58,7 @@ public class Time extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
-    String date,h,m;
-    String type;
+    String date,h,m,type;
 
     @BindView(R.id.txt_date_picker) TextView txt_date_picker;
     @BindView(R.id.btn_accept) Button btn_accept;
@@ -184,27 +183,89 @@ public class Time extends AppCompatActivity {
         });
 
         btn_accept.setOnClickListener(v -> {
-            AntenaPost();
-            Snacky.builder()
-                    .setActivity(Time.this)
-                    .setActionClickListener(v1 -> {
-                        //do something
-                    })
-                    .setText("سرویس مورد نظر ثبت شد")
-                    .setTextColor(Color.rgb(255,255,255))
-                    .setBackgroundColor(Color.rgb(35,144,3))
-                    .setDuration(Snacky.LENGTH_LONG)
-                    .build()
-                    .show();
+            switch(type) {
+                case "antenna":
+                    AntenaPost();
+                    Intent antenna = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(antenna);
+                    finish();
+                    break;
+                case "asansor":
+                    AsansorPost();
+                    Intent asansor = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(asansor);
+                    finish();
+                    break;
+                case "camera":
+                    Intent camera = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(camera);
+                    finish();
+                    break;
+                case "chandelier":
+                    Intent chandelier = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(chandelier);
+                    finish();
+                    break;
+                case "cooler":
+                    Intent cooler = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(cooler);
+                    finish();
+                    break;
+                case "electronicdevice":
+                    Intent electronicDevice = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(electronicDevice);
+                    finish();
+                    break;
+                case "electronicpanel":
+                    Intent electronicPanel = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(electronicPanel);
+                    finish();
+                    break;
+                case "generator":
+                    Intent generator = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(generator);
+                    finish();
+                    break;
+                case "iphon":
+                    Intent iphon = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(iphon);
+                    finish();
+                    break;
+                case "lighting":
+                    Intent lighting = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(lighting);
+                    finish();
+                    break;
+                case "santeral":
+                    Intent santeral = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(santeral);
+                    finish();
+                    break;
+                case "security":
+                    Intent security = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(security);
+                    finish();
+                    break;
+                case "shutterdoor":
+                    Intent shutterDoor = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(shutterDoor);
+                    finish();
+                    break;
+                case "socket":
+                    Intent socket = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(socket);
+                    finish();
+                    break;
+                case "wiring":
+                    Intent wiring = new Intent(getApplicationContext(), Wallet.class);
+                    startActivity(wiring);
+                    finish();
+                    break;
+            }
+
         });
 
-        Log.i("sdas" , AntenaModel.service_antenna_job+"");
-        Log.i("sdas" , AntenaModel.service_antenna_number+"");
-        Log.i("sdas" , AntenaModel.service_antenna_address+"");
-        Log.i("sdas" , h+":"+m);
 
-
-        });
 
     }
 
@@ -220,10 +281,10 @@ public class Time extends AppCompatActivity {
                 .addBodyParameter("service_antenna_text",AntenaModel.service_antenna_text)
                 .addBodyParameter("service_antenna_date",date)
                 .addBodyParameter("service_antenna_hour",h+":"+m)
-                .addBodyParameter("service_antenna_lat",AntenaModel.service_antenna_lat)
-                .addBodyParameter("service_antenna_sat",AntenaModel.service_antenna_sat)
-                .addBodyParameter("id",AntenaModel.id )
-                .addBodyParameter("state_id",AntenaModel.state_id)
+                .addBodyParameter("service_lat",AntenaModel.service_lat)
+                .addBodyParameter("service_sat",AntenaModel.service_sat)
+                .addBodyParameter("id","1" )
+                .addBodyParameter("state_id","2")
                 .setPriority(Priority.MEDIUM)
                 .setTag("Antena")
                 .build()
@@ -232,18 +293,20 @@ public class Time extends AppCompatActivity {
                     public void onResponse(Response response) {
                         // do anything with response
                         if (response.isSuccessful()) {
-                            Log.i("okk",response.isSuccessful() + "");
+                            SnackFunc("درخواست شما با موفقیت ثبت شد" , "#2eb82e");
                         }
                     }
                     @Override
                     public void onError(ANError anError) {
-                        // handle error
+                        SnackFunc("مشکلی پیش آمده با پشتیبانی تماس بگیرید" , "#ff3333");
+
                     }
                 });
     }
 
     public void AsansorPost() {
         AndroidNetworking.post(Global.BASE_URL + "ApiPost/Asansor")
+                .setContentType("application/json; charset=utf-8")
                 .addBodyParameter("service_asansor_number", AsansorModel.service_asansor_number)
                 .addBodyParameter("service_asansor_job",AsansorModel.service_asansor_job)
                 .addBodyParameter("service_asansor_kind",AsansorModel.service_asansor_kind)
@@ -255,8 +318,8 @@ public class Time extends AppCompatActivity {
                 .addBodyParameter("service_asansor_text",AsansorModel.service_asansor_text)
                 .addBodyParameter("service_asansor_date",date)
                 .addBodyParameter("service_asansor_hour",h+":"+m)
-                .addBodyParameter("service_asansor_lat",AsansorModel.service_asansor_lat)
-                .addBodyParameter("service_asansor_sat",AsansorModel.service_asansor_sat)
+                .addBodyParameter("service_lat",AsansorModel.service_lat)
+                .addBodyParameter("service_sat",AsansorModel.service_sat)
                 .addBodyParameter("id",AsansorModel.id )
                 .addBodyParameter("state_id",AsansorModel.state_id)
                 .setPriority(Priority.MEDIUM)
@@ -267,12 +330,13 @@ public class Time extends AppCompatActivity {
                     public void onResponse(Response response) {
                         // do anything with response
                         if (response.isSuccessful()) {
-                            Log.i("tttttttttttt",AsansorModel.service_asansor_text + "");
+                            SnackFunc("درخواست شما با موفقیت ثبت شد" , "#2eb82e");
                         }
                     }
                     @Override
                     public void onError(ANError anError) {
-                        // handle error
+                        SnackFunc("مشکلی پیش آمده با پشتیبانی تماس بگیرید" , "#ff3333");
+
                     }
                 });
     }
@@ -321,9 +385,26 @@ public class Time extends AppCompatActivity {
     }
 
 
+    public void SnackFunc(String message,String color) {
+        Snacky.builder()
+                .setActivity(Time.this)
+                .setActionClickListener(v1 -> {
+                    //do something
+                })
+                .setText(message)
+                .setTextColor(Color.rgb(255,255,255))
+                .setBackgroundColor(Color.parseColor(color))
+                .setDuration(Snacky.LENGTH_LONG)
+                .build()
+                .show();
+    }
+
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
+
+
 
 }

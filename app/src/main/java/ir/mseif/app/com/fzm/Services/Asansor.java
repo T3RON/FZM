@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
@@ -31,6 +32,7 @@ import ir.mseif.app.com.fzm.Activity.History;
 import ir.mseif.app.com.fzm.Activity.Profile;
 import ir.mseif.app.com.fzm.Activity.Time;
 import ir.mseif.app.com.fzm.Activity.Wallet;
+import ir.mseif.app.com.fzm.Model.AsansorModel;
 import ir.mseif.app.com.fzm.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -40,10 +42,8 @@ public class Asansor extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     Button btn_nav;
-    String asansorJobText;
-    String engineText;
-    String kindText;
-    String lat,lang;
+    String engineText,kindText,lat,lang;
+    StringBuilder asansorJobText;
 
     @BindView(R.id.imgbtn_up) ImageButton Inc_number;
     @BindView(R.id.imgbtn_down) ImageButton Dec_number;
@@ -75,12 +75,126 @@ public class Asansor extends AppCompatActivity {
         setContentView(R.layout.activity_asansor);
         ButterKnife.bind(this);
 
+        asansorJobText = new StringBuilder();
+
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             lat = bundle.getString("lat");
             lang = bundle.getString("lang");
         }
 
+        cb_nasb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    asansorJobText.append(cb_nasb.getText().toString());
+                }
+            }
+        });
+
+        cb_other_kind.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    asansorJobText.append(cb_other_kind.getText().toString());
+                }
+            }
+        });
+
+        cb_repair.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    asansorJobText.append(cb_repair.getText().toString());
+                }
+            }
+        });
+
+        rb_nimeEsteal_auto.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked==true) {
+                    kindText="";
+                    kindText = rb_nimeEsteal_auto.getText().toString();
+                }else {
+                    kindText="";
+                }
+            }
+        });
+
+        rb_nimeEsteal_nime.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked==true) {
+                    kindText="";
+                    kindText = rb_nimeEsteal_nime.getText().toString();
+                }else {
+                    kindText="";
+                }
+            }
+        });
+
+        rb_tamamEsteal_tamam.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked==true) {
+                    kindText="";
+                    kindText = rb_tamamEsteal_tamam.getText().toString();
+                }else {
+                    kindText="";
+                }
+            }
+        });
+
+        rb_tamamEsteal_nime.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked==true) {
+                    kindText="";
+                    kindText = rb_tamamEsteal_nime.getText().toString();
+                }else {
+                    kindText="";
+                }
+            }
+        });
+
+
+
+        rb_irani.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked==true) {
+                    engineText="";
+                    engineText = rb_irani.getText().toString();
+                }else {
+                    engineText="";
+                }
+            }
+        });
+
+        rb_khareji.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked==true) {
+                    engineText="";
+                    engineText = rb_khareji.getText().toString();
+                }else {
+                    engineText="";
+                }
+            }
+        });
+
+        rb_nemidanam.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked==true) {
+                    engineText="";
+                    engineText = rb_nemidanam.getText().toString();
+                }else {
+                    engineText="";
+                }
+            }
+        });
 
 
         Inc_number.setOnClickListener(v -> {
@@ -293,7 +407,7 @@ public class Asansor extends AppCompatActivity {
                                                     Intent asansor_intent = new Intent(Asansor.this, Time.class);
                                                     asansor_intent.putExtra("name", "asansor");
                                                     AsansorModel.service_asansor_number =txt_number.getText().toString();
-                                                    AsansorModel.service_asansor_job = asansorJobText;
+                                                    AsansorModel.service_asansor_job = asansorJobText.toString();
                                                     AsansorModel.service_asansor_kind = kindText;
                                                     AsansorModel.service_asansor_engine = engineText;
                                                     AsansorModel.service_asansor_address = etx_address.getText().toString();
@@ -301,8 +415,8 @@ public class Asansor extends AppCompatActivity {
                                                     AsansorModel.service_asansor_unit = etx_unit.getText().toString();
                                                     AsansorModel.service_asansor_plaque = etx_plaque.getText().toString();
                                                     AsansorModel.service_asansor_text = etx_description_address.getText().toString();
-                                                    AsansorModel.service_asansor_lat = lat;
-                                                    AsansorModel.service_asansor_sat = lang;
+                                                    AsansorModel.service_lat = lat;
+                                                    AsansorModel.service_sat = lang;
                                                     AsansorModel.id = "1";
                                                     AsansorModel.state_id = "1";
 
