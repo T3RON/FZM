@@ -20,8 +20,10 @@ import ir.mseif.app.com.fzm.Activity.About;
 import ir.mseif.app.com.fzm.Activity.Contact;
 import ir.mseif.app.com.fzm.Activity.History;
 import ir.mseif.app.com.fzm.Activity.Map;
-import ir.mseif.app.com.fzm.Activity.PayForService;
+import ir.mseif.app.com.fzm.Activity.ServiceInfo;
+import ir.mseif.app.com.fzm.Activity.ServiceNotDone;
 import ir.mseif.app.com.fzm.Activity.Profile;
+import ir.mseif.app.com.fzm.Activity.ServiceToDo;
 import ir.mseif.app.com.fzm.Activity.Wallet;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -94,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), About.class);
                 startActivity(intent);
             }else if(id == R.id.exit_app){
-                Intent intent = new Intent(getApplicationContext(), PayForService.class);
+                Intent intent = new Intent(getApplicationContext(), ServiceInfo.class);
                 startActivity(intent);
             }
 
