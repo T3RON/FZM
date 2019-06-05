@@ -4,11 +4,11 @@
     <color name="colorPrimaryDark">#3953a0</color>
     <color name="colorAccent">#27356E</color>
     <color name="color_white">#fff</color>
-    <color name="color_tittle_gray">#858688</color>
+    <color name="color_tittle_gray">#858585</color>
     <color name="color_sms_orange">#cb7400</color>
     <color name="color_background_asansor">#f1f1f1</color>
     <color name="color_hint">#c0c0c0</color>
-    <color name="color_asansor_view">#f2f2f2</color>
+    <color name="color_asansor_view">#f1f1f1</color>
     <color name="color_asansor_num">#d4a520</color>
     <color name="color_green">#239003</color>
     <color name="color_orange_profile">#a08c23</color>
@@ -17,4 +17,19 @@
     <color name="color_orange_history">#a08c26</color>
     <color name="color_date">#9f8756</color>
     <color name="color_red">#ff1100</color>
+    <color name="color_service_history">#f4f4f4</color>
+    <color name="color_service_history_btn">#e9e9e9</color>
+    <color name="color_service_pardakht_btn">#4fa635</color>
+    <color name="color_service_cancel_btn">#ff4033</color>
+    <color name="color_service_price">#9b9b1b</color>
+    <color name="color_service_btn">#6e6e6e</color>
+    <color name="color_service_txt">#8c7ca7</color>
+    <color name="color_service_img_border">#e0e0e0</color>
+    <color name="color_service_mid_line">#f9f9f9</color>
+    <color name="color_service_kind_txt">#474747</color>
+    <color name="color_service_servicekar_txt">#3e60bf</color>
+    <color name="color_service_not_pay">#ab3e41</color>
+    <color name="color_service_dialog_btn">#5b5e63</color>
+    <color name="color_call">#9e8c2a</color>
+    <color name="color_mid_gray">#efefef</color>
 </resources>
