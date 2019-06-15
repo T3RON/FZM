@@ -25,7 +25,8 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:supportsRtl"
         tools:targetApi="m">
-        <activity android:name=".Activity.ServiceToDo"></activity>
+        <activity android:name=".Activity.ServiceProcess"></activity>
+        <activity android:name=".Activity.ServiceToDo" />
         <activity android:name=".Activity.ServiceInfo" />
         <activity android:name=".Activity.ServiceNotDone" />
         <activity android:name=".Services.ShutterDoor" />

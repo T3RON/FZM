@@ -23,6 +23,7 @@ import ir.mseif.app.com.fzm.Activity.Map;
 import ir.mseif.app.com.fzm.Activity.ServiceInfo;
 import ir.mseif.app.com.fzm.Activity.ServiceNotDone;
 import ir.mseif.app.com.fzm.Activity.Profile;
+import ir.mseif.app.com.fzm.Activity.ServiceProcess;
 import ir.mseif.app.com.fzm.Activity.ServiceToDo;
 import ir.mseif.app.com.fzm.Activity.Wallet;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), About.class);
                 startActivity(intent);
             }else if(id == R.id.exit_app){
-                Intent intent = new Intent(getApplicationContext(), ServiceInfo.class);
+                Intent intent = new Intent(getApplicationContext(), ServiceProcess.class);
                 startActivity(intent);
             }
 
