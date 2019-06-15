@@ -32,4 +32,5 @@
     <color name="color_service_dialog_btn">#5b5e63</color>
     <color name="color_call">#9e8c2a</color>
     <color name="color_mid_gray">#efefef</color>
+    <color name="color_process_btn">#eef1f8</color>
 </resources>

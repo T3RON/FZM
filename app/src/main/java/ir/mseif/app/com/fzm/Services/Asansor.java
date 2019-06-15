@@ -1,11 +1,14 @@
 package ir.mseif.app.com.fzm.Services;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -83,116 +86,86 @@ public class Asansor extends AppCompatActivity {
             lang = bundle.getString("lang");
         }
 
-        cb_nasb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    asansorJobText.append(cb_nasb.getText().toString());
-                }
+        cb_nasb.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                asansorJobText.append(cb_nasb.getText().toString());
             }
         });
 
-        cb_other_kind.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    asansorJobText.append(cb_other_kind.getText().toString());
-                }
+        cb_other_kind.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                asansorJobText.append(cb_other_kind.getText().toString());
             }
         });
 
-        cb_repair.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    asansorJobText.append(cb_repair.getText().toString());
-                }
+        cb_repair.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                asansorJobText.append(cb_repair.getText().toString());
             }
         });
 
-        rb_nimeEsteal_auto.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked==true) {
-                    kindText="";
-                    kindText = rb_nimeEsteal_auto.getText().toString();
-                }else {
-                    kindText="";
-                }
+        rb_nimeEsteal_auto.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked==true) {
+                kindText="";
+                kindText = rb_nimeEsteal_auto.getText().toString();
+            }else {
+                kindText="";
             }
         });
 
-        rb_nimeEsteal_nime.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked==true) {
-                    kindText="";
-                    kindText = rb_nimeEsteal_nime.getText().toString();
-                }else {
-                    kindText="";
-                }
+        rb_nimeEsteal_nime.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked==true) {
+                kindText="";
+                kindText = rb_nimeEsteal_nime.getText().toString();
+            }else {
+                kindText="";
             }
         });
 
-        rb_tamamEsteal_tamam.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked==true) {
-                    kindText="";
-                    kindText = rb_tamamEsteal_tamam.getText().toString();
-                }else {
-                    kindText="";
-                }
+        rb_tamamEsteal_tamam.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked==true) {
+                kindText="";
+                kindText = rb_tamamEsteal_tamam.getText().toString();
+            }else {
+                kindText="";
             }
         });
 
-        rb_tamamEsteal_nime.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked==true) {
-                    kindText="";
-                    kindText = rb_tamamEsteal_nime.getText().toString();
-                }else {
-                    kindText="";
-                }
+        rb_tamamEsteal_nime.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked==true) {
+                kindText="";
+                kindText = rb_tamamEsteal_nime.getText().toString();
+            }else {
+                kindText="";
             }
         });
 
 
 
-        rb_irani.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked==true) {
-                    engineText="";
-                    engineText = rb_irani.getText().toString();
-                }else {
-                    engineText="";
-                }
+        rb_irani.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked==true) {
+                engineText="";
+                engineText = rb_irani.getText().toString();
+            }else {
+                engineText="";
             }
         });
 
-        rb_khareji.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked==true) {
-                    engineText="";
-                    engineText = rb_khareji.getText().toString();
-                }else {
-                    engineText="";
-                }
+        rb_khareji.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked==true) {
+                engineText="";
+                engineText = rb_khareji.getText().toString();
+            }else {
+                engineText="";
             }
         });
 
-        rb_nemidanam.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked==true) {
-                    engineText="";
-                    engineText = rb_nemidanam.getText().toString();
-                }else {
-                    engineText="";
-                }
+        rb_nemidanam.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked==true) {
+                engineText="";
+                engineText = rb_nemidanam.getText().toString();
+            }else {
+                engineText="";
             }
         });
 
@@ -200,12 +173,22 @@ public class Asansor extends AppCompatActivity {
         Inc_number.setOnClickListener(v -> {
             String A = INC(String.valueOf(txt_number.getText()));
             txt_number.setText(A);
+            etx_address.clearFocus();
+            etx_alley.clearFocus();
+            etx_unit.clearFocus();
+            etx_plaque.clearFocus();
+            etx_description_address.clearFocus();
         });
 
 
         Dec_number.setOnClickListener(v -> {
             String A = DEC(String.valueOf(txt_number.getText()));
             txt_number.setText(A);
+            etx_address.clearFocus();
+            etx_alley.clearFocus();
+            etx_unit.clearFocus();
+            etx_plaque.clearFocus();
+            etx_description_address.clearFocus();
         });
 
 
@@ -458,8 +441,6 @@ public class Asansor extends AppCompatActivity {
         }
         return String.valueOf(b);
     }
-
-
 
     @Override
     protected void attachBaseContext(Context newBase) {
